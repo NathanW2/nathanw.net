@@ -1,0 +1,55 @@
+---
+layout: post
+title: Getting ECW and MrSID support working in QGIS dev OSGeo4W install
+tags:
+- ecw
+- gis
+- mapping
+- mrsid
+- Open Source
+- qgis
+- Quantum GIS
+- raster
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '4008903'
+  superawesome: 'true'
+  jabber_published: '1299558213'
+  reddit: a:2:{s:5:"count";s:1:"0";s:4:"time";s:10:"1335515660";}
+  _wpas_mess: ! 'Getting ECW and MrSID support working in QGIS dev OSGeo4W install:
+    http://wp.me/pjIwZ-7V'
+  email_notification: '1299558215'
+  _wpas_done_twitter: '1'
+---
+<em>Note:  This post is about getting ecw and mrsid support working in the trunk (qgis-dev) version of QGIS which is installed with the OSGeo4W installer.  Non-dev versions seem to work fine following this method: <a href="http://www.qgis.org/wiki/OSGeo4wSetup#Installing_support_for_raster__.2A.ECW_.28ERMapper.29_and_.2A.sid_.28MrSid.29_formats">http://www.qgis.org/wiki/OSGeo4wSetup#Installing_support_for_raster__.2A.ECW_.28ERMapper.29_and_.2A.sid_.28MrSid.29_formats</a> </em>
+
+Getting ECW and MrSID support into QGIS can be a real pain in the butt when you first try; but once you know how it's easy.
+
+If you try to open a ecw file in QGIS you will get this nice little error message:
+
+<a href="http://woostuff.files.wordpress.com/2011/03/error.png"></a><a href="http://woostuff.files.wordpress.com/2011/03/error2.png"><img class="aligncenter size-full wp-image-548" title="Error" src="http://woostuff.files.wordpress.com/2011/03/error3.png" alt="" width="506" height="120" /></a>
+
+What?  I thought QGIS supported ECW files!
+
+Turns out it does, but the team are not able to ship the required libs with the program due to licensing restrictions by ERDAS.   Luckily adding support is not "too" hard.
+<ol>
+	<li>First head over to <a href="http://www.erdas.com/products/ERDASECWJPEG2000SDK/Downloads.aspx">http://www.erdas.com/products/ERDASECWJPEG2000SDK/Downloads.aspx</a></li>
+	<li>Click <strong>Download Now</strong> for the ERDAS ECW/JP2 SDK Desktop Read-Only, Version 4.1 libs,</li>
+	<li>Fill out a bit of registration details and click though all the pages (<em>this is the most painful process I have ever had to go though to get some libs for a program, ERDAS should be ashamed that it is such an effort.</em>)</li>
+	<li>Once you have download <strong><em>ECWJP2SDKSetup_RO_20100920.exe</em></strong>; install it.</li>
+	<li> Copy all the files from <strong>C:\Program Files\ERDAS\ERDAS ECW JPEG2000 Read SDK\bin\vc90\win32</strong> into the bin folder of your <strong>OSGeo4W install </strong>(default is C:\OSGeo4W\bin)
+You can open the OSgeo4W shell and run: <em><strong>copy "C:\Program Files\ERDAS\ERDAS ECW JPEG2000 Read SDK\bin\vc90\win32\*.dll" %OSGEO4W_ROOT%\bin </strong></em>to do the same thing.</li>
+	<li>Launch <strong>osgeo4w-setup.exe</strong>, the installer that you used to install qgis-dev,  and select  <strong>gdal-ecw, gdal17-ecw</strong> and <strong>gdal-mrsid, gdal17-sid </strong>under the libs section. Let it install the needed libs and any dependencies.</li>
+	<li>Open <em><strong>%OSGEO4W_ROOT%\bin </strong></em>and search for <strong>qgis-dev.bat; </strong>open it with a text editor and add the following line:
+<strong>set GDAL_DRIVER_PATH="%OSGEO4W_ROOT%"\bin\gdalplugins\1.8
+</strong>I always insert it just after  SET OSGEO4W_ROOT=</li>
+	<li>Launch qgis-dev.bat</li>
+	<li>Open a ecw</li>
+</ol>
+[caption id="attachment_541" align="aligncenter" width="630" caption="ECW file opened in QGIS"]<a href="http://woostuff.files.wordpress.com/2011/03/ecw.png"><img class="size-full wp-image-541" title="Opened ecw file in qgis" src="http://woostuff.files.wordpress.com/2011/03/ecw.png" alt="" width="630" height="544" /></a>[/caption]
+
+I have tested this on a couple of machines now but as always
+<p style="text-align:center;"><img class="size-full wp-image-542 aligncenter" title="works-on-my-machine-starburst" src="http://woostuff.files.wordpress.com/2011/03/works-on-my-machine-starburst.jpg" alt="" width="150" height="145" /></p>
+with no guarantee that it will work on yours :)  (<em>Although it should</em>)

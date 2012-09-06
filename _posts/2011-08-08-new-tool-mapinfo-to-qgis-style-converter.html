@@ -1,0 +1,66 @@
+---
+layout: post
+title: ! 'New Tool: MapInfo to QGIS style converter'
+tags:
+- gis
+- mapinfo
+- MapInfo
+- MapInfo Professional
+- mapping
+- Open Source
+- qgis
+- QGIS for MapInfo Users
+- qgis-vs-mapinfo
+- Quantum GIS
+- styling
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '4008903'
+  superawesome: 'true'
+  jabber_published: '1312785547'
+  email_notification: '1312785547'
+  reddit: a:2:{s:5:"count";i:0;s:4:"time";i:1346629530;}
+  _wpas_mess: ! 'New Tool: MapInfo to QGIS style converter: http://wp.me/pjIwZ-bp
+    #mapinfo #qgis #gis #mapping'
+  _wpas_done_twitter: '1'
+  tagazine-media: a:7:{s:7:"primary";s:52:"http://woostuff.files.wordpress.com/2011/08/qgis.png";s:6:"images";a:2:{s:55:"http://woostuff.files.wordpress.com/2011/08/mapinfo.png";a:6:{s:8:"file_url";s:55:"http://woostuff.files.wordpress.com/2011/08/mapinfo.png";s:5:"width";s:3:"425";s:6:"height";s:3:"498";s:4:"type";s:5:"image";s:4:"area";s:6:"211650";s:9:"file_path";s:0:"";}s:52:"http://woostuff.files.wordpress.com/2011/08/qgis.png";a:6:{s:8:"file_url";s:52:"http://woostuff.files.wordpress.com/2011/08/qgis.png";s:5:"width";s:3:"634";s:6:"height";s:3:"605";s:4:"type";s:5:"image";s:4:"area";s:6:"383570";s:9:"file_path";s:0:"";}}s:6:"videos";a:0:{}s:11:"image_count";s:1:"2";s:6:"author";s:7:"4008903";s:7:"blog_id";s:7:"4699413";s:9:"mod_stamp";s:19:"2011-08-08
+    06:39:06";}
+---
+Hopefully this tool can be of some use to people, as I know it has been very helpful to me since I made it.
+
+As I'm a pretty heavy QGIS user now, and my work place still stores most, if not all, of our data MapInfo TAB format, one &nbsp;friction point for me using QGIS was having to restyle all the MapInfo layers. &nbsp;If we only had a handful of layer this wouldn't be such a pain but we have a lot of tables and it would take me months to go though each one manually and style them.
+
+I thought "there has to be some way I can automate this..." and so the MapInfo To QGIS Style Generator (or mapinfoToQgis.py) was born. Knowing that QGIS uses QML (a XML file format) to store it style information, and that MapInfo was able to export a style string for each object, I compared what QGIS generated for its QML using the same symbol I picked in QGIS as I had in MapInfo. &nbsp; Almost a 1 to 1&nbsp;conversion! Once I worked out how to convert MapInfo point size&nbsp; to QGIS symbol size, and MapInfo colour value to RGB it was just a matter of generating a QML with the correct values.
+
+Long story short, after a bit of clean up and&nbsp;writing&nbsp;a user guide I would like release version 0.1 of the MapInfo To QGIS Style Generator for wider testing.
+
+Here is a quick example of the output.
+
+Step 1: Take One MapInfo table.
+
+<img class="aligncenter size-full wp-image-793" title="MapInfo" src="http://woostuff.files.wordpress.com/2011/08/mapinfo.png" alt="" width="425" height="498" />
+
+Step 2: Run it though mapinfoToQgis.py
+
+[sourcecode language="python"]
+python mapinfoToQgis.py WaterFittings.Tab WatterFittings.qml -c FittingType --UseMapInfo
+[/sourcecode]
+
+Step 3: Load QML file in QGIS
+
+[caption id="attachment_794" align="aligncenter" width="630" caption="Result from running mapinfoToQGIS.py"]<a href="http://woostuff.files.wordpress.com/2011/08/qgis.png"><img class="size-full wp-image-794" title="QGIS" src="http://woostuff.files.wordpress.com/2011/08/qgis.png" alt="" width="630" height="601" /></a>[/caption]
+
+Step 4: Get a beer?
+
+If you are using MapInfo Font symbols or normal MapInfo 3.0 everything should come across almost exactly. mapinfoToQgis.py will use the same fonts in QGIS as you did in MapInfo and select to the correct symbol size. Although if you are using custom MapInfo 3.0 symbols you will get the default QGIS black square symbol,you can just change it to something better after loading the QML.
+
+Currently the program only support converting symbols but I plan on adding line and region support sometime in the future.
+
+The program can be found at&nbsp;<a href="https://github.com/NathanW2/MapInfo-to-QGIS-style-generator">https://github.com/NathanW2/MapInfo-to-QGIS-style-generator</a>&nbsp;and more detailed instructions and download link can be found at&nbsp;<a href="https://github.com/NathanW2/MapInfo-to-QGIS-style-generator/wiki/Using-MapInfo-to-QGIS-style-generator.">https://github.com/NathanW2/MapInfo-to-QGIS-style-generator/wiki/Using-MapInfo-to-QGIS-style-generator.</a>
+
+Like I said at the start, hopefully other people will find this tool handy as I know I have. &nbsp;If you do find it handy let me know, I would love to hear peoples feedback. &nbsp;Also if you find any bugs let me know in the comments or log a issue on&nbsp;<a href="https://github.com/NathanW2/MapInfo-to-QGIS-style-generator/issues">https://github.com/NathanW2/MapInfo-to-QGIS-style-generator/issues</a>
+
+Enjoy :)
+

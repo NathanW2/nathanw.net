@@ -1,0 +1,51 @@
+---
+layout: post
+title: Slow opening of rasters in QGIS 1.7? Here is a fix.
+tags:
+- FOSSGIS
+- gis
+- Open Source
+- OSS
+- qgis
+- QGIS 1.7
+- Quantum GIS
+- rasters
+status: publish
+type: post
+published: true
+meta:
+  superawesome: 'true'
+  _edit_last: '4008903'
+  jabber_published: '1312757307'
+  tagazine-media: a:7:{s:7:"primary";s:57:"http://woostuff.files.wordpress.com/2011/08/rasterfix.png";s:6:"images";a:1:{s:57:"http://woostuff.files.wordpress.com/2011/08/rasterfix.png";a:6:{s:8:"file_url";s:57:"http://woostuff.files.wordpress.com/2011/08/rasterfix.png";s:5:"width";s:3:"580";s:6:"height";s:3:"610";s:4:"type";s:5:"image";s:4:"area";s:6:"353800";s:9:"file_path";s:0:"";}}s:6:"videos";a:0:{}s:11:"image_count";s:1:"1";s:6:"author";s:7:"4008903";s:7:"blog_id";s:7:"4699413";s:9:"mod_stamp";s:19:"2011-08-07
+    22:48:26";}
+  email_notification: '1312757307'
+  reddit: a:2:{s:5:"count";i:0;s:4:"time";i:1346819434;}
+  _wpas_mess: ! 'Slow opening of rasters in QGIS 1.7? Here is a fix. #qgis #gis:'
+  _wpas_done_twitter: '1'
+---
+<strong><span style="color:#ff0000;">Note: The following post only applies to QGIS 1.7.  QGIS 1.7.1 (upcoming patch) will not have this issue as the default behavior has changed. </span></strong>
+
+One thing I noticed when running QGIS 1.7 was my rasters were really slow to open and sometimes froze QGIS.  I thought maybe it was some bad plugin that I had installed, nope; maybe opening the raster of the network drive was causing it to be slow, nope. I tried a bunch of stuff, still nothing.  After a while a few other people posted to the mailing list saying they were having the same issue, turns out the solution was very simple.
+
+In QGIS contrast enhancement for rasters is turned on by default, so each time a raster is opened QGIS had to calculate the stats (max and min for example) for the raster and then scale the contrast.  For a large raster this is pretty heavy and this was the cause of all those problems.
+
+<strong>So what's the solution?</strong>
+
+<strong></strong>Turns out QGIS will remember the contrast setting for all rasters if you want it to.
+
+To fix the slow opening raster problem:
+<ol>
+	<li>Open a small raster (just any old picture will do)</li>
+	<li>Double click the layer in the layer list</li>
+	<li>Change Contrast Enhancement to No Stretch
+
+[caption id="attachment_791" align="aligncenter" width="580" caption="Change Contrast Enhancement to No Stretch"]<a href="http://woostuff.files.wordpress.com/2011/08/rasterfix.png"><img class="size-full wp-image-791" title="RasterFix" src="http://woostuff.files.wordpress.com/2011/08/rasterfix.png" alt="" width="580" height="610" /></a>[/caption]</li>
+	<li>Hit the little Save icon next to the drop down box</li>
+	<li>Open your big raster.</li>
+</ol>
+That setting will now be remembered for each raster that is opened and improve the loading time.
+
+On a similar note.  Tim over at <a href="http://linfiniti.com/2011/08/improvements-to-raster-performance-in-qgis-master/">http://linfiniti.com</a> has done some work to improve the raster performance even more with <a href="http://linfiniti.com/2011/08/improvements-to-raster-performance-in-qgis-master/">http://linfiniti.com/2011/08/improvements-to-raster-performance-in-qgis-master/</a> .  The improvements that  Tim has made are available in the nightly build of QGIS via qgis-dev in OSGeo4W, or by building the master line from github.com.
+
+&nbsp;

@@ -1,0 +1,88 @@
+---
+layout: post
+title: My first QGIS plugin -or- creating a plugin from start to finish
+tags:
+- Mapinfo Programming
+status: draft
+type: post
+published: false
+meta:
+  superawesome: 'false'
+  _edit_last: '4008903'
+---
+The other day I started working on my first plugin for QGIS.  The general idea was a tree like explorer dialog that could open the selected file into the map canvas with a double click.   I did start working on the same kind of thing for MapInfo a while ago but it never really got off the ground.
+
+I thought I would write a post about it to outline the whole plugin building process from the start.
+<h2><strong>Getting Started</strong></h2>
+The first thing to do is get yourself a good editor to write the python code.  As I am now started doing most of my dev work in Linux I have started to learn Vim, however,  the learning curve is  huge so if you don't have time or are not comfortable with learning something new I would stay clear of that one :).  There are plenty of other options out there to pick from, so take your pick: <a href="http://wiki.python.org/moin/IntegratedDevelopmentEnvironments">http://wiki.python.org/moin/IntegratedDevelopmentEnvironments</a>
+
+The next thing we need to do is start laying out the code in order for qgis to recognize it as a plugin.  The QGIS developers have written up a good guide on how to layout your code in the correct way (see <a href="http://www.qgis.org/wiki/Writing_Python_Plugins">http://www.qgis.org/wiki/Writing_Python_Plugins</a>), however who wants to write things by hand when you can get a program to do it for you.  That's right.  Nobody!.  In fact Gary Sherman, the father of QGIS, has created such a tool.
+
+The program can be installed right inside QGIS using the plugin installer (search for: plugin builder).  Once the plugin builder plugin is installed, head to Plugins-&gt;Plugin Builder..-&gt;Plugin Builder...  You can then fill out the information for your plugin:﻿
+<p style="text-align:center;">&nbsp;</p>
+
+
+[caption id="attachment_451" align="aligncenter" width="391" caption="Plugin builder details page"]<a href="http://woostuff.files.wordpress.com/2011/01/builder.png"><img class="size-full wp-image-451 " title="Plugin builder details page" src="http://woostuff.files.wordpress.com/2011/01/builder.png" alt="Plugin builder details page" width="391" height="406" /></a>[/caption]
+<p style="text-align:left;">Pressing OK present you with a dialog asking you where to save your plugin.  I just saved mine to the root of C: so after it saves I will have C:\QGISFileBrowser which is the plugin I just created.</p>
+
+<h2 style="text-align:left;">Coding</h2>
+The plugin builder will generate 7 files for you;
+<ul>
+	<li><strong>resources.qrc</strong> &lt;- This Qt resource file (we will compile this later for the plugin to use)</li>
+	<li><strong>ui_qgisfilebrowser.ui </strong>&lt;- This is the Qt Ui file that contains the dialog for the plugin. (Complied later)</li>
+	<li><strong>qgisfilebrowserdialog.py</strong> &lt;- This is a wrapper for the soon to be complied ui file.  Provides a layer between ui and logic</li>
+	<li><strong>qgisfilebrowser.py</strong> &lt;- This is the main logic python file.  Most of your stuff will be done in here.</li>
+	<li><strong>__init__.py</strong> &lt;- A file that contains information for qgis to know the plugin name, description, version, and what to load.</li>
+	<li><strong>Makefile</strong> &lt;- A qmake file that can be used to complie the ui and qrc files</li>
+	<li><strong>icon.png</strong> &lt;- The icon for the plugin.</li>
+</ul>
+Opening up __init__.py we will get:
+
+[sourcecode language="python"]
+def name():
+      return &quot;QGIS File Browser&quot;
+def description():
+      return &quot;A tree like file browser for qgis&quot;
+def version():
+return &quot;Version 0.1&quot;
+def icon():
+return &quot;icon.png&quot;
+def qgisMinimumVersion():
+      return &quot;1.0&quot;
+def classFactory(iface):
+     # load QGISFileBrowser class from file QGISFileBrowser
+     from qgisfilebrowser import QGISFileBrowser
+     return QGISFileBrowser(iface)
+[/sourcecode]
+
+This file outlines all the stuff QGIS needs to know to load the plugin.  The last part builds up you main plugin class that lives in <strong>qgisfilebrowser.py </strong>and passes though the QGIS iface object.  The iface object is a object that provides an API that plugins can use to get access to common tasks in python (or C++).
+<h2>Before we move on - Source Control</h2>
+The MOST important (read: if you don't use it, you're crazy) thing when programming  is source control, so we are going to set that up first before we move on.   My latest weapon of choice for source control is git.  Git can be installed on Windows using
+<blockquote><a href="http://code.google.com/p/msysgit/">http://code.google.com/p/msysgit/</a></blockquote>
+and on Ubuntu linux using:
+<blockquote>sudo apt-get install git-core</blockquote>
+<p style="text-align:left;">Once you have git installed we need to move to the directory where we created our plugin and create a empty git repo, so in my case C:\QGISFileBrowser (If you are using windows I would recommend using the Git Bash icon from your desktop from here on in)</p>
+
+<blockquote>$ cd C:\QGISFileBrowser
+$ git init
+Initialized empty Git repository in C:/QGISFileBrowser/.git/</blockquote>
+Now we have a empty git repo in the QGISFileBrowser folder.
+
+At this point no files have been committed into our new git repo, we can see this by running:
+<blockquote>$ git status -s</blockquote>
+All the files that have ?? next to them are not in the git repo, git is not tracking them.  Lets add all the files in the current directory using:
+<blockquote>$ git add .</blockquote>
+(The dot at the end is needed).  Now if you run git status -s again you will see a A next to all your files, these files have been added but not yet committed.
+
+Committing the files is easy, just run:
+<blockquote>$ git commit -m "First checkin of pluing code"</blockquote>
+The -m switch lets us specify a message that is stored with the commit.  You can check if the last commit is now in the repo by running:
+<blockquote>$ git log
+
+commit 0805afbdd2e563534faec5a299dc96ec7beadd01
+Author: Nathan Woodrow &lt;woodrow.nathan@gmail.com&gt;
+Date:   Mon Feb 14 12:39:27 2011 +1000
+First checkin of plugin code</blockquote>
+The basics for source control  are now setup.  I will return to this topic later when we set up a remote repository.
+<h2>Back to the plugin</h2>
+Now that we have source control set up we can head back to working on our plugin.

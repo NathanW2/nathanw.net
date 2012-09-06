@@ -1,0 +1,48 @@
+---
+layout: post
+title: Generating contour lines in QGIS
+tags:
+- gis
+- MapInfo
+- mapping
+- Open Source
+- python
+- qgis
+- shapely
+status: publish
+type: post
+published: true
+meta:
+  superawesome: 'false'
+  _edit_last: '4008903'
+  _wpas_mess: ! 'Generating contour lines in QGIS: http://wp.me/pjIwZ-8i'
+  jabber_published: '1298530823'
+  reddit: a:2:{s:5:"count";s:1:"0";s:4:"time";s:10:"1335506527";}
+  _wpas_done_twitter: '1'
+  email_notification: '1298530825'
+---
+One of the cool things I love about QGIS is finding stuff that you didn't know it could do, well not just itself but plugins that you didn't know about.
+
+Today my discovery was in how to generate contour lines from a point layer.
+<ol>
+	<li>First install the <strong>contour </strong>plugin for qgis via the plugin installer.  Just search for "contour"</li>
+	<li>Once installed open a vector point layer in QGIS.  Make sure the point layer has a field that you can use for elevation.
+
+[caption id="attachment_515" align="aligncenter" width="630" caption="One I prepared earlier"]<a href="http://woostuff.files.wordpress.com/2011/02/points.png"><img class="size-full wp-image-515" title="points" src="http://woostuff.files.wordpress.com/2011/02/points.png" alt="" width="630" height="459" /></a>[/caption]</li>
+	<li>Then select from the menu: Plugins-&gt;Contour-&gt;Contour</li>
+	<li>Fill in the information
+
+[caption id="attachment_517" align="aligncenter" width="514" caption="Details form (The above setting will generate 0.5m contours)"]<a href="http://woostuff.files.wordpress.com/2011/02/form.png"><img class="size-full wp-image-517" title="form" src="http://woostuff.files.wordpress.com/2011/02/form.png" alt="" width="514" height="580" /></a>[/caption]</li>
+	<li>Press OK</li>
+	<li>Results
+
+[caption id="attachment_518" align="aligncenter" width="630" caption="Results from plugin "]<a href="http://woostuff.files.wordpress.com/2011/02/results.png"><img class="size-full wp-image-518" title="results" src="http://woostuff.files.wordpress.com/2011/02/results.png" alt="" width="630" height="459" /></a>[/caption]</li>
+	<li>Profit??</li>
+</ol>
+The resulting contours will have a field that contains the label and z value for each contour line, you can then just label or color them how you wish.
+
+<strong>Note:  There is a bug with QGIS memory layers where the fields don't  show up in dropdown or attribute browsers, a simple fix is just to make the layer editable and then non editable then the fields will be there.</strong>
+
+The contour layer is a QGIS memory layer so remember to save it to disk eg a shapefile before you close you will loose your new fancy contour layer.
+
+Happy mapping :)

@@ -1,0 +1,70 @@
+---
+layout: post
+title: ! 'QGIS Style Tricks: Using styles to help fix kerb line directions'
+tags:
+- Open Source
+- qgis
+- Quantum GIS
+- styling
+status: publish
+type: post
+published: true
+meta:
+  superawesome: 'false'
+  _edit_last: '4008903'
+  jabber_published: '1342963324'
+  email_notification: '1342963326'
+  tagazine-media: a:7:{s:7:"primary";s:56:"http://woostuff.files.wordpress.com/2012/07/overview.png";s:6:"images";a:8:{s:69:"http://woostuff.files.wordpress.com/2012/07/symbol-properties_117.png";a:6:{s:8:"file_url";s:69:"http://woostuff.files.wordpress.com/2012/07/symbol-properties_117.png";s:5:"width";s:3:"624";s:6:"height";s:3:"402";s:4:"type";s:5:"image";s:4:"area";s:6:"250848";s:9:"file_path";s:0:"";}s:63:"http://woostuff.files.wordpress.com/2012/07/line-directions.png";a:6:{s:8:"file_url";s:63:"http://woostuff.files.wordpress.com/2012/07/line-directions.png";s:5:"width";s:3:"387";s:6:"height";s:3:"270";s:4:"type";s:5:"image";s:4:"area";s:6:"104490";s:9:"file_path";s:0:"";}s:52:"http://woostuff.files.wordpress.com/2012/07/left.png";a:6:{s:8:"file_url";s:52:"http://woostuff.files.wordpress.com/2012/07/left.png";s:5:"width";s:3:"624";s:6:"height";s:3:"402";s:4:"type";s:5:"image";s:4:"area";s:6:"250848";s:9:"file_path";s:0:"";}s:53:"http://woostuff.files.wordpress.com/2012/07/wrong.png";a:6:{s:8:"file_url";s:53:"http://woostuff.files.wordpress.com/2012/07/wrong.png";s:5:"width";s:3:"416";s:6:"height";s:3:"282";s:4:"type";s:5:"image";s:4:"area";s:6:"117312";s:9:"file_path";s:0:"";}s:53:"http://woostuff.files.wordpress.com/2012/07/right.png";a:6:{s:8:"file_url";s:53:"http://woostuff.files.wordpress.com/2012/07/right.png";s:5:"width";s:3:"390";s:6:"height";s:3:"242";s:4:"type";s:5:"image";s:4:"area";s:5:"94380";s:9:"file_path";s:0:"";}s:58:"http://woostuff.files.wordpress.com/2012/07/wrong-side.png";a:6:{s:8:"file_url";s:58:"http://woostuff.files.wordpress.com/2012/07/wrong-side.png";s:5:"width";s:3:"355";s:6:"height";s:3:"237";s:4:"type";s:5:"image";s:4:"area";s:5:"84135";s:9:"file_path";s:0:"";}s:68:"http://woostuff.files.wordpress.com/2012/07/wrong-side-wrong-way.png";a:6:{s:8:"file_url";s:68:"http://woostuff.files.wordpress.com/2012/07/wrong-side-wrong-way.png";s:5:"width";s:3:"410";s:6:"height";s:3:"246";s:4:"type";s:5:"image";s:4:"area";s:6:"100860";s:9:"file_path";s:0:"";}s:56:"http://woostuff.files.wordpress.com/2012/07/overview.png";a:6:{s:8:"file_url";s:56:"http://woostuff.files.wordpress.com/2012/07/overview.png";s:5:"width";s:3:"815";s:6:"height";s:3:"526";s:4:"type";s:5:"image";s:4:"area";s:6:"428690";s:9:"file_path";s:0:"";}}s:6:"videos";a:0:{}s:11:"image_count";s:1:"8";s:6:"author";s:7:"4008903";s:7:"blog_id";s:7:"4699413";s:9:"mod_stamp";s:19:"2012-07-22
+    13:22:03";}
+  _wpas_mess: ! 'QGIS Style Tricks: Using styles to help fix kerb line directions
+    http://wp.me/pjIwZ-hi #osgeo #qgis #mapping'
+  _wpas_done_twitter: '1'
+---
+We are currently working a kerb line digitization and defect capture project at work.  This process involves looking at the aerial photo along with video of the roads and drawing lines on the kerb layer using QGIS, not overly hard just tedious.  As I mentioned in my <a title="Using QGIS in local government" href="http://woostuff.wordpress.com/2012/04/23/using-qgis-in-local-government/">Using QGIS in local government</a> post, the defect points are snapped to the lines in order generate the distances, or chainage, along the kerb line for reporting reasons e.g Defect 1 at 10m, Defect 2 at 11.5m.  In order for this to happen the kerb lines must be running the correct direction, the correct direction here is defined by the road direction.    The kerb line also has an attribute to define what side of the road it is on, left or right, in reference to the direction of the road center line.
+
+So we have two conditions:
+<ol>
+	<li><strong>Must</strong> run the same way as the road</li>
+	<li><strong>Must</strong> have the correct side of the road assigned</li>
+</ol>
+The problem is how to clean up any lines that are already wrong (we were 90% of the way though when the above conditions were added).
+
+In QGIS we can add line directions by using a two layer symbol for the kerb line:
+
+[caption id="attachment_1074" align="aligncenter" width="624"]<a href="http://woostuff.files.wordpress.com/2012/07/symbol-properties_117.png"><img class="size-full wp-image-1074" title="Symbol properties_117" src="http://woostuff.files.wordpress.com/2012/07/symbol-properties_117.png" alt="" width="624" height="402" /></a> Line with direction[/caption]
+
+[caption id="attachment_1075" align="aligncenter" width="387"]<a href="http://woostuff.files.wordpress.com/2012/07/line-directions.png"><img class="size-full wp-image-1075" title="line directions" src="http://woostuff.files.wordpress.com/2012/07/line-directions.png" alt="" width="387" height="270" /></a> Showing line direction[/caption]
+
+Not too bad but I still have to focus a lot to see which direction the lines are going.  Viewing them at this scale is fine but once you start to move the arrows all become a blur after a while.  Plus this also doesn't let me check the side of road attribute quickly. Yes I can look at the color and the label but still I would like a quick way to look at line and see if it is facing the right way <strong>and</strong> with the correct side of the road attached.
+
+What we can do is offset the arrows on the line so that they will be on the inside of the kerb line, between the kerb line and the road direction markers when they are facing the correct direction <strong>and </strong>have the correct side of road attribute.
+
+For the left side we will of set the marker Line offset to 3, and for the right side we offset by -3
+
+[caption id="attachment_1077" align="aligncenter" width="624"]<a href="http://woostuff.files.wordpress.com/2012/07/left.png"><img class="size-full wp-image-1077" title="left" src="http://woostuff.files.wordpress.com/2012/07/left.png" alt="" width="624" height="402" /></a> Offset arrow[/caption]
+
+Using the 3 and -3 offsets will mean the arrows are rendered on the inside of the kerb line if the line is facing the correct direction. Lets have a look
+
+[caption id="attachment_1078" align="aligncenter" width="416"]<a href="http://woostuff.files.wordpress.com/2012/07/wrong.png"><img class="size-full wp-image-1078" title="wrong" src="http://woostuff.files.wordpress.com/2012/07/wrong.png" alt="" width="416" height="282" /></a> Opps no that isn't right[/caption]
+
+Ohh no that isn't right!  See how the line directions are facing the wrong way and it is showing the arrows on the outside of the line, further away from the road line.  This isn't right.  Lets swap those line directions using a plugin that I wrote called <em>Swap Line Direction (Search for 'Swap' in the plugin installer).</em>
+
+[caption id="attachment_1079" align="aligncenter" width="390"]<a href="http://woostuff.files.wordpress.com/2012/07/right.png"><img class="size-full wp-image-1079" title="right" src="http://woostuff.files.wordpress.com/2012/07/right.png" alt="" width="390" height="242" /></a> Lines facing correct direction[/caption]
+
+So now the arrows are on the inside of the line and are facing the correct way.
+<h2>But wait there is more</h2>
+This styling also helps me check that it is assigned the correct side of the road.  If we assign the top line the value '<strong>left</strong>', which is wrong in this case, we will see that the arrows are now on the wrong side of the line
+
+[caption id="attachment_1080" align="aligncenter" width="355"]<a href="http://woostuff.files.wordpress.com/2012/07/wrong-side.png"><img class="size-full wp-image-1080" title="wrong side" src="http://woostuff.files.wordpress.com/2012/07/wrong-side.png" alt="" width="355" height="237" /></a> Wrong side of road assigned[/caption]
+
+Of course here the obvious thing here is that there is two green lines which you can't have, but also having the arrows on the wrong side of the line lets you quickly see which one is wrong.
+
+It is impossible to get the arrows to be on the inside <strong>and </strong>facing the correct way.  If we swap the direction of the line the arrows are now on the inside but are facing the wrong way
+
+[caption id="attachment_1082" align="aligncenter" width="410"]<a href="http://woostuff.files.wordpress.com/2012/07/wrong-side-wrong-way.png"><img class="size-full wp-image-1082" title="wrong side wrong way" src="http://woostuff.files.wordpress.com/2012/07/wrong-side-wrong-way.png" alt="" width="410" height="246" /></a> Wrong side running the wrong way[/caption]
+
+Using this style trick allows me to quickly see at a glance which sections might be wrong when I have more then a single road in view
+
+<a href="http://woostuff.files.wordpress.com/2012/07/overview.png"><img class="aligncenter size-full wp-image-1083" title="overview" src="http://woostuff.files.wordpress.com/2012/07/overview.png" alt="" width="630" height="406" /></a>
+<h2>Summary</h2>
+This post is a quick example of how you can use QGIS styles to help you visually validate you data.  The way I have done things in the post my not work for you and you might find it less helpful and more distracting then I did; however I found it worked well with my eyes and reduced strain.

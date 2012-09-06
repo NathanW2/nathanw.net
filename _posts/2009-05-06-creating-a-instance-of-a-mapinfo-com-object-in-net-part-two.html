@@ -1,0 +1,144 @@
+---
+layout: post
+title: Creating an instance of a Mapinfo COM object in .NET - Part Two
+tags:
+- .NET
+- Mapbasic
+- mapinfo
+- mapinfo interop
+- mapinfo ole
+- Mapinfo Programming
+- mapping
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '4008903'
+  _wpas_done_twitter: '1'
+  superawesome: 'false'
+  reddit: a:2:{s:5:"count";s:1:"0";s:4:"time";s:10:"1335409393";}
+---
+In part two of the series <a href="http://woostuff.wordpress.com/2009/04/01/com-instance-mapinfo-main/">Creating a instance of a Mapinfo COM object in .NET</a>, I'm going to be talking about <strong>creating an instance of Mapinfo's COM object using reflection and Activator.CreateInstace</strong>.  This approach unlike the approach outlined in <a href="http://woostuff.wordpress.com/2009/04/01/com-instance-part-one/">part one</a>, will allow for your application to be Mapinfo version independent.
+<h2>Step 1: Creating a COM instance of Mapinfo.</h2>
+Unlike part one where the first step was to create a reference to the Mapinfo COM object, we won't be needing to do that here as we are using reflection to create an instance straight away.
+
+The first function that we need to call is called <em>Type.GetTypeFromProgID, </em> this will return a type  using the program ID of an application.  Where do we get this program ID from?  A listing in HKEY_CLASSES_ROOT is created when a application registers itself as a COM server, this listing includes things like the GUID of the application, the applications program ID and the path to the application to use as the COM server.  Lets have a quick look at how mapinfo is registered in the registry.
+
+<img class="alignleft size-full wp-image-139" title="registry" src="http://woostuff.files.wordpress.com/2009/04/registry.jpg" alt="registry" width="500" height="152" />
+
+If you have read part one of this series you will notice that the GUID above is for Mapinfo 9.5, we don't need to use this GUID anywhere in this post so I have only marked it in the above picture just as a note.
+
+You will notice two other things in the picture above, one is the key <em>ProgID </em>and the other is the key <em>VersionIndependentProgID ,</em> these keys contain the program ID that can be used by <em>Type.GetTypeFromProgID</em> to create an instance of Mapinfo.
+Enough about the registry lets see some code.
+
+First lets get the type associated to Mapinfo using the program ID that's in the registry, like so:
+
+[sourcecode language="csharp"]
+Type mapinfotype = Type.GetTypeFromProgID(&amp;quot;Mapinfo.Application&amp;quot;);
+[/sourcecode]
+
+The above code will now search the regisrty for a application with the program ID equaling <em>"Mapinfo.Application" </em>and return the type for that application or as the documentation in the .NET framework says.
+<blockquote>Gets the type associated with the specified program identifier (ProgID),
+returning null if an error is encountered while loading the System.Type.</blockquote>
+Moving on. Now that we have the type that is associated to Mapinfo's COM object we can now go and create an instance of Mapinfo from this type, for this we will need a static method in the <em>Activator </em> class.  The code that we will need to call is like this:
+
+[sourcecode language="csharp"]
+object instance = Activator.CreateInstance(mapinfotype);
+[/sourcecode]
+
+Passing the type that we got returned from<em> Type.GetTypeFromProgID</em> into the <em>CreateInstance </em>method will create an instance of Mapinfo for us and return it as a object. If we join the above code together we should have something like this:
+
+[sourcecode language="csharp"]
+Type mapinfotype = Type.GetTypeFromProgID(&amp;quot;Mapinfo.Application&amp;quot;);
+object instance = Activator.CreateInstance(mapinfotype);
+[/sourcecode]
+
+Now that we have created an instance of Mapinfo we can go ahead and start using it.
+<h2>Step 2: Using the object.</h2>
+The biggest problem with doing things this way is that because we only have the instance of Mapinfo as a object type we have to use reflection to get access to the <em>Do</em> and <em>Eval</em> methods that Mapinfo provides.
+
+So what we will do first is create a our own <em>Do</em> method that wraps up the reflection process, so we don't have to see it every time we need to call <em>Do</em>
+[sourcecode language="csharp"]
+public void Do(string command) {}
+[/sourcecode]
+
+ Now lets go on and fill out the reflection bit.
+[sourcecode language="csharp"]
+public void Do(string command)
+{
+      parameter[0] = command; 
+      mapinfoType.InvokeMember(&amp;quot;Do&amp;quot;,
+                    BindingFlags.InvokeMethod,
+                    null, instance, parameter); 
+} 
+[/sourcecode]
+
+ The above code will invoke the <em>Do</em> method in Mapinfo using reflection and pass in the command string that we supplied.
+<blockquote>A note about the above code because we are using a COM object we have very limited use of reflection and have to use the InvokeMember method, which is slow compared to the optimized reflection methods that we can use on .NET objects.  I won't go into details here but if you do a quick google search on InvokeMemeber vs Methodinfo.Invoke speed you will find what I'm talking about.  Moving on. <span style="color:#ff0000;">See speed test section form notes.</span></blockquote>
+Now that we have to <em>Do</em> method out of the way lets move on to <em>eval</em>. Pretty much the same process but it will return a string insteed of a void type.  
+
+[sourcecode language="csharp"]
+public string Eval(string command)
+{
+      parameter[0] = command; 
+      return (string)mapinfoType.InvokeMember(&amp;quot;Eval&amp;quot;, BindingFlags.InvokeMethod,
+                             null,instance,parameter); 
+} 
+[/sourcecode]
+
+ Done, now lets put that all together in a nice class with a static CreateInstance method. [sourcecode language="csharp"]
+public class Mapinfo
+{
+   private object mapinfoinstance;
+   public Mapinfo(object mapinfo)
+   {
+     this. mapinfoinstance = mapinfo;
+   }
+
+   public static Mapinfo CreateInstance()
+   {
+        Type mapinfotype = Type.GetTypeFromProgID(&amp;quot;Mapinfo.Application&amp;quot;);
+        object instance = Activator.CreateInstance(mapinfotype);
+        return new Mapinfo(instance);
+    }
+
+    public void Do(string command)
+    {
+          parameter[0] = command;
+          mapinfoType.InvokeMember(&amp;quot;Do&amp;quot;,
+                    BindingFlags.InvokeMethod,
+                    null, instance, parameter);
+     }
+
+     public string Eval(string command)
+     {
+         parameter[0] = command;
+         return (string)mapinfoType.InvokeMember(&amp;quot;Eval&amp;quot;, BindingFlags.InvokeMethod,
+                             null,instance,parameter);
+      }
+}
+[/sourcecode]
+
+ Now that we have it wrapped up in a nice class we can go ahead and use it in our application, something like this:  [sourcecode language="csharp"]
+public static void Main()
+{
+    Mapinfo mymapinfo = Mapinfo.CreateInstance();
+    mymapinfo.Do(//Run some command);
+}
+[/sourcecode]
+
+
+<h2>Summing up: Pros and Cons</h2>
+In summng up, lets have a look at some of the pros and cons of this approch.  <strong><em>Pros</em></strong>
+<ul>
+	<li>Allows Mapinfo version independence.</li>
+</ul>
+<strong><em>Cons</em></strong>
+<ul>
+	<li>Not strongly typed</li>
+	<li>Is late bound using reflection = no complier support + slower speed  <span style="color:#ff0000;">See Speed test section</span></li>
+	<li>Using reflection has speed issues due to it having to get type information everytime Do or Eval methods are called. See Speed test section</li>
+	<li>You have to write wrapper methods around the reflection process.</li>
+	<li>Can't easily get to methods that Mapinfo provides, with out wrapping them up first.</li>
+</ul>
+This approach has a lot more cons then pros as you can see, some of them are pretty big ones, the real only advantage it gives you is the ability to work with any version Mapinfo.  My next post will outline a method that allows both version independence and strong typed access and no late binding.

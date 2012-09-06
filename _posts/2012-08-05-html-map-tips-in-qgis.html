@@ -1,0 +1,60 @@
+---
+layout: post
+title: HTML map tips in QGIS
+tags:
+- FOSSGIS
+- gis
+- mapping
+- Open Source
+- qgis
+- styling
+- tips
+status: publish
+type: post
+published: true
+meta:
+  superawesome: 'false'
+  _edit_last: '4008903'
+  _wpas_mess: HTML map tips in QGIS http://wp.me/pjIwZ-hI
+  jabber_published: '1344166521'
+  _wpas_done_twitter: '1'
+  email_notification: '1344166522'
+  tagazine-media: a:7:{s:7:"primary";s:52:"http://woostuff.files.wordpress.com/2012/08/html.png";s:6:"images";a:4:{s:52:"http://woostuff.files.wordpress.com/2012/08/html.png";a:6:{s:8:"file_url";s:52:"http://woostuff.files.wordpress.com/2012/08/html.png";s:5:"width";i:616;s:6:"height";i:613;s:4:"type";s:5:"image";s:4:"area";i:377608;s:9:"file_path";b:0;}s:61:"http://woostuff.files.wordpress.com/2012/08/html-inaction.png";a:6:{s:8:"file_url";s:61:"http://woostuff.files.wordpress.com/2012/08/html-inaction.png";s:5:"width";i:616;s:6:"height";i:613;s:4:"type";s:5:"image";s:4:"area";i:377608;s:9:"file_path";b:0;}s:62:"http://woostuff.files.wordpress.com/2012/08/html-inaction2.png";a:6:{s:8:"file_url";s:62:"http://woostuff.files.wordpress.com/2012/08/html-inaction2.png";s:5:"width";i:644;s:6:"height";i:551;s:4:"type";s:5:"image";s:4:"area";i:354844;s:9:"file_path";b:0;}s:51:"http://woostuff.files.wordpress.com/2012/08/css.png";a:6:{s:8:"file_url";s:51:"http://woostuff.files.wordpress.com/2012/08/css.png";s:5:"width";i:576;s:6:"height";i:536;s:4:"type";s:5:"image";s:4:"area";i:308736;s:9:"file_path";b:0;}}s:6:"videos";a:0:{}s:11:"image_count";i:4;s:6:"author";s:7:"4008903";s:7:"blog_id";s:7:"4699413";s:9:"mod_stamp";s:19:"2012-08-05
+    11:35:17";}
+---
+New fresh QGIS feature! So fresh in fact you can still smell the wet paint :)
+
+QGIS (development build) can <a href="https://github.com/qgis/Quantum-GIS/commit/8aa160bcb3548a881248c7d46d92c4f2e12ffc02">now</a> display map tips using HTML (a <a href="http://doc.qt.nokia.com/4.7-snapshot/richtext-html-subset.html">subset</a> anyway).
+
+To enable the new map tips: Open the Layer Properties dialog for a layer and select the Display tab
+
+[caption id="attachment_1099" align="aligncenter" width="616"]<a href="http://woostuff.files.wordpress.com/2012/08/html.png"><img class="size-full wp-image-1099" title="html" src="http://woostuff.files.wordpress.com/2012/08/html.png" alt="" width="616" height="613" /></a> Display tab to set HTML map tips[/caption]
+<h2>In action</h2>
+[caption id="attachment_1100" align="aligncenter" width="616"]<a href="http://woostuff.files.wordpress.com/2012/08/html-inaction.png"><img class="size-full wp-image-1100" title="html-inaction" src="http://woostuff.files.wordpress.com/2012/08/html-inaction.png" alt="" width="616" height="613" /></a> Layer properties for HTML map tip[/caption]
+
+Notice how we can also use a QGIS expression. Anything inside <code>[% %]</code> will be evaluated and replaced with the value in real-time. We can even use a CASE statement. Pretty cool!
+
+And the result when hovering over a feature
+
+[caption id="attachment_1101" align="aligncenter" width="630"]<a href="http://woostuff.files.wordpress.com/2012/08/html-inaction2.png"><img class="size-full wp-image-1101" title="html-inaction2" src="http://woostuff.files.wordpress.com/2012/08/html-inaction2.png" alt="" width="630" height="539" /></a> HTML in QGIS map tip? Yes! WOOT![/caption]
+
+Hold on. Pause the track! We can even use some CSS to make it more fancy.
+
+[sourcecode language="html"]
+
+&lt;style&gt;
+h1 {color:red;}
+p.question {color:blue;}
+&lt;/style&gt;
+&lt;h1&gt; [% &quot;NAME&quot; %] &lt;/h1&gt;
+&lt;br&gt;
+&lt;img src=&quot;[% &quot;image&quot; %]&quot; /&gt;
+&lt;br&gt;
+&lt;p class=&quot;question&quot;&gt;Is this place a country?&lt;/p&gt;
+&lt;br&gt;
+[% CASE WHEN &quot;TYPE&quot; = 'Country' THEN 'Yes' ELSE 'No. It is a ' || &quot;TYPE&quot; END %]
+[/sourcecode]
+
+[caption id="attachment_1105" align="aligncenter" width="576"]<a href="http://woostuff.files.wordpress.com/2012/08/css.png"><img class="size-full wp-image-1105" title="css" src="http://woostuff.files.wordpress.com/2012/08/css.png" alt="" width="576" height="536" /></a> CSS in a html map tip[/caption]
+
+Happy Mapping :)

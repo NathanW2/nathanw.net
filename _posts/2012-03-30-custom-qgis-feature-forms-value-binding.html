@@ -1,0 +1,62 @@
+---
+layout: post
+title: Custom QGIS feature forms - Value Binding
+tags:
+- FOSSGIS
+- gis
+- Open Source
+- osgeo
+- qgis
+- qgis-editing
+- Quantum GIS
+status: publish
+type: post
+published: true
+meta:
+  superawesome: 'false'
+  _edit_last: '4008903'
+  jabber_published: '1333066112'
+  reddit: a:2:{s:5:"count";i:0;s:4:"time";i:1346847925;}
+  _wpas_done_linkedin: '1'
+  _wpas_mess: ! 'Custom QGIS feature forms - Value Binding #qgis #osgeo'
+  email_notification: '1333066112'
+  publicize_results: a:1:{s:7:"twitter";a:1:{i:14667770;a:2:{s:7:"user_id";s:9:"madmanwoo";s:7:"post_id";s:18:"185518839046483969";}}}
+  _wpas_done_twitter: '1'
+  tagazine-media: a:7:{s:7:"primary";s:58:"http://woostuff.files.wordpress.com/2012/03/properties.png";s:6:"images";a:7:{s:54:"http://woostuff.files.wordpress.com/2012/03/y-u-no.jpg";a:6:{s:8:"file_url";s:54:"http://woostuff.files.wordpress.com/2012/03/y-u-no.jpg";s:5:"width";s:3:"400";s:6:"height";s:3:"300";s:4:"type";s:5:"image";s:4:"area";s:6:"120000";s:9:"file_path";s:0:"";}s:58:"http://woostuff.files.wordpress.com/2012/03/customform.png";a:6:{s:8:"file_url";s:58:"http://woostuff.files.wordpress.com/2012/03/customform.png";s:5:"width";s:3:"554";s:6:"height";s:3:"435";s:4:"type";s:5:"image";s:4:"area";s:6:"240990";s:9:"file_path";s:0:"";}s:58:"http://woostuff.files.wordpress.com/2012/03/properties.png";a:6:{s:8:"file_url";s:58:"http://woostuff.files.wordpress.com/2012/03/properties.png";s:5:"width";s:3:"650";s:6:"height";s:3:"556";s:4:"type";s:5:"image";s:4:"area";s:6:"361400";s:9:"file_path";s:0:"";}s:54:"http://woostuff.files.wordpress.com/2012/03/fields.png";a:6:{s:8:"file_url";s:54:"http://woostuff.files.wordpress.com/2012/03/fields.png";s:5:"width";s:3:"650";s:6:"height";s:3:"556";s:4:"type";s:5:"image";s:4:"area";s:6:"361400";s:9:"file_path";s:0:"";}s:55:"http://woostuff.files.wordpress.com/2012/03/options.png";a:6:{s:8:"file_url";s:55:"http://woostuff.files.wordpress.com/2012/03/options.png";s:5:"width";s:3:"128";s:6:"height";s:3:"267";s:4:"type";s:5:"image";s:4:"area";s:5:"34176";s:9:"file_path";s:0:"";}s:52:"http://woostuff.files.wordpress.com/2012/03/form.png";a:6:{s:8:"file_url";s:52:"http://woostuff.files.wordpress.com/2012/03/form.png";s:5:"width";s:3:"577";s:6:"height";s:3:"295";s:4:"type";s:5:"image";s:4:"area";s:6:"170215";s:9:"file_path";s:0:"";}s:54:"http://woostuff.files.wordpress.com/2012/03/values.png";a:6:{s:8:"file_url";s:54:"http://woostuff.files.wordpress.com/2012/03/values.png";s:5:"width";s:3:"382";s:6:"height";s:3:"250";s:4:"type";s:5:"image";s:4:"area";s:5:"95500";s:9:"file_path";s:0:"";}}s:6:"videos";a:0:{}s:11:"image_count";s:1:"7";s:6:"author";s:7:"4008903";s:7:"blog_id";s:7:"4699413";s:9:"mod_stamp";s:19:"2012-03-30
+    13:51:27";}
+---
+One thing I didn't explain very well  in my <a title="QGIS Tips – Custom feature forms with Python logic" href="http://woostuff.wordpress.com/2011/09/05/qgis-tips-custom-feature-forms-with-python-logic/">other</a> post was how to correctly set up value binding between your custom form and QGIS.  I didn't explain it because at the time I didn't know how.
+
+The other day I was building a custom form QGIS for a project I am working on. I had named all the fields right, set the ui as the edit form for the layer, but only the line edits were getting bound to the correct values.
+<p style="text-align:center;"><a href="http://woostuff.files.wordpress.com/2012/03/y-u-no.jpg"><img class="aligncenter  wp-image-958" title="Y U NO" src="http://woostuff.files.wordpress.com/2012/03/y-u-no.jpg" alt="" width="280" height="210" /></a></p>
+ So having a dig around in the code I noticed that QGIS uses the same methods to bind the built-in edit forms as it does for the custom forms, meaning that you must set what kind of control you want to use in <strong>Layer Properties -&gt; Fields </strong>
+<h2>Correctly binding values</h2>
+First create the form with the controls you need, remember to name them the same as your fields.
+
+[caption id="attachment_959" align="aligncenter" width="554" caption="Custom form with controls using the same name as the fields"]<a href="http://woostuff.files.wordpress.com/2012/03/customform.png"><img class="size-full wp-image-959" title="CustomForm" src="http://woostuff.files.wordpress.com/2012/03/customform.png" alt="" width="554" height="435" /></a>[/caption]
+
+Note that here I have a QComboBox with the FeatureCla name, this will bind the combo box to the FeatureCla field in my dataset in QGIS.
+
+Now set the custom form as the <strong>Edit UI </strong>for the layer
+
+[caption id="attachment_960" align="aligncenter" width="441" caption="Set the Edit UI to your form"]<a href="http://woostuff.files.wordpress.com/2012/03/properties.png"><img class=" wp-image-960" title="properties" src="http://woostuff.files.wordpress.com/2012/03/properties.png" alt="" width="441" height="377" /></a>[/caption]
+<blockquote><em>Tip: You can use relative paths if you store the form along side your project file</em></blockquote>
+<em> </em>Flick to the Fields tab and set up the <strong>Edit Widget </strong>type for each field that you have used on the custom feature form.
+
+[caption id="attachment_961" align="aligncenter" width="504" caption="Set the Edit Widget that matches your control"]<a href="http://woostuff.files.wordpress.com/2012/03/fields.png"><img class=" wp-image-961 " title="fields" src="http://woostuff.files.wordpress.com/2012/03/fields.png" alt="" width="504" height="430" /></a>[/caption]
+
+I have set the <strong>FeatueCla</strong> field to use Unique values widget, this tells QGIS to collect all the unique values from that column and add them to the QComboBox.  There are a range of different edit widgets you can set
+
+<a href="http://woostuff.files.wordpress.com/2012/03/options.png"><img class="aligncenter size-full wp-image-962" title="options" src="http://woostuff.files.wordpress.com/2012/03/options.png" alt="" width="128" height="267" /></a>Each will map to a different set of control types (Widgets) e.g. If you want to have a checkbox on your form you must select Checkbox in the Edit Widget list to get it to bind correctly.
+
+Save the properties and head back to you map.  Use the Identify Tool to select a feature.
+
+[caption id="attachment_963" align="aligncenter" width="577" caption="Values bound to form"]<a href="http://woostuff.files.wordpress.com/2012/03/form.png"><img class="size-full wp-image-963" title="Form" src="http://woostuff.files.wordpress.com/2012/03/form.png" alt="" width="577" height="295" /></a>[/caption]
+
+<a href="http://woostuff.files.wordpress.com/2012/03/values.png"><img class="aligncenter size-full wp-image-964" title="values" src="http://woostuff.files.wordpress.com/2012/03/values.png" alt="" width="382" height="250" /></a>
+
+And that is it. Pretty cool hey!
+<h2>Final thoughts</h2>
+This is one feature I really like in QGIS.  The ability to create custom forms for people to do data entry without the need to build a plugin is very cool.  Couple this the built-in GPS module for QGIS and you have yourself a nice simple field data collection program.
+
+I have some ideas to make this feature even more powerful, but more on that later once I get some time to add it in.

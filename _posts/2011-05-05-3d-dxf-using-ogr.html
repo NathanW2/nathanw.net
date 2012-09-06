@@ -1,0 +1,57 @@
+---
+layout: post
+title: 3D DXF from MapInfo Tab or ESRI Shape (or anything) using OGR
+tags:
+- 3D
+- ESRI
+- gdal
+- gis
+- mapinfo
+- MapInfo
+- mapping
+- ogr
+- Open Source
+- OSS
+status: publish
+type: post
+published: true
+meta:
+  tagazine-media: a:7:{s:7:"primary";s:53:"http://woostuff.files.wordpress.com/2011/05/after.png";s:6:"images";a:2:{s:54:"http://woostuff.files.wordpress.com/2011/05/before.png";a:6:{s:8:"file_url";s:54:"http://woostuff.files.wordpress.com/2011/05/before.png";s:5:"width";s:3:"658";s:6:"height";s:3:"721";s:4:"type";s:5:"image";s:4:"area";s:6:"474418";s:9:"file_path";s:0:"";}s:53:"http://woostuff.files.wordpress.com/2011/05/after.png";a:6:{s:8:"file_url";s:53:"http://woostuff.files.wordpress.com/2011/05/after.png";s:5:"width";s:3:"658";s:6:"height";s:3:"722";s:4:"type";s:5:"image";s:4:"area";s:6:"475076";s:9:"file_path";s:0:"";}}s:6:"videos";a:0:{}s:11:"image_count";s:1:"2";s:6:"author";s:7:"4008903";s:7:"blog_id";s:7:"4699413";s:9:"mod_stamp";s:19:"2011-05-04
+    22:55:10";}
+  _wpas_done_twitter: '1'
+  email_notification: '1304549717'
+  jabber_published: '1304549716'
+  _wpas_mess: ! '3D DXF from MapInfo Tab or ESRI Shape (or anything) using OGR : http://wp.me/pjIwZ-9C'
+  superawesome: 'false'
+  _edit_last: '4008903'
+  reddit: a:2:{s:5:"count";i:0;s:4:"time";i:1346639764;}
+---
+<strong>Note:The following post requires gdal 1.8</strong>
+
+A lot of times we need to send/use 3D dxf files, we used to use <a href="http://www.safe.com/">FME</a> however FME is not free or cheap.  So I went looking for a free solution.
+
+If you have gdal 1.8 it's just one simple command line run using, what is becoming my favorite GIS tool, ogr2ogr.
+
+All you have to do is run:
+
+[sourcecode language="bash"]
+ogr2ogr -f &quot;DXF&quot; {outFile} {inFile} -zfield {ColumnWithZValue}
+[/sourcecode]
+
+So in my case I ran:
+[sourcecode language="bash"]
+ogr2ogr -f &quot;DXF&quot; C:\Temp\contourswarwick.dxf C:\Temp\Contours.TAB -zfield Height
+[/sourcecode]
+
+I haven't fully tested it but {outfile} can be any file ogr supports. 
+
+and the output:
+
+[caption id="attachment_601" align="aligncenter" width="630" caption="Top view of contour layer"]<a href="http://woostuff.files.wordpress.com/2011/05/before.png"><img src="http://woostuff.files.wordpress.com/2011/05/before.png" alt="Top view of contours" title="ContoursTop" width="630" height="690" class="size-full wp-image-601" /></a>[/caption]
+
+[caption id="attachment_602" align="aligncenter" width="630" caption="The side view of the above image."]<a href="http://woostuff.files.wordpress.com/2011/05/after.png"><img src="http://woostuff.files.wordpress.com/2011/05/after.png" alt="Contours side view" title="ContoursSideView" width="630" height="691" class="size-full wp-image-602" /></a>[/caption]
+
+In the words of, the not so great, Charlie Sheen. WINNING!
+
+Happy mapping :D
+ 

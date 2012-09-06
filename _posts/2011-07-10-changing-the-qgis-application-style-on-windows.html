@@ -1,0 +1,42 @@
+---
+layout: post
+title: Changing the QGIS application style on Windows
+tags:
+- gis
+- Open Source
+- qgis
+- Quantum GIS
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '4008903'
+  superawesome: 'false'
+  jabber_published: '1310261216'
+  email_notification: '1310261216'
+  tagazine-media: a:7:{s:7:"primary";s:63:"http://woostuff.files.wordpress.com/2011/07/qplastiquestyle.png";s:6:"images";a:2:{s:63:"http://woostuff.files.wordpress.com/2011/07/qplastiquestyle.png";a:6:{s:8:"file_url";s:63:"http://woostuff.files.wordpress.com/2011/07/qplastiquestyle.png";s:5:"width";s:4:"1040";s:6:"height";s:3:"545";s:4:"type";s:5:"image";s:4:"area";s:6:"566800";s:9:"file_path";s:0:"";}s:61:"http://woostuff.files.wordpress.com/2011/07/qwindowsstyle.png";a:6:{s:8:"file_url";s:61:"http://woostuff.files.wordpress.com/2011/07/qwindowsstyle.png";s:5:"width";s:4:"1094";s:6:"height";s:3:"546";s:4:"type";s:5:"image";s:4:"area";s:6:"597324";s:9:"file_path";s:0:"";}}s:6:"videos";a:0:{}s:11:"image_count";s:1:"2";s:6:"author";s:7:"4008903";s:7:"blog_id";s:7:"4699413";s:9:"mod_stamp";s:19:"2011-07-10
+    01:26:55";}
+  _wpas_mess: ! 'Changing the QGIS application style on Windows #qgis #mapping #Qt:'
+  _wpas_done_twitter: '1'
+  reddit: a:2:{s:5:"count";i:0;s:4:"time";i:1346849061;}
+---
+By default QGIS uses the Qt QPlastiqueStyle for all its windows which makes QGIS render all controls like this:
+
+[caption id="attachment_757" align="aligncenter" width="630" caption="Default style for QGIS on windows."]<a href="http://woostuff.files.wordpress.com/2011/07/qplastiquestyle.png"><img class="size-full wp-image-757" title="QPlastiqueStyle" src="http://woostuff.files.wordpress.com/2011/07/qplastiquestyle.png" alt="" width="630" height="330" /></a>[/caption]
+
+However it can be changed in order to make it fit in with system style, as in use Windows style. Running the following commands in the python console:
+
+[sourcecode language="python"]
+from PyQt4.QtGui import QApplication
+QApplication.setStyle(&quot;windowsvista&quot;)
+[/sourcecode]
+
+will change QGIS to render controls in windows style:
+
+[caption id="attachment_758" align="aligncenter" width="630" caption="QGIS using windows style."]<a href="http://woostuff.files.wordpress.com/2011/07/qwindowsstyle.png"><img class="size-full wp-image-758" title="QWindowsStyle" src="http://woostuff.files.wordpress.com/2011/07/qwindowsstyle.png" alt="" width="630" height="314" /></a>[/caption]
+
+<em>It's quite hard to notice many of the differences but just try it you will see them</em>
+
+However there is one limitation. QGIS will not remember that setting as the compiled binary forces QGIS running on Windows into QPlastiqueStyle.
+
+I have started working on a patch to give the user a choice in the options which control rendering style they would like to use. I think choice in these situations is good because I have grown to like the QPlastiqueStyle, mainly because I have used it so much , but other people I know prefer the Windows Vista style controls.

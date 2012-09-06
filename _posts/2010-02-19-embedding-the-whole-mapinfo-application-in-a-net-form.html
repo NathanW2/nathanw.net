@@ -1,0 +1,90 @@
+---
+layout: post
+title: Embedding the whole Mapinfo application in a .Net form.
+tags:
+- .NET
+- Mapbasic
+- mapinfo
+- mapinfo interop
+- mapinfo ole
+- Mapinfo Programming
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '4008903'
+  email_notification: '1266560344'
+  superawesome: 'false'
+---
+Not sure if I'll ever have a need for this, but someone else may so I thought I would throw this up here, just in case.
+
+A couple of days ago there was a question on MapInfo-l about embedding MapInfo into a .Net application(<a href="http://groups.google.com/group/mapinfo-l/browse_thread/thread/15dfc23ceff8ceef">http://groups.google.com/group/mapinfo-l/browse_thread/thread/15dfc23ceff8ceef</a>).
+Embedding a map window into .Net is something that is covered in the Mapbasic manual however this is not what was needed, what was interesting was the person wanted to be able to embed the whole Mapinfo application menus and all into a .Net contol.
+
+As I had not done this before or seen anyone else do it I thought it might be interesting to have a look into it, knowing also that by using Win32 libraries from .Net(<em>eg User32.dll</em>) you could do some cool stuff I figured why not?
+
+The following code is what I managed to write that lets me embed the whole application into a .Net control(I let the code comments explain what is going on):
+
+<em>For this code to work you will need to create a .Net form with a picture box somewhere on it and a button that calls button1_click for it's click handler, you will also need to reference Mapinfow.exe/Mapinfo COM server see </em><a href="http://woostuff.wordpress.com/2009/04/01/com-instance-mapinfo-main/"><em>http://woostuff.wordpress.com/2009/04/01/com-instance-mapinfo-main/</em></a><em> for details.</em>
+<div id="_mcePaste">[sourcecode language="csharp"]
+    public partial class Form1 : Form
+    {
+        // Sets the parent of a window.
+        [DllImport(&quot;User32&quot;, CharSet = CharSet.Auto, ExactSpelling = true)]
+        internal static extern IntPtr SetParent(IntPtr hWndChild, IntPtr hWndParent);
+
+        //Sets window attributes
+        [DllImport(&quot;USER32.DLL&quot;)]
+        public static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+
+        //Gets window attributes
+        [DllImport(&quot;USER32.DLL&quot;)]
+        public static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+        //assorted constants needed
+        public static int GWL_STYLE = -16;
+        public static int WS_CHILD = 0x40000000; //child window
+        public static int WS_BORDER = 0x00800000; //window with border
+        public static int WS_DLGFRAME = 0x00400000; //window with double border but no title
+        public static int WS_CAPTION= WS_BORDER | WS_DLGFRAME; //window with a title bar
+        public static int WS_MAXIMIZE = 0x1000000;
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of MapInfo.
+            MapInfoApplication mapinfo = new MapInfoApplication();
+
+            // Get the handle to the whole MapInfo application.
+            // 9 = SYS_INFO_MAPINFOWND.
+            string handle = mapinfo.Eval(&quot;SystemInfo(9)&quot;);
+
+            // Convert the handle to an IntPtr type.
+            IntPtr oldhandle = new IntPtr(Convert.ToInt32(handle));
+
+            //Make mapinfo visible otherwise it won't show up in our control.
+            mapinfo.Visible = true;
+
+            //Set the parent of MapInfo to a picture box on the form.
+            SetParent(oldhandle, this.pictureBox1.Handle);
+
+            //Get current window style of MapInfo window
+            int style = GetWindowLong(oldhandle, GWL_STYLE);
+
+            //Take current window style and remove WS_CAPTION(title bar) from it
+            SetWindowLong(oldhandle, GWL_STYLE, (style &amp; ~WS_CAPTION));
+
+            //Maximize MapInfo so that it fits into our control.
+            mapinfo.Do(&quot;Set Window 1011 Max&quot;);
+        }
+    }
+[/sourcecode]
+
+After the code is complied and run you should end up with a screen like this:
+<em>(Once the whole MapInfo application is embedded into our C# application, we can still do all the Do and Eval methods that we normally would when doing integrated Mapping) </em>
+<pre style="font:normal normal normal 12px/18px Consolas, Monaco, 'Courier New', Courier, monospace;"><a href="http://woostuff.files.wordpress.com/2010/02/re-parented-whole-mapinfo-pro-application2.jpg"><img class="alignleft size-full wp-image-253" title="Re-parented whole MapInfo Pro application" src="http://woostuff.files.wordpress.com/2010/02/re-parented-whole-mapinfo-pro-application2.jpg" alt="" width="949" height="707" /></a></pre>
+</div>

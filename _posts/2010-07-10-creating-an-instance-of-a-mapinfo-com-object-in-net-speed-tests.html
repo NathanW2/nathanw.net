@@ -1,0 +1,165 @@
+---
+layout: post
+title: Creating an instance of a MapInfo COM object in .NET – Speed Tests
+tags:
+- .NET
+- C#
+- Mapbasic
+- mapinfo
+- mapinfo interop
+- mapinfo ole
+- MapInfo Professional
+- Mapinfo Programming
+status: publish
+type: post
+published: true
+meta:
+  superawesome: 'true'
+  _edit_last: '4008903'
+  jabber_published: '1278766522'
+  _wp_old_slug: ''
+  email_notification: '1278766523'
+  _wpas_done_twitter: '1'
+  reddit: a:2:{s:5:"count";s:1:"0";s:4:"time";s:10:"1335921256";}
+---
+A while ago I posted about how to create an instance of MapInfo in .Net, If you missed those posts then they can be found <a href="https://woostuff.wordpress.com/2009/04/01/com-instance-mapinfo-main/">here</a>.  In these posts I outlined how you can create a instance using three different methods, in the reflection based post I said that one of the disadvantages of doing it this way was that it was slower.   I said this due to just my observations but I thought it would be a good idea to put it to the test and show the speed difference.
+
+I created a simple project to test and show me the results of three different things: Speed of complied MBX, calling a MapBasic function though the Do and via the interface (see posts <a href="https://woostuff.wordpress.com/2009/04/01/com-instance-part-one/">1</a> &amp; <a href="https://woostuff.wordpress.com/2009/06/01/creating-an-instance-of-a-mapinfo-com-object-in-net-part-three/">3</a>) and calling Do and Eval via reflection (see post <a href="https://woostuff.wordpress.com/2009/05/06/creating-a-instance-of-a-mapinfo-com-object-in-net-part-two/">2</a>)
+
+The code is simple, and is posted at the bottom of this post, the command “Fetch Next From {Table}” is called a number of times: 100;200;300;500;1000;2000;5000 and each block is timed.
+
+After running each iteration set 3 times, these are the results :
+
+<a href="http://woostuff.files.wordpress.com/2010/07/speedtests.png"><img style="display:inline;border-width:0;" title="SpeedTests" src="http://woostuff.files.wordpress.com/2010/07/speedtests_thumb.png" border="0" alt="SpeedTests" width="626" height="584" /></a>
+
+Behold my fancy graph making skills….or lack there of.  The time is in seconds, so the 0.032 in the Interface pass 1 is 0.032 seconds for 200 iterations which is still pretty quick.  You’ll notice that using the reflection based method starts to really take its toll when you are doing 5000 iterations, mind you ~1 second is still pretty quick.
+
+The Mapbasic code I used:
+
+[sourcecode language="csharp"]
+Declare Sub Main
+Declare Function Time(count as Integer) as Float
+Declare Function GetTickCount Lib &quot;kernel32&quot; () As Integer
+
+Sub Main
+   Dim pass as Integer
+   pass = 0
+	Dim a,b,c,d,e,f,g as Integer
+   a = 100
+   b = 200
+   c = 300
+   d = 500
+   e = 1000
+   f = 2000
+   g = 5000
+
+	Do While pass &lt;= 2
+       Print &quot;====PASS &quot; + pass + &quot;=========&quot;
+       Print Time(a)
+       Print Time(b)
+       Print Time(c)
+       Print Time(d)
+       Print Time(e)
+       Print Time(f)
+       Print Time(g)
+		pass = pass + 1
+   Loop
+End Sub
+
+Function Time(count as Integer) as Float
+    Dim a as Integer
+    Dim b as Integer
+	Dim i as Integer
+	a = GetTickCount()
+	For i = 0 to count
+       Fetch Next From Untitled
+    Next
+	b = GetTickCount()
+	Time = (b - a) / 1000
+End Function
+[/sourcecode]
+
+and the C# code:
+
+[sourcecode language="csharp"]
+class ReflectionMapInfo
+    {
+        private readonly object mapinfo;
+
+        public ReflectionMapInfo(object mapinfo)
+        {
+            this.mapinfo = mapinfo;
+        }
+
+        public void Do(string commandstring)
+        {
+            this.mapinfo.GetType().InvokeMember(&quot;Do&quot;, BindingFlags.InvokeMethod,
+                                                                null, this.mapinfo,
+                                                                new[] {commandstring});
+        }
+    }
+
+    class Program
+    {
+        [DllImport(&quot;kernel32.dll&quot;, CharSet = CharSet.Auto, ExactSpelling = true)]
+        public static extern int GetTickCount();
+        static MapInfoApplication mapinfo = new MapInfoApplication();
+        static ReflectionMapInfo reflectionmapinfo = new ReflectionMapInfo(mapinfo);
+
+        static void Main(string[] args)
+        {
+            mapinfo.Do(@&quot;Open Table &quot;&quot;C:\Users\Woo\Documents\Untitled.TAB&quot;&quot;&quot;);
+
+            int pass = 0;
+            while (pass &lt;= 2)
+            {
+                Console.WriteLine(&quot;Interface Test, Pass &quot; + pass + &quot;Count 100 &quot; + Time(100));
+                Console.WriteLine(&quot;Interface Test, Pass &quot; + pass + &quot;Count 200 &quot; + Time(200));
+                Console.WriteLine(&quot;Interface Test, Pass &quot; + pass + &quot;Count 300 &quot; + Time(300));
+                Console.WriteLine(&quot;Interface Test, Pass &quot; + pass + &quot;Count 500 &quot; + Time(500));
+                Console.WriteLine(&quot;Interface Test, Pass &quot; + pass + &quot;Count 1000 &quot; + Time(1000));
+                Console.WriteLine(&quot;Interface Test, Pass &quot; + pass + &quot;Count 2000 &quot; + Time(2000));
+                Console.WriteLine(&quot;Interface Test, Pass &quot; + pass + &quot;Count 5000 &quot; + Time(5000));
+                pass++;
+            }
+
+            pass = 0;
+            while (pass &lt;= 4)
+            {
+                Console.WriteLine(&quot;Reflection Test, Pass &quot; + pass + &quot;Count 100 &quot; + ReflectionTime(100));
+                Console.WriteLine(&quot;Reflection Test, Pass &quot; + pass + &quot;Count 200 &quot; + ReflectionTime(200));
+                Console.WriteLine(&quot;Reflection Test, Pass &quot; + pass + &quot;Count 300 &quot; + ReflectionTime(300));
+                Console.WriteLine(&quot;Reflection Test, Pass &quot; + pass + &quot;Count 500 &quot; + ReflectionTime(500));
+                Console.WriteLine(&quot;Reflection Test, Pass &quot; + pass + &quot;Count 1000 &quot; + ReflectionTime(1000));
+                Console.WriteLine(&quot;Reflection Test, Pass &quot; + pass + &quot;Count 2000 &quot; + ReflectionTime(2000));
+                Console.WriteLine(&quot;Reflection Test, Pass &quot; + pass + &quot;Count 5000 &quot; + ReflectionTime(5000));
+                pass++;
+            }
+            Console.ReadLine();
+        }
+
+        public static double Time(int count)
+        {
+            int start = GetTickCount();
+            for (int i = 0; i &lt; count; i++)
+            {
+                mapinfo.Do(&quot;Fetch Next From Untitled&quot;);
+            }
+            int end = GetTickCount();
+            mapinfo.Do(&quot;Fetch First From Untitled&quot;);
+            return (end - start) / 1000d;
+        }
+
+        public static double ReflectionTime(int count)
+        {
+            int start = GetTickCount();
+            for (int i = 0; i &lt; count; i++)
+            {
+                reflectionmapinfo.Do(&quot;Fetch Next From Untitled&quot;);
+            }
+            int end = GetTickCount();
+            reflectionmapinfo.Do(&quot;Fetch First From Untitled&quot;);
+            return (end - start) / 1000d;
+        }
+    }
+[/sourcecode]

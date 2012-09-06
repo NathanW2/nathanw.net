@@ -1,0 +1,146 @@
+---
+layout: post
+title: ! 'Browsers: QGIS vs MapInfo 11'
+tags:
+- .NET
+- Feature Requests
+- mapinfo
+- MapInfo
+- MapInfo Professional
+- mapinfo-11
+- Open Source
+- qgis
+- QGIS for MapInfo Users
+- qgis-vs-mapinfo
+- Quantum GIS
+status: publish
+type: post
+published: true
+meta:
+  tagazine-media: a:7:{s:7:"primary";s:61:"http://woostuff.files.wordpress.com/2011/07/qgisattribute.png";s:6:"images";a:3:{s:59:"http://woostuff.files.wordpress.com/2011/07/mapinfosort.png";a:6:{s:8:"file_url";s:59:"http://woostuff.files.wordpress.com/2011/07/mapinfosort.png";s:5:"width";s:3:"506";s:6:"height";s:3:"464";s:4:"type";s:5:"image";s:4:"area";s:6:"234784";s:9:"file_path";s:0:"";}s:61:"http://woostuff.files.wordpress.com/2011/07/qgisattribute.png";a:6:{s:8:"file_url";s:61:"http://woostuff.files.wordpress.com/2011/07/qgisattribute.png";s:5:"width";s:3:"890";s:6:"height";s:3:"538";s:4:"type";s:5:"image";s:4:"area";s:6:"478820";s:9:"file_path";s:0:"";}s:55:"http://woostuff.files.wordpress.com/2011/07/control.png";a:6:{s:8:"file_url";s:55:"http://woostuff.files.wordpress.com/2011/07/control.png";s:5:"width";s:3:"750";s:6:"height";s:3:"276";s:4:"type";s:5:"image";s:4:"area";s:6:"207000";s:9:"file_path";s:0:"";}}s:6:"videos";a:0:{}s:11:"image_count";s:1:"3";s:6:"author";s:7:"4008903";s:7:"blog_id";s:7:"4699413";s:9:"mod_stamp";s:19:"2011-07-08
+    00:26:57";}
+  email_notification: '1310042553'
+  reddit: a:2:{s:5:"count";s:1:"0";s:4:"time";s:10:"1338234980";}
+  _wpas_mess: ! 'Browser Wars: QGIS vs MapInfo 11 - Updated for 11.03 : http://wp.me/pjIwZ-bC
+    #gis #mapinfo #qgis #mapping'
+  _wpas_done_twitter: '1'
+  _edit_last: '4008903'
+  jabber_published: '1310042553'
+  superawesome: 'false'
+  _wpas_skip_linkedin: '1'
+---
+<em>Warning: This post contains small rants! You have been warned.</em>
+
+PBBI have recently released MapInfo 11, the new version has brought one change that I think deserves some attention - even if for the wrong reasons.
+
+MapInfo's browser window was in need of a very good make over; it didn't follow normal keyboard conventions, eg holding shift to select rather than ctrl; couldn't sort via the headers; keyboard navigation was poor; and it looked ugly. PBBI then announced that MapInfo 11 would have a new "improved" browser. I thought "Sweet! About time" and then we got a copy. <em>/sigh</em>
+<h2>So what's the problem?</h2>
+First off it's slow to resize, this would be due to them using .NET WPF for the new browser (I have never seen a good fast .NET WPF datagrid).
+
+Then we have sorting, which is meant to be the cool new feature. This is not the normal just click on the header to sort the column, no because that would be too easy, you have to right click in the browser, click sort and select the options which then opens a new browser window. um what?
+
+<a href="http://woostuff.files.wordpress.com/2011/07/mapinfosort.png"><img class="aligncenter size-full wp-image-723" title="MapInfoSort" src="http://woostuff.files.wordpress.com/2011/07/mapinfosort.png" alt="" width="506" height="464" /></a>
+
+Yes this is a pretty handy feature but no it shouldn't be the only way to sort, you should have a click on the header kind of sort. This seems to be what people wanted.
+
+Next. No visible scroll progress. When you move the little scroll box on the side the browser waits until you have finished to show you the data. I guess the old browser did this too so why change it!
+
+And finally shift click to select a block of rows doesn't work, I mean come on this is not a hard thing to do.
+
+Surly you can dock it? Nope!
+
+In the end we have a browser that is pretty much the same as the old one but slower......oh and has alternating row colors.
+
+Overall reaction: Disappointed
+<h2>Enter QGIS</h2>
+Now if you are reading this blog you are well aware that I am a huge fan of QGIS, I don't really make that a secret. So I guess the overall point of this post is to compare the QGIS attribute table (browser) and the new MapInfo 11 one.
+
+Lets run though the same list as MapInfo.
+
+Slow to resize? Nope. Even with a large table open the resize speed doesn't change.
+
+Header based sorting? Yep. Just click the header and it will sort that column. Multi column sorting is on the to-do list.
+
+Live scrolling (results update as you scroll)? Yep + no lag.
+
+Shift click to select blocks of rows? Sure why not. Or you can hold ctrl to select rows all over the grid.
+
+Docking? Yep and floating so you can put it on a different monitor if you need.
+
+<strong>Bonus</strong>
+
+The QGIS attribute table has a built-in search/filter box, saves having to run a query and have a new window like in MapInfo if you just want to filter the browser.
+
+[caption id="attachment_728" align="aligncenter" width="630" caption="The QGIS attribute table (browser)"]<a href="http://woostuff.files.wordpress.com/2011/07/qgisattribute.png"><img class="size-full wp-image-728" title="qgisattribute" src="http://woostuff.files.wordpress.com/2011/07/qgisattribute.png" alt="" width="630" height="380" /></a>[/caption]
+
+<strong>Extra Bonus</strong>
+The QGIS browser can even have other UI objects inside the cells. Very bloody handy.
+
+[caption id="attachment_734" align="aligncenter" width="630" caption="Combo box in browser table."]<a href="http://woostuff.files.wordpress.com/2011/07/control.png"><img class="size-full wp-image-734" title="control" src="http://woostuff.files.wordpress.com/2011/07/control.png" alt="" width="630" height="231" /></a>[/caption]
+
+You can even have a calendar date picker if you want.
+<h2>Lets review</h2>
+<table border="1">
+<tbody>
+<tr>
+<th>Feature</th>
+<th>MapInfo 11</th>
+<th>QGIS</th>
+</tr>
+<tr>
+<td>Good resize speed.</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Header sorting.</td>
+<td>Yes [See update]</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Multi column sorting.</td>
+<td>Yes [1]</td>
+<td>No [2]</td>
+</tr>
+<tr>
+<td>Live scrolling.</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Shift click for blocks of rows</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Docking.</td>
+<td>No[3]</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<em>[1] Why does it need to open a new browser window? At least make it an option.
+[2] On the to-do list</em>
+[3] Yes you can use http://www.pbinsight.com/support/product-downloads/item/windowhelper for this support. It's a good tool go and download it. I just think it should be built in.
+
+Doesn't look too good for MapInfo at the moment. QGIS is even accessing the TAB data though ogr. Quick tip: if a free program can access and manage your data faster than you, you are failing.
+
+My work place spends a good deal of money on our annual MapInfo "maintenance" licence, money I would happily send to the QGIS project if I had the choice. Or at least part of it,
+<h3>Data</h3>
+Both programs opened a 27000 row .TAB file.
+
+<em>Just for the record I'm not anti-MapInfo. It still has some features that I really like. I just wish they would pick up the game.</em>
+<h2>Update for 11.03 patch</h2>
+As promised in my comments this is an update to reflect the new header click sorting in MapInfo Professional 11.03.
+
+The 11.03 patch has added header based sorting, and while the sorting works as expected which is good, there is something a little odd.
+
+What is the typical sort pattern? Left click header, table sorts ascending click again and table sorts descending or vice versa.  Then you normally have any extra sorting stuff in the right-click menu e.g Sort Ascending, Sort Desending, Clear Sort etc.
+
+Go into MapInfo 11.03 left click header, context menu appears 0_o...  I'm not aware of any program that  has ever done that.  A menu on left click is not normal, even crappy ol' Lotus Notes doesn't have a menu on left click and Lotus Notes is one really crappy program.
+
+Nuff said.
+
+P.S Don't talk about your new feature i.e the browser, following normal conventions for browser style windows then do something no one has ever done....and still no shift click block select.
+
+P.P.S I know it may sound like a constant bashing but really something like this should never got passed review. I know UI is hard but come, on a context menu on left click...

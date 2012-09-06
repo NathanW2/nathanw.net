@@ -11,7 +11,7 @@ pygments: true
 #
 title : Nathan's QGIS Blog 
 tagline:
-author : Nathan Woodrow
+author :
   name : Nathan Woodrow
   email : woodrow.nathan@gmail.com  
   github : NathanW2

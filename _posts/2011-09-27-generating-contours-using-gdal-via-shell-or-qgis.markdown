@@ -37,21 +37,21 @@ First make sure that you have the latest version of the GdalTools plugin install
 
 Load the DEM into QGIS using the Load Raster icon.
 
-[![](http://woostuff.files.wordpress.com/2011/09/loaddem.png)](http://woostuff.files.wordpress.com/2011/09/loaddem.png)
+[caption id="attachment_846" align="aligncenter" width="630" caption="DEM loaded in QGIS"][![](http://woostuff.files.wordpress.com/2011/09/loaddem.png)](http://woostuff.files.wordpress.com/2011/09/loaddem.png)[/caption]
 
 Now head up to the menu Raster->Extraction->Contour
 
-[![](http://woostuff.files.wordpress.com/2011/09/rastermenu.png)](http://woostuff.files.wordpress.com/2011/09/rastermenu.png)
+[caption id="attachment_847" align="aligncenter" width="247" caption="Raster menu in QGIS"][![](http://woostuff.files.wordpress.com/2011/09/rastermenu.png)](http://woostuff.files.wordpress.com/2011/09/rastermenu.png)[/caption]
 
 Select the settings that you need. For this DEM I am going to generate 250mm contours.
 
-[![](http://woostuff.files.wordpress.com/2011/09/contour.png)](http://woostuff.files.wordpress.com/2011/09/contour.png)
+[caption id="attachment_848" align="aligncenter" width="605" caption="Contour dialog."][![](http://woostuff.files.wordpress.com/2011/09/contour.png)](http://woostuff.files.wordpress.com/2011/09/contour.png)[/caption]
 
 Take note of the text area at the bottom of the dialog as that is the exact command sent to GDAL in order to generate the contours. If you take a copy of that you can run it on the command line for batch processing later.
 
 Hit ok.
 
-[![](http://woostuff.files.wordpress.com/2011/09/250mm.png)](http://woostuff.files.wordpress.com/2011/09/250mm.png)
+[caption id="attachment_849" align="aligncenter" width="630" caption="250mm contours from the DEM"][![](http://woostuff.files.wordpress.com/2011/09/250mm.png)](http://woostuff.files.wordpress.com/2011/09/250mm.png)[/caption]
 
 [![](http://woostuff.files.wordpress.com/2011/09/zoomed.png)](http://woostuff.files.wordpress.com/2011/09/zoomed.png)
 
@@ -85,13 +85,13 @@ sh generate_contours.sh
 
 If you're a windows user you will need to run OsGeo4W Shell in order to use sh.
 
-[![](http://woostuff.files.wordpress.com/2011/09/osgeoshell.png)](http://woostuff.files.wordpress.com/2011/09/osgeoshell.png)
+[caption id="attachment_851" align="aligncenter" width="630" caption="Loading OsGeo4w shell."][![](http://woostuff.files.wordpress.com/2011/09/osgeoshell.png)](http://woostuff.files.wordpress.com/2011/09/osgeoshell.png)[/caption]
 
 Once the shell is loaded you can just call:
 
 sh generate_contours.sh
 
-[![](http://woostuff.files.wordpress.com/2011/09/osgeoshell2.png)](http://woostuff.files.wordpress.com/2011/09/osgeoshell2.png)
+[caption id="attachment_852" align="aligncenter" width="630" caption="Output from running generate_contours.sh"][![](http://woostuff.files.wordpress.com/2011/09/osgeoshell2.png)](http://woostuff.files.wordpress.com/2011/09/osgeoshell2.png)[/caption]
 
 
 ## Final remarks

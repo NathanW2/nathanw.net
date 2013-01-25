@@ -41,9 +41,9 @@ I haven't fully tested it but {outfile} can be any file ogr supports.
 
 and the output:
 
-[![Top view of contours](http://woostuff.files.wordpress.com/2011/05/before.png)](http://woostuff.files.wordpress.com/2011/05/before.png)
+[caption id="attachment_601" align="aligncenter" width="630" caption="Top view of contour layer"][![Top view of contours](http://woostuff.files.wordpress.com/2011/05/before.png)](http://woostuff.files.wordpress.com/2011/05/before.png)[/caption]
 
-[![Contours side view](http://woostuff.files.wordpress.com/2011/05/after.png)](http://woostuff.files.wordpress.com/2011/05/after.png)
+[caption id="attachment_602" align="aligncenter" width="630" caption="The side view of the above image."][![Contours side view](http://woostuff.files.wordpress.com/2011/05/after.png)](http://woostuff.files.wordpress.com/2011/05/after.png)[/caption]
 
 In the words of, the not so great, Charlie Sheen. WINNING!
 

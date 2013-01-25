@@ -24,24 +24,37 @@ QGIS (development build) can [now](https://github.com/qgis/Quantum-GIS/commit/8a
 
 To enable the new map tips: Open the Layer Properties dialog for a layer and select the Display tab
 
-[![](http://woostuff.files.wordpress.com/2012/08/html.png)](http://woostuff.files.wordpress.com/2012/08/html.png) Display tab to set HTML map tips
+[caption id="attachment_1099" align="aligncenter" width="616"][![](http://woostuff.files.wordpress.com/2012/08/html.png)](http://woostuff.files.wordpress.com/2012/08/html.png) Display tab to set HTML map tips[/caption]
 
 
 ## In action
 
 
-[![](http://woostuff.files.wordpress.com/2012/08/html-inaction.png)](http://woostuff.files.wordpress.com/2012/08/html-inaction.png) Layer properties for HTML map tip
+[caption id="attachment_1100" align="aligncenter" width="616"][![](http://woostuff.files.wordpress.com/2012/08/html-inaction.png)](http://woostuff.files.wordpress.com/2012/08/html-inaction.png) Layer properties for HTML map tip[/caption]
 
 Notice how we can also use a QGIS expression. Anything inside `[% %]` will be evaluated and replaced with the value in real-time. We can even use a CASE statement. Pretty cool!
 
 And the result when hovering over a feature
 
-[![](http://woostuff.files.wordpress.com/2012/08/html-inaction2.png)](http://woostuff.files.wordpress.com/2012/08/html-inaction2.png) HTML in QGIS map tip? Yes! WOOT!
+[caption id="attachment_1101" align="aligncenter" width="630"][![](http://woostuff.files.wordpress.com/2012/08/html-inaction2.png)](http://woostuff.files.wordpress.com/2012/08/html-inaction2.png) HTML in QGIS map tip? Yes! WOOT![/caption]
 
 Hold on. Pause the track! We can even use some CSS to make it more fancy.
 
-<script src="https://gist.github.com/3651842.js"> </script>
+[sourcecode language="html"]
 
-[![](http://woostuff.files.wordpress.com/2012/08/css.png)](http://woostuff.files.wordpress.com/2012/08/css.png) CSS in a html map tip
+<style>
+h1 {color:red;}
+p.question {color:blue;}
+</style>
+<h1> [% "NAME" %] </h1>
+<br>
+<img src="[% "image" %]" />
+<br>
+<p class="question">Is this place a country?</p>
+<br>
+[% CASE WHEN "TYPE" = 'Country' THEN 'Yes' ELSE 'No. It is a ' || "TYPE" END %]
+[/sourcecode]
+
+[caption id="attachment_1105" align="aligncenter" width="576"][![](http://woostuff.files.wordpress.com/2012/08/css.png)](http://woostuff.files.wordpress.com/2012/08/css.png) CSS in a html map tip[/caption]
 
 Happy Mapping :)

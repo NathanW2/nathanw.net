@@ -129,6 +129,6 @@ if __name__ == "__main__":
 
 and the result is a map window and information printed to the console.
 
-[![](http://woostuff.files.wordpress.com/2011/04/image001.png)](http://woostuff.files.wordpress.com/2011/04/image001.png)
+[caption id="attachment_591" align="aligncenter" width="630" caption="Information from MapInfo callback"][![](http://woostuff.files.wordpress.com/2011/04/image001.png)](http://woostuff.files.wordpress.com/2011/04/image001.png)[/caption]
 
 I think Python could be a good language to prototype MapInfo based app, or even build a whole app itself.   If you do end up making something of it let me know I am quite interested with what people could come up with.

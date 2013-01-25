@@ -42,7 +42,7 @@ Main improvements include:
   * Overall tweaks to the dialog
 
 
-[![](http://woostuff.files.wordpress.com/2012/01/rules-dialog.png)](http://woostuff.files.wordpress.com/2012/01/rules-dialog.png)
+[caption id="attachment_908" align="aligncenter" width="630" caption="The new rule dialog"][![](http://woostuff.files.wordpress.com/2012/01/rules-dialog.png)](http://woostuff.files.wordpress.com/2012/01/rules-dialog.png)[/caption]
 
 As you can see in the screenshot, the rules are now organized in a tree which clearly expresses which rules should be applied and when.
 
@@ -50,7 +50,7 @@ In the example above, all the rules under the **Sealed **rule will only be appli
 
 And the results! As you can see below, QGIS will only render the colored squares if the **Sealed **rule is true otherwise it just shows a green line.
 
-[![](http://woostuff.files.wordpress.com/2012/01/rules.png)](http://woostuff.files.wordpress.com/2012/01/rules.png)
+[caption id="attachment_907" align="aligncenter" width="630" caption="The rules applied"][![](http://woostuff.files.wordpress.com/2012/01/rules.png)](http://woostuff.files.wordpress.com/2012/01/rules.png)[/caption]
 
 The work was sponsored by Ville de Morges, Switzerland and developed by Martin Dobias.  Thanks to both of them for these improvements.
 

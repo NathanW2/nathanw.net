@@ -93,121 +93,121 @@ This is a little bit of C#3.0 sample code that you can use to detect and display
 
     
     
-    <span style="color:#606060;">   1: <span style="color:#0000ff;">string registryKey = <span style="color:#006080;">@"SOFTWARE\MapInfo\MapInfo\Professional";
+    <span style="color:#606060;">   1:</span> <span style="color:#0000ff;">string</span> registryKey = <span style="color:#006080;">@"SOFTWARE\MapInfo\MapInfo\Professional"</span>;
 
 
 
     
     
-    <span style="color:#606060;">   2:  
+    <span style="color:#606060;">   2:</span>  
 
 
 
     
     
-    <span style="color:#606060;">   3: <span style="color:#0000ff;">using (Microsoft.Win32.RegistryKey prokey = Registry.LocalMachine.OpenSubKey(registryKey))
+    <span style="color:#606060;">   3:</span> <span style="color:#0000ff;">using</span> (Microsoft.Win32.RegistryKey prokey = Registry.LocalMachine.OpenSubKey(registryKey))
 
 
 
     
     
-    <span style="color:#606060;">   4: {
+    <span style="color:#606060;">   4:</span> {
 
 
 
     
     
-    <span style="color:#606060;">   5:     var versions = from a <span style="color:#0000ff;">in prokey.GetSubKeyNames()
+    <span style="color:#606060;">   5:</span>     var versions = from a <span style="color:#0000ff;">in</span> prokey.GetSubKeyNames()
 
 
 
     
     
-    <span style="color:#606060;">   6:                    let r = prokey.OpenSubKey(a)
+    <span style="color:#606060;">   6:</span>                    let r = prokey.OpenSubKey(a)
 
 
 
     
     
-    <span style="color:#606060;">   7:                    let name = r.Name
+    <span style="color:#606060;">   7:</span>                    let name = r.Name
 
 
 
     
     
-    <span style="color:#606060;">   8:                    let slashindex = name.LastIndexOf(<span style="color:#006080;">@"\")
+    <span style="color:#606060;">   8:</span>                    let slashindex = name.LastIndexOf(<span style="color:#006080;">@"\")
 
 
 
     
     
-    <span style="color:#606060;">   9:                    select new
+    <span style="color:#606060;">   9:</span>                    select new
 
 
 
     
     
-    <span style="color:#606060;">  10:                    {
+    <span style="color:#606060;">  10:</span>                    {
 
 
 
     
     
-    <span style="color:#606060;">  11:                       MapinfoVersion = Convert.ToInt32(name.Substring(slashindex + 1,
+    <span style="color:#606060;">  11:</span>                       MapinfoVersion = Convert.ToInt32(name.Substring(slashindex + 1,
 
 
 
     
     
-    <span style="color:#606060;">  12:                                                                        name.Length - slashindex -1))
+    <span style="color:#606060;">  12:</span>                                                                        name.Length - slashindex -1))
 
 
 
     
     
-    <span style="color:#606060;">  13:                    };
+    <span style="color:#606060;">  13:</span>                    };
 
 
 
     
     
-    <span style="color:#606060;">  14:  
+    <span style="color:#606060;">  14:</span>  
 
 
 
     
     
-    <span style="color:#606060;">  15:     Console.WriteLine("Installed Mapinfo Version<span style="color:#006080;">");
+    <span style="color:#606060;">  15:</span>     Console.WriteLine("</span>Installed Mapinfo Version<span style="color:#006080;">");
 
 
 
     
     
-    <span style="color:#606060;">  16:     foreach (var item in versions)
+    <span style="color:#606060;">  16:</span>     foreach (var item in versions)
 
 
 
     
     
-    <span style="color:#606060;">  17:     {
+    <span style="color:#606060;">  17:</span>     {
 
 
 
     
     
-    <span style="color:#606060;">  18:         Console.WriteLine("Mapinfo Version: {0}", item.MapinfoVersion);
+    <span style="color:#606060;">  18:</span>         Console.WriteLine("</span>Mapinfo Version: {0}", item.MapinfoVersion);
 
 
 
     
     
-    <span style="color:#606060;">  19:     }
+    <span style="color:#606060;">  19:</span>     }
 
 
 
     
     
-    <span style="color:#606060;">  20: }
+    <span style="color:#606060;">  20:</span> }
 
 
   
@@ -231,121 +231,121 @@ If you don’t want to use LINQ you could use something like this:
 
     
     
-    <span style="color:#606060;">   1: <span style="color:#0000ff;">string registryKey = <span style="color:#006080;">@"SOFTWARE\MapInfo\MapInfo\Professional";
+    <span style="color:#606060;">   1:</span> <span style="color:#0000ff;">string</span> registryKey = <span style="color:#006080;">@"SOFTWARE\MapInfo\MapInfo\Professional"</span>;
 
 
 
     
     
-    <span style="color:#606060;">   2:  
+    <span style="color:#606060;">   2:</span>  
 
 
 
     
     
-    <span style="color:#606060;">   3: <span style="color:#0000ff;">using (Microsoft.Win32.RegistryKey prokey = Registry.LocalMachine.OpenSubKey(registryKey))
+    <span style="color:#606060;">   3:</span> <span style="color:#0000ff;">using</span> (Microsoft.Win32.RegistryKey prokey = Registry.LocalMachine.OpenSubKey(registryKey))
 
 
 
     
     
-    <span style="color:#606060;">   4: {
+    <span style="color:#606060;">   4:</span> {
 
 
 
     
     
-    <span style="color:#606060;">   5:     List<<span style="color:#0000ff;">int> versions = <span style="color:#0000ff;">new List<<span style="color:#0000ff;">int>();
+    <span style="color:#606060;">   5:</span>     List<<span style="color:#0000ff;">int</span>> versions = <span style="color:#0000ff;">new</span> List<<span style="color:#0000ff;">int</span>>();
 
 
 
     
     
-    <span style="color:#606060;">   6:     <span style="color:#0000ff;">foreach (<span style="color:#0000ff;">string key <span style="color:#0000ff;">in prokey.GetSubKeyNames())
+    <span style="color:#606060;">   6:</span>     <span style="color:#0000ff;">foreach</span> (<span style="color:#0000ff;">string</span> key <span style="color:#0000ff;">in</span> prokey.GetSubKeyNames())
 
 
 
     
     
-    <span style="color:#606060;">   7:     {
+    <span style="color:#606060;">   7:</span>     {
 
 
 
     
     
-    <span style="color:#606060;">   8:         RegistryKey subkey = prokey.OpenSubKey(key);
+    <span style="color:#606060;">   8:</span>         RegistryKey subkey = prokey.OpenSubKey(key);
 
 
 
     
     
-    <span style="color:#606060;">   9:         <span style="color:#0000ff;">string name = subkey.Name;
+    <span style="color:#606060;">   9:</span>         <span style="color:#0000ff;">string</span> name = subkey.Name;
 
 
 
     
     
-    <span style="color:#606060;">  10:         <span style="color:#0000ff;">int slashindex = name.LastIndexOf(<span style="color:#006080;">@"\");
+    <span style="color:#606060;">  10:</span>         <span style="color:#0000ff;">int</span> slashindex = name.LastIndexOf(<span style="color:#006080;">@"\");
 
 
 
     
     
-    <span style="color:#606060;">  11:         int version = Convert.ToInt32(name.Substring(slashindex + 1,
+    <span style="color:#606060;">  11:</span>         int version = Convert.ToInt32(name.Substring(slashindex + 1,
 
 
 
     
     
-    <span style="color:#606060;">  12:                                                      name.Length - slashindex - 1));
+    <span style="color:#606060;">  12:</span>                                                      name.Length - slashindex - 1));
 
 
 
     
     
-    <span style="color:#606060;">  13:         versions.Add(version);
+    <span style="color:#606060;">  13:</span>         versions.Add(version);
 
 
 
     
     
-    <span style="color:#606060;">  14:     }
+    <span style="color:#606060;">  14:</span>     }
 
 
 
     
     
-    <span style="color:#606060;">  15:  
+    <span style="color:#606060;">  15:</span>  
 
 
 
     
     
-    <span style="color:#606060;">  16:     Console.WriteLine("Installed Mapinfo Version<span style="color:#006080;">");
+    <span style="color:#606060;">  16:</span>     Console.WriteLine("</span>Installed Mapinfo Version<span style="color:#006080;">");
 
 
 
     
     
-    <span style="color:#606060;">  17:     foreach (int mapinfoversion in versions)
+    <span style="color:#606060;">  17:</span>     foreach (int mapinfoversion in versions)
 
 
 
     
     
-    <span style="color:#606060;">  18:     {
+    <span style="color:#606060;">  18:</span>     {
 
 
 
     
     
-    <span style="color:#606060;">  19:         Console.WriteLine("Mapinfo Version: {0}", mapinfoversion);
+    <span style="color:#606060;">  19:</span>         Console.WriteLine("</span>Mapinfo Version: {0}", mapinfoversion);
 
 
 
     
     
-    <p><span style="color:#606060;">  20:     }</p>
+    <p><span style="color:#606060;">  20:</span>     }</p>
 
 
   
@@ -389,103 +389,103 @@ Something like this would do it:
 
     
     
-    <span style="color:#606060;">   1: <span style="color:#0000ff;">const <span style="color:#0000ff;">int NeededMapinfoVersion = 1000;
+    <span style="color:#606060;">   1:</span> <span style="color:#0000ff;">const</span> <span style="color:#0000ff;">int</span> NeededMapinfoVersion = 1000;
 
 
 
     
     
-    <span style="color:#606060;">   2:  
+    <span style="color:#606060;">   2:</span>  
 
 
 
     
     
-    <span style="color:#606060;">   3: Console.WriteLine(<span style="color:#006080;">"Checking Mapinfo Version");
+    <span style="color:#606060;">   3:</span> Console.WriteLine(<span style="color:#006080;">"Checking Mapinfo Version"</span>);
 
 
 
     
     
-    <span style="color:#606060;">   4: <span style="color:#0000ff;">foreach (var item <span style="color:#0000ff;">in versions)
+    <span style="color:#606060;">   4:</span> <span style="color:#0000ff;">foreach</span> (var item <span style="color:#0000ff;">in</span> versions)
 
 
 
     
     
-    <span style="color:#606060;">   5: {
+    <span style="color:#606060;">   5:</span> {
 
 
 
     
     
-    <span style="color:#606060;">   6:     <span style="color:#0000ff;">if (item.MapinfoVersion < NeededMapinfoVersion)
+    <span style="color:#606060;">   6:</span>     <span style="color:#0000ff;">if</span> (item.MapinfoVersion < NeededMapinfoVersion)
 
 
 
     
     
-    <span style="color:#606060;">   7:     {
+    <span style="color:#606060;">   7:</span>     {
 
 
 
     
     
-    <span style="color:#606060;">   8:         Console.WriteLine(<span style="color:#006080;">"Sorry I need Mapinfo Version {0} but you have {1}",
+    <span style="color:#606060;">   8:</span>         Console.WriteLine(<span style="color:#006080;">"Sorry I need Mapinfo Version {0} but you have {1}"</span>,
 
 
 
     
     
-    <span style="color:#606060;">   9:                           NeededMapinfoVersion,item.MapinfoVersion);
+    <span style="color:#606060;">   9:</span>                           NeededMapinfoVersion,item.MapinfoVersion);
 
 
 
     
     
-    <span style="color:#606060;">  10:        <span style="color:#008000;">// Exit the app.
+    <span style="color:#606060;">  10:</span>        <span style="color:#008000;">// Exit the app.</span>
 
 
 
     
     
-    <span style="color:#606060;">  11:     }
+    <span style="color:#606060;">  11:</span>     }
 
 
 
     
     
-    <span style="color:#606060;">  12:     <span style="color:#0000ff;">else
+    <span style="color:#606060;">  12:</span>     <span style="color:#0000ff;">else</span>
 
 
 
     
     
-    <span style="color:#606060;">  13:     {
+    <span style="color:#606060;">  13:</span>     {
 
 
 
     
     
-    <span style="color:#606060;">  14:         Console.WriteLine(<span style="color:#006080;">"Your good to go");
+    <span style="color:#606060;">  14:</span>         Console.WriteLine(<span style="color:#006080;">"Your good to go"</span>);
 
 
 
     
     
-    <span style="color:#606060;">  15:         <span style="color:#0000ff;">break;
+    <span style="color:#606060;">  15:</span>         <span style="color:#0000ff;">break</span>;
 
 
 
     
     
-    <span style="color:#606060;">  16:     }
+    <span style="color:#606060;">  16:</span>     }
 
 
 
     
     
-    <span style="color:#606060;">  17: }
+    <span style="color:#606060;">  17:</span> }
 
 
   

@@ -46,7 +46,7 @@ This project is currently being done by a 67 year old foreman who has worked for
 
 Each defect point is snapped to the underlying  kerb line and chainages (distance along line) is generated using a update statement at the end of the project (could be done using a insert trigger if needed) using ST_line_locate_point(line, point).
 
-[![](http://woostuff.files.wordpress.com/2012/04/kerb.png)](http://woostuff.files.wordpress.com/2012/04/kerb.png)
+[caption id="attachment_1005" align="aligncenter" width="630" caption="Defect points coloured by risk captured against the kerb line"][![](http://woostuff.files.wordpress.com/2012/04/kerb.png)](http://woostuff.files.wordpress.com/2012/04/kerb.png)[/caption]
 
 Overall QGIS has been great for this project.  The built in data entry forms have been a great help to allow fast and correct data entry. Each form has four drop downs all with present values and descriptions to aid in data entry.
 
@@ -133,7 +133,7 @@ The Spatialite database has a spatial index on the road distance nodes and with 
 
 I have been involved in creating, and maintaining, our [planning scheme maps](http://www.southerndowns.qld.gov.au/nps/) for the council.  It's been a pretty fun project, apart from the constant moving target that is the state planning specifications, but I digress.
 
-[![](http://woostuff.files.wordpress.com/2012/04/planning.png)](http://woostuff.files.wordpress.com/2012/04/planning.png)
+[caption id="attachment_1008" align="aligncenter" width="630" caption="Planning scheme in QGIS"][![](http://woostuff.files.wordpress.com/2012/04/planning.png)](http://woostuff.files.wordpress.com/2012/04/planning.png)[/caption]
 
 This project was done, and still is, in MapInfo. While there is nothing technically wrong with that, it has become a bit more of a pain to maintain then one would hope.  The planning scheme is not just one map but rather a series of different maps all with different scales and requirements.  I'm sure by now you can start to see the issues that can arise:
 

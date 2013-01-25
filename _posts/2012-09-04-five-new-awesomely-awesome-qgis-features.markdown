@@ -41,7 +41,7 @@ The task was to add Python macros that run when a project is open, saved, clos
 
 [![](http://woostuff.files.wordpress.com/2012/09/marcos.png)](http://woostuff.files.wordpress.com/2012/09/marcos.png) Of course this addition can also expanded into other areas of the program. My first plan is to use it for notifying the user of plugins to failed to load.  There is nothing in QGIS that annoys more then starting and seeing this:
 
-[![](http://woostuff.files.wordpress.com/2012/09/error.png)](http://woostuff.files.wordpress.com/2012/09/error.png) Dear dialog, why are you in my face!
+[caption id="attachment_1137" align="aligncenter" width="504"][![](http://woostuff.files.wordpress.com/2012/09/error.png)](http://woostuff.files.wordpress.com/2012/09/error.png) Dear dialog, why are you in my face![/caption]
 
 To make matters worse if more then one plugin fails to load then I have to dismiss each dialog. So we can now use the notification bar to present it to the user in a nice non-blocking way. Something like "BTW four plugins failed to load at startup. What would you like me to do?"
 
@@ -55,9 +55,9 @@ I'm working on a patch  to move this stuff into the notification bar just no E
 
 [Larry Shaffer](https://github.com/dakcarto) has been working on some great improvements to the new labeling engine in order to make our maps look a lot more professional. Larry has been doing a lot of work in this area and is still going so I'm not going to go into all the details. However one new labeling feature that I really like is the ability to to set the  spacing between letters and words.
 
-[![](http://woostuff.files.wordpress.com/2012/09/before_spacing.png)](http://woostuff.files.wordpress.com/2012/09/before_spacing.png) Before spacing
+[caption id="attachment_1139" align="aligncenter" width="630"][![](http://woostuff.files.wordpress.com/2012/09/before_spacing.png)](http://woostuff.files.wordpress.com/2012/09/before_spacing.png) Before spacing[/caption]
 
-[![](http://woostuff.files.wordpress.com/2012/09/spacing.png)](http://woostuff.files.wordpress.com/2012/09/spacing.png) With a little bit of spacing
+[caption id="attachment_1140" align="aligncenter" width="630"][![](http://woostuff.files.wordpress.com/2012/09/spacing.png)](http://woostuff.files.wordpress.com/2012/09/spacing.png) With a little bit of spacing[/caption]
 
 There is also the new ability to set the transparency of the label and the buffer.  The buffer transparency is something that I really like as sometimes you need a buffer but a solid buffer can then block out your map features; by adding a 45% transparent buffer I still have the labels pop off the map but not in your face or blocking features.  It's hard to make a picture to explain it well so you'll just have to experiment.
 
@@ -69,7 +69,7 @@ This one could be quite handy for people that make a lot of maps with the same b
 
 `~/.qgis/project_templates` folder and the project will be shown in the file menu.
 
-[![](http://woostuff.files.wordpress.com/2012/09/tempalte.png)](http://woostuff.files.wordpress.com/2012/09/tempalte.png) Template list
+[caption id="attachment_1143" align="aligncenter" width="367"][![](http://woostuff.files.wordpress.com/2012/09/tempalte.png)](http://woostuff.files.wordpress.com/2012/09/tempalte.png) Template list[/caption]
 
 You can also set the current project as the default template:
 
@@ -85,15 +85,15 @@ And last but not least. This years GSoC student [Arunmozhi](https://github.com
 
 The tagging and smart groups are one of my favorite additions to the new symbol manager.
 
-[![](http://woostuff.files.wordpress.com/2012/09/tagging.png)](http://woostuff.files.wordpress.com/2012/09/tagging.png) Symbol tagging
+[caption id="attachment_1145" align="aligncenter" width="630"][![](http://woostuff.files.wordpress.com/2012/09/tagging.png)](http://woostuff.files.wordpress.com/2012/09/tagging.png) Symbol tagging[/caption]
 
 I love this new feature as not all the symbols I create belong to a single group so the tagging and smart groups fit this bill well.  I can now tag all the council symbols with 'SDRC' and include them a SDRC smart group but at the same time tag the sewer ones with 'sewer' and they can live in the sewer style smart group; or how about all sewer symbols that are also SDRC ones:
 
-[![](http://woostuff.files.wordpress.com/2012/09/smart.png)](http://woostuff.files.wordpress.com/2012/09/smart.png) Smart group with sewer and sdrc symbols
+[caption id="attachment_1146" align="aligncenter" width="508"][![](http://woostuff.files.wordpress.com/2012/09/smart.png)](http://woostuff.files.wordpress.com/2012/09/smart.png) Smart group with sewer and sdrc symbols[/caption]
 
 You can then filter by this group in the symbol selector:
 
-[![](http://woostuff.files.wordpress.com/2012/09/search.png)](http://woostuff.files.wordpress.com/2012/09/search.png) Filter based on smart group
+[caption id="attachment_1147" align="aligncenter" width="530"][![](http://woostuff.files.wordpress.com/2012/09/search.png)](http://woostuff.files.wordpress.com/2012/09/search.png) Filter based on smart group[/caption]
 
 
 ## Conclusion

@@ -41,7 +41,7 @@ To fix the slow opening raster problem:
 	
   3. Change Contrast Enhancement to No Stretch
 
-[![](http://woostuff.files.wordpress.com/2011/08/rasterfix.png)](http://woostuff.files.wordpress.com/2011/08/rasterfix.png)
+[caption id="attachment_791" align="aligncenter" width="580" caption="Change Contrast Enhancement to No Stretch"][![](http://woostuff.files.wordpress.com/2011/08/rasterfix.png)](http://woostuff.files.wordpress.com/2011/08/rasterfix.png)[/caption]
 
 	
   4. Hit the little Save icon next to the drop down box

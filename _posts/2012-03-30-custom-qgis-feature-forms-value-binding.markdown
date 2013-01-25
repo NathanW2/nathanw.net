@@ -33,13 +33,13 @@ The other day I was building a custom form QGIS for a project I am working on. I
 
 First create the form with the controls you need, remember to name them the same as your fields.
 
-[![](http://woostuff.files.wordpress.com/2012/03/customform.png)](http://woostuff.files.wordpress.com/2012/03/customform.png)
+[caption id="attachment_959" align="aligncenter" width="554" caption="Custom form with controls using the same name as the fields"][![](http://woostuff.files.wordpress.com/2012/03/customform.png)](http://woostuff.files.wordpress.com/2012/03/customform.png)[/caption]
 
 Note that here I have a QComboBox with the FeatureCla name, this will bind the combo box to the FeatureCla field in my dataset in QGIS.
 
 Now set the custom form as the **Edit UI **for the layer
 
-[![](http://woostuff.files.wordpress.com/2012/03/properties.png)](http://woostuff.files.wordpress.com/2012/03/properties.png)
+[caption id="attachment_960" align="aligncenter" width="441" caption="Set the Edit UI to your form"][![](http://woostuff.files.wordpress.com/2012/03/properties.png)](http://woostuff.files.wordpress.com/2012/03/properties.png)[/caption]
 
 
 > _Tip: You can use relative paths if you store the form along side your project file_
@@ -47,7 +47,7 @@ Now set the custom form as the **Edit UI **for the layer
 
 _ _Flick to the Fields tab and set up the **Edit Widget **type for each field that you have used on the custom feature form.
 
-[![](http://woostuff.files.wordpress.com/2012/03/fields.png)](http://woostuff.files.wordpress.com/2012/03/fields.png)
+[caption id="attachment_961" align="aligncenter" width="504" caption="Set the Edit Widget that matches your control"][![](http://woostuff.files.wordpress.com/2012/03/fields.png)](http://woostuff.files.wordpress.com/2012/03/fields.png)[/caption]
 
 I have set the **FeatueCla** field to use Unique values widget, this tells QGIS to collect all the unique values from that column and add them to the QComboBox.  There are a range of different edit widgets you can set
 
@@ -55,7 +55,7 @@ I have set the **FeatueCla** field to use Unique values widget, this tells QGIS 
 
 Save the properties and head back to you map.  Use the Identify Tool to select a feature.
 
-[![](http://woostuff.files.wordpress.com/2012/03/form.png)](http://woostuff.files.wordpress.com/2012/03/form.png)
+[caption id="attachment_963" align="aligncenter" width="577" caption="Values bound to form"][![](http://woostuff.files.wordpress.com/2012/03/form.png)](http://woostuff.files.wordpress.com/2012/03/form.png)[/caption]
 
 [![](http://woostuff.files.wordpress.com/2012/03/values.png)](http://woostuff.files.wordpress.com/2012/03/values.png)
 

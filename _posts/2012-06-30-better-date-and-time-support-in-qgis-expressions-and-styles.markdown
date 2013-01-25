@@ -137,17 +137,17 @@ Currently the only date format supported is {year}-{month}-{day} as seen in the
 
 When I wrote the new[ expression builder](http://woostuff.wordpress.com/2011/10/27/expression-based-labeling/) dialog a while ago I made it dynamic so that any new functions added to the expression engine will show up automatically.  So here they are:
 
-[![](http://woostuff.files.wordpress.com/2012/06/functions.png)](http://woostuff.files.wordpress.com/2012/06/functions.png) List of new date and time functions.
+[caption id="attachment_1056" align="aligncenter" width="387"][![](http://woostuff.files.wordpress.com/2012/06/functions.png)](http://woostuff.files.wordpress.com/2012/06/functions.png) List of new date and time functions.[/caption]
 
 We can also use these functions in the rule based rending, which is where the power really comes in.  Lets see something like that in action:
 
-[![](http://woostuff.files.wordpress.com/2012/06/dates-style1.png)](http://woostuff.files.wordpress.com/2012/06/dates-style1.png) Styled using days and years
+[caption id="attachment_1058" align="aligncenter" width="630"][![](http://woostuff.files.wordpress.com/2012/06/dates-style1.png)](http://woostuff.files.wordpress.com/2012/06/dates-style1.png) Styled using days and years[/caption]
 
 Should be pretty straight forward to understand. We are using the age() and day() functions to style the events that are older than 30 days, within 30 days, for today, or in the future.  We also check the year of the event using year() and year($now) to make sure we only see this years events, or style them differently depending on if they are last years events or in the future.
 
 This is the result of the above rules:
 
-[![](http://woostuff.files.wordpress.com/2012/06/style-result.png)](http://woostuff.files.wordpress.com/2012/06/style-result.png) Result of using date functions in rule based renderer
+[caption id="attachment_1059" align="aligncenter" width="630"][![](http://woostuff.files.wordpress.com/2012/06/style-result.png)](http://woostuff.files.wordpress.com/2012/06/style-result.png) Result of using date functions in rule based renderer[/caption]
 
 I'm also using the date functions in the expression based labelling to label the features using the following expression:
 

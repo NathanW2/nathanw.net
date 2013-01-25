@@ -31,7 +31,7 @@ Behold my fancy graph making skills….or lack there of.  The time is in second
 
 The Mapbasic code I used:
 
-[sourcecode language="csharp"]
+{% highlight csharp %}
 Declare Sub Main
 Declare Function Time(count as Integer) as Float
 Declare Function GetTickCount Lib "kernel32" () As Integer
@@ -72,11 +72,11 @@ Function Time(count as Integer) as Float
 	b = GetTickCount()
 	Time = (b - a) / 1000
 End Function
-[/sourcecode]
+{% endhighlight %}
 
 and the C# code:
 
-[sourcecode language="csharp"]
+{% highlight csharp %}
 class ReflectionMapInfo
     {
         private readonly object mapinfo;
@@ -157,4 +157,4 @@ class ReflectionMapInfo
             return (end - start) / 1000d;
         }
     }
-[/sourcecode]
+{% endhighlight %}

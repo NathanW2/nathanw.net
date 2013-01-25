@@ -28,7 +28,7 @@ however QGIS doesn't have the ability (yet..) to run SQL queries like this, but 
 
 The following is a little python snippet that will get the total length of the selected objects. _(You will need to have shapely installed to use)_
 
-[sourcecode language="python"]
+{% highlight python %}
 from shapely.wkb import loads
 def getLength():
     layer = qgis.utils.iface.mapCanvas().currentLayer()
@@ -41,11 +41,11 @@ def getLength():
     return total
 
 print getLength()
-[/sourcecode]
+{% endhighlight %}
 
 _**EDIT:Or as Peter asked in the comments, yes you can just call length on the geometry:**_
 
-[sourcecode language="python"]
+{% highlight python %}
 def getLength():
     layer = qgis.utils.iface.mapCanvas().currentLayer()
     total = 0
@@ -55,7 +55,7 @@ def getLength():
     return total
 
 print getLength()
-[/sourcecode]
+{% endhighlight %}
 
 Just copy and past that into your QGIS python console and call _getLength()_ when ever you need the total length.
 

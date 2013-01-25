@@ -34,10 +34,10 @@ As I am writing this on my Ubuntu install I only have version 1.6.3 but the late
 
 Now open the python console in QGIS and type the following:
 
-[sourcecode language="python"]
+{% highlight python %}
 uri = "MSSQL:server={serverName};database={databaseName};tables={tableName};trusted_connection=yes"
 qgis.utils.iface.addVectorLayer(uri,'{yourLayerNameHere}','ogr')
-[/sourcecode]
+{% endhighlight %}
 
 Replacing {serverName} with your server name, if installed on your local machine you can use localhost; {databaseName} with the name of the database with the tables;{tableName} with the table to open; {yourLayerNameHere} with the name you would like the layer to have in the map legend.
 

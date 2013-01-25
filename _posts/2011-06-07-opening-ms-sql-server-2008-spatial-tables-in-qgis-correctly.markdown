@@ -29,7 +29,7 @@ The answer is so obvious it's almost embarrassing :)
 
 In order to open and display a SQL Server 2008 layer in QGIS correctly, via OGR, you must have a geometry_columns table in your database with the name, geometry type and srid of the layer. That's it! Oh look, it was even right in front of me in the OGR code for the mssqlspatial driver.
 
-[sourcecode language="cpp"]
+{% highlight cpp %}
 int OGRMSSQLSpatialTableLayer::FetchSRSId()
 {
     CPLODBCStatement oStatement = CPLODBCStatement( poDS->GetSession() );
@@ -45,7 +45,7 @@ int OGRMSSQLSpatialTableLayer::FetchSRSId()
 
     return nSRSId;
 }
-[/sourcecode]
+{% endhighlight %}
 
 **So the process to open a MS SQL 2008 spatial layer in OGR is as follows.**
 
@@ -66,9 +66,9 @@ The easiest way to get the correct tables is to let OGR handle it for you via og
 
 So to get ogr2ogr to create the right tables for you it's as simple as running the following command from inside the OSGeo4W shell, changing the connection string part of course:
 
-[sourcecode language="bash"]
+{% highlight bash %}
 ogr2ogr -overwrite -f MSSQLSpatial "MSSQL:server=.\MSSQLSERVER2008;database=geodb;trusted_connection=yes" "rivers.tab"
-[/sourcecode]
+{% endhighlight %}
 
 _(sample taken from [http://www.gdal.org/ogr/drv_mssqlspatial.html](http://www.gdal.org/ogr/drv_mssqlspatial.html))_
 
@@ -150,16 +150,16 @@ So if you have already existing tables in your MS SQL 2008 database that were lo
 
 Then you can open the table in QGIS using:
 
-[sourcecode language="python"]
+{% highlight python %}
 uri = "MSSQL:server={serverName};database={databaseName};tables={tableName};trusted_connection=yes"
 qgis.utils.iface.addVectorLayer(uri,'{yourLayerNameHere}','ogr')
-[/sourcecode]
+{% endhighlight %}
 
 **Tip:** In order to test you have correctly set the table in geometry_columns you can run another ogr tool ogrinfo:
 
-[sourcecode language="bash"]
+{% highlight bash %}
 ogrinfo -al "MSSQL:server=localhost;database={your database};tables={your table}" -fid 1
-[/sourcecode]
+{% endhighlight %}
 
 If you see a value in Layer SRS WKT: then chances are it's set right and QGIS should be able to render it, however if you see: Layer SRS WKT:(unknown) Than chances are QGIS will not render it correctly.
 

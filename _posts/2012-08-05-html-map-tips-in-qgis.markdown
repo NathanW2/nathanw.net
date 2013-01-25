@@ -40,8 +40,7 @@ And the result when hovering over a feature
 
 Hold on. Pause the track! We can even use some CSS to make it more fancy.
 
-[sourcecode language="html"]
-
+{% highlight html %}
 <style>
 h1 {color:red;}
 p.question {color:blue;}
@@ -53,7 +52,7 @@ p.question {color:blue;}
 <p class="question">Is this place a country?</p>
 <br>
 [% CASE WHEN "TYPE" = 'Country' THEN 'Yes' ELSE 'No. It is a ' || "TYPE" END %]
-[/sourcecode]
+{% endhighlight %}
 
 [caption id="attachment_1105" align="aligncenter" width="576"][![](http://woostuff.files.wordpress.com/2012/08/css.png)](http://woostuff.files.wordpress.com/2012/08/css.png) CSS in a html map tip[/caption]
 

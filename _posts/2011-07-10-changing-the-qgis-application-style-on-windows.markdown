@@ -21,10 +21,10 @@ By default QGIS uses the Qt QPlastiqueStyle for all its windows which makes QGIS
 
 However it can be changed in order to make it fit in with system style, as in use Windows style. Running the following commands in the python console:
 
-[sourcecode language="python"]
+{% highlight python %}
 from PyQt4.QtGui import QApplication
 QApplication.setStyle("windowsvista")
-[/sourcecode]
+{% endhighlight %}
 
 will change QGIS to render controls in windows style:
 

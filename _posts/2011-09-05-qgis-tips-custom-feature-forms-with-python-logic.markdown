@@ -39,9 +39,9 @@ This process is pretty much the same as what Tim outlined in his [blog post](htt
 
 In order to create the custom form you will need to install Qt Desinger. For windows I haven't found a way to just install the desinger although if you have QGIS installed it is normally installed with the Qt framework and can be found at C:\OSGeo4w\bin\designer.exe. If you're on Linux you can run something like
 
-[sourcecode language="bash"]
+{% highlight bash %}
 sudo apt-get install qt4-designer
-[/sourcecode]
+{% endhighlight %}
 
 _Ohh how I wish windows had a package management system :( _
 
@@ -88,7 +88,7 @@ What I want to do is add some validation to the Name field so the user can't ent
 
 First save your QGIS project (as the Python code runner will look where the project is saved for the Python module). Again I have saved mine in C:\Temp\Roads as Roads.qgs. Now lets make a new python file in your favourite text editor and add the following code.
 
-[sourcecode language="python"]
+{% highlight python %}
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
@@ -118,7 +118,7 @@ def validate():
 	else:
 		# Return the form as accpeted to QGIS.
 		myDialog.accept()
-[/sourcecode]
+{% endhighlight %}
 
 Wow! What the hell is all that! I'll step though the code to explain each bit.
 
@@ -128,25 +128,25 @@ Wow! What the hell is all that! I'll step though the code to explain each bit.
 
 First import the modules from Qt and set up a few global variables to hold the dialog and name field.
 
-[sourcecode language="python"]
+{% highlight python %}
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
 nameField = None
 myDialog = None
-[/sourcecode]
+{% endhighlight %}
 
 Now we create a method that QGIS will call when it loads the form. This method takes an instance of our custom dialog, the Layer ID, and the Feature ID.
 
-[sourcecode language="python"]
+{% highlight python %}
 def formOpen(dialog,layerid,featureid):
-[/sourcecode]
+{% endhighlight %}
 
 Then using the findChild method we want to grab the reference to the Name field and the button box. We are also calling buttonBox.accepted.disconnect() to disconnect the slots that QGIS has auto wired up to our button box, we do this so we can hook up our own accepted logic.
 
 After we have disconnected the accepted signal we can wire up our own call to the validate method using buttonBox.accepted.connect(validate).
 
-[sourcecode language="python"]
+{% highlight python %}
 global myDialog
 myDialog = dialog
 global nameField
@@ -158,11 +158,11 @@ buttonBox.accepted.disconnect(myDialog.accept)
 # Wire up our own signals.
 buttonBox.accepted.connect(validate)
 buttonBox.rejected.connect(myDialog.reject)
-[/sourcecode]
+{% endhighlight %}
 
 We need a method to validate the logic. This will be called when the signal buttonBox.accepted() is called. The logic in this method should be pretty streight forward. If the Name line edit has a length > 0 then we accept the dialog, if not then we give the user a message and let them fix the mistake.
 
-[sourcecode language="python"]
+{% highlight python %}
 def validate():
   # Make sure that the name field isn't empty.
 	if not nameField.text().length() > 0:
@@ -172,7 +172,7 @@ def validate():
 	else:
 		# Return the form as accpeted to QGIS.
 		myDialog.accept()
-[/sourcecode]
+{% endhighlight %}
 
 
 ## Almost done!
@@ -200,7 +200,7 @@ _If you do end up using this custom form with python logic stuff in the real wor
 
 Why not add a red highlight to the textbox if something is not valid.
 
-[sourcecode language="python"]
+{% highlight python %}
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
@@ -237,7 +237,7 @@ def Name_onTextChanged(text):
     nameField.setStyleSheet("background-color: rgba(255, 107, 107, 150);")
   else:
     nameField.setStyleSheet("")
-[/sourcecode]
+{% endhighlight %}
 
 The key part of of this is nameField.textChanged.connect(Name_onTextChanged) and the Name_onTextChanged(text) method. Give it a try, I think it looks quite nice.
 

@@ -27,7 +27,7 @@ The following code is what I managed to write that lets me embed the whole appli
 _For this code to work you will need to create a .Net form with a picture box somewhere on it and a button that calls button1_click for it's click handler, you will also need to reference Mapinfow.exe/Mapinfo COM server see _[_http://woostuff.wordpress.com/2009/04/01/com-instance-mapinfo-main/_](http://woostuff.wordpress.com/2009/04/01/com-instance-mapinfo-main/)_ for details._
 
 
-[sourcecode language="csharp"]
+{% highlight csharp %}
     public partial class Form1 : Form
     {
         // Sets the parent of a window.
@@ -83,7 +83,7 @@ _For this code to work you will need to create a .Net form with a picture box so
             mapinfo.Do("Set Window 1011 Max");
         }
     }
-[/sourcecode]
+{% endhighlight %}
 
 After the code is complied and run you should end up with a screen like this:
 _(Once the whole MapInfo application is embedded into our C# application, we can still do all the Do and Eval methods that we normally would when doing integrated Mapping) _

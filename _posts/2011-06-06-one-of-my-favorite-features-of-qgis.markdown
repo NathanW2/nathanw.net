@@ -30,32 +30,32 @@ Take for example the above screen shot.   The screen shot is from a current pr
 
 For example: A pipe that has an upstream and downstream invert and is part of the trunk (main) network is then considered valid (for this situation anyway), so I created the following rule:
 
-[sourcecode language="SQL"]
+{% highlight sql %}
 network_type = 'Trunk' AND Description != 'Drainage Imaginary Pipe' AND (US_Invert > 0 AND DS_Invert > 0)
-[/sourcecode]
+{% endhighlight %}
 
 We also have little connecting pipes that I don't want to include in valid trunk  as they are only used to connect pits to pipes and are just cosmetic, I have excluded them by adding "**Description !='Drainage Imaginary Pipe'**" to the above filter.
 
 Next I wanted to show invalid trunk network pipes (ones without an up or downstream invert), so we just invert the last condition and swap the last AND for a OR:
 
-[sourcecode language="SQL"]
+{% highlight sql %}
 network_type = 'Trunk' AND Description != 'Drainage Imaginary Pipe' AND (NOT US_Invert > 0 OR NOT DS_Invert > 0)
-[/sourcecode]
+{% endhighlight %}
 
 I also need to show but no highlight the non trunk pipes and the connecting pipes, so I made the next two rules and set their styles to a light gray:
 
-[sourcecode language="SQL"]
+{% highlight sql %}
 NOT network_type = 'Trunk' AND NOT Description = 'Drainage Imaginary Pipe'
-[/sourcecode]
-[sourcecode language="SQL"]
+{% endhighlight %}
+{% highlight sql %}
 Description = 'Drainage Imaginary Pipe'
-[/sourcecode]
+{% endhighlight %}
 
 Finally I want to show pipe direction on all pipes but not the connecting pipes, again as they are just cosmetic:
 
-[sourcecode language="SQL"]
+{% highlight sql %}
 Description != 'Drainage Imaginary Pipe'
-[/sourcecode]
+{% endhighlight %}
 
 You will also note in the screenshot above that I have a max zoom scales set on the last three rules, this is because when I zoom out all that info becomes overwhelming at that scale and distracts from showing the invalid parts of the main trunk line.
 

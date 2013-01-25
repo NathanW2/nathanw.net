@@ -65,13 +65,13 @@ Using QGIS for a one off DEM is fine and dandy but what if you have 3000 DEMs th
 
 Remember the contour tool in QGIS told us the exact command line args to use, so creating a shell script for automating the process is pretty easy.
 
-[sourcecode language="shell"]
+{% highlight bash %}
 for f in *.asc
 do
   echo "Processing $f"
  gdal_contour -a ELEV -i 0.25 $f $f-250mm.shp
 done
-[/sourcecode]
+{% endhighlight %}
 
 The above code will loop though the current directory and process all the DEMs generating 250mm contours for each one. It saves each new contour file as {filename}-250mm.shp. You will need to change *.asc to whatever format your DEM is in.
 

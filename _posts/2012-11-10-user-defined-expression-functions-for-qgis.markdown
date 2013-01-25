@@ -31,20 +31,20 @@ First we need to import the new [`qgsfunction`](https://github.com/qgis/Quantum-
 
 So what does an empty function look like:
 
-[sourcecode language="python"]
+{% highlight python %}
 from qgis.utils import qgsfunction
 from qgis.core import QGis
 
 @qgsfunction(0, "Python")
 def vertices(values, feature, parent):
 	pass
-[/sourcecode]
+{% endhighlight %}
 
 `@qgsfunction(0, "Python")` means we are defining a new vertices function that takes 0 args and lives in the "python" group in the expression builder UI. Any custom function must take `(values, feature, parent)` as python args. **`values`** is a list of QVariants passed into the function, **`feature`** is the current `QgsFeature`, and **`parent`** is expression engine node (you use this to raise errors).
 
 Lets stick some more logic in there:
 
-[sourcecode language="python"]
+{% highlight python %}
 from qgis.utils import qgsfunction
 from qgis.core import QGis
 
@@ -66,7 +66,7 @@ def vertices(values, feature, parent):
 		  for ring in polygon:
 		    count += len(ring)
 	return count
-[/sourcecode]
+{% endhighlight %}
 
 Pretty simple. Get the geometry from the feature, check if it's a polygon, if it is then count the number of vertices and return that number.
 

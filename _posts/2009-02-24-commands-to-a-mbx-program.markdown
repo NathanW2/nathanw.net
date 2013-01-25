@@ -19,9 +19,9 @@ I'm going to tackle this in two posts, the first post will just be getting the b
 
 The first thing you can do is launch an MBX from inside a .Net application by running the following command.
 
-[sourcecode language="csharp"]
+{% highlight csharp %}
     MapinfoOLEInstance.Do(@"Run Application " + "\"" + @"{myapp.MBX}" + "\"");
-[/sourcecode]
+{% endhighlight %}
 
 Now while this will launch the specified MBX in the current Mapinfo instance, Mapbasic programs do not allow arguments to be passed in at startup via another
 program.  
@@ -32,7 +32,7 @@ Lets go ahead and create a basic Mapbasic file which will just load in Mapinfo a
 
 _Note:  I will add comments to the source code to explain each section, and will be refered to as RemoteTest.mb/.mbx_
 
-[sourcecode language="vb"]
+{% highlight vbnet %}
 
 Include "MAPBASIC.DEF" 
 Include "MENU.DEF" 
@@ -51,7 +51,7 @@ Sub RemoteMsgHandler 
     command = CommandInfo(CMD_INFO_MSG) 
     Note command 
 End Sub 
-[/sourcecode]
+{% endhighlight %}
 
 Notice how Sub Main above doesn't contain any code, now normally if you where to run this program in Mapinfo
 it would run and then just exit because it reached the end of Sub Main 
@@ -88,7 +88,7 @@ First we will start with step 1 and 2 from the list above.
 Step 2: Run the RemoteTest.MBX.
 
 
-[sourcecode language="csharp"]
+{% highlight csharp %}
         //... normal using statements
         using Mapinfo;
         static void Main(string[] args) 
@@ -103,7 +103,7 @@ Step 2: Run the RemoteTest.MBX.
             //Run the command in Mapinfo.
             mapinfoinstance.Do(appcommand);
         }
-[/sourcecode]
+{% endhighlight %}
 
 Now save and run the above code, if everything went ok the code should run, load Mapinfo and run the MBX file and just sit there.
 If it did, great! That's what we wanted it to do.
@@ -117,9 +117,9 @@ On to the next step:
 
 We can get all the running Mapbasic programs inside Mapinfo by using the following command:
 
-[sourcecode language="csharp"]
+{% highlight csharp %}
      DMBApplications MBApps = (DMBApplications)mapinfoinstance.MBApplications; 
-[/sourcecode]
+{% endhighlight %}
 
 MBApplications contains a collection of the currenly running Mapbasic programs running inside your instance of
 Mapinfo.  Because MBApplications is just an object type we have to cast it to the DMBApplications interface which can be found in the Mapinfo namespace.
@@ -137,16 +137,16 @@ Mapinfo.  Because MBApplications is just an object type we have to cast it to t
 
 Step four can be done two ways, one way is if you have LINQ and the other is just using a for loop.  I will show the LINQ method first.
 
-[sourcecode language="csharp"]
+{% highlight csharp %}
              //If you can use LINQ you can do this:
              DMapBasicApplication  myapp = (from DMapBasicApplication app in MBApps
                                             where app.Name == "RemoteTest.MBX"
                                             select app).Single();
- [/sourcecode]
+ {% endhighlight %}
 
 and now the for loop
 
-[sourcecode language="csharp"]
+{% highlight csharp %}
             //If you don't have LINQ you can do this.
             DMapBasicApplication  myapp;
             foreach (DMapBasicApplication app in MBApps) 
@@ -157,7 +157,7 @@ and now the for loop
                     break; 
                 } 
             }  
- [/sourcecode]
+ {% endhighlight %}
 
 MBApps(which was declared in step three) should have had a collection of Mapbasic programs that are running in Mapinfo.  We can cast each one of these programs the inteface DMapBasicApplication found in the Mapinfo namespace. 
 
@@ -169,9 +169,9 @@ Both the above methods should preform around the same,   I prefer the LINQ meth
 
 The last thing we have to do is pass the command into the Mapbasic program,  which can be done like this.
 
-[sourcecode language="csharp"]
+{% highlight csharp %}
 myapp.Do("Hello World");
-[/sourcecode]
+{% endhighlight %}
 
 When _myapp.Do is called, _it will call the **RemoteMsgHandler **in our Mapbasic file and pass in the "Hello World" string, which we then read and print to a messsage box.
 
@@ -179,7 +179,7 @@ That is pretty much it.  You should be able to complie and run.  Mapinfo shou
 
 The final .Net code should look like this, using LINQ of course :).
 
-[sourcecode language="csharp"]
+{% highlight csharp %}
         //... normal using statements
         using Mapinfo;
         static void Main(string[] args) 
@@ -199,6 +199,6 @@ The final .Net code should look like this, using LINQ of course :).
                                             select app).Single();
             myapp.Do("Hello World");
         }
-[/sourcecode]
+{% endhighlight %}
 
 In my next post I will create a simple method name parser in the **RemoteMsgHandler **method** **to handle calling methods inside of a our Mapbasic program.

@@ -32,7 +32,7 @@ Lets have a look an inspection layer we have in our Spatialite database viewed 
 
 Pretty boring and hard to see what has been done in the last 30 days.  Now with the lack of support for dates in the expression engine we have to use another methods.  For this example we will use the really handy DBManger plugin that now ships with QGIS from 1.8.  Load it, connect to your database, and run the following query:
 
-[sourcecode language="sql"]
+{% highlight sql %}
 SELECT id,
               CASE WHEN DATE("date_checked") > DATE('now', '-30 days') THEN
                          'Within 30 Days'
@@ -40,7 +40,7 @@ SELECT id,
                          'older'
               END as age, date_checked, geom
 FROM  "inspections"
-[/sourcecode]
+{% endhighlight %}
 
 
 

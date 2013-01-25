@@ -35,9 +35,9 @@ Enough about the registry lets see some code.
 
 First lets get the type associated to Mapinfo using the program ID that's in the registry, like so:
 
-[sourcecode language="csharp"]
+{% highlight csharp %}
 Type mapinfotype = Type.GetTypeFromProgID(&quot;Mapinfo.Application&quot;);
-[/sourcecode]
+{% endhighlight %}
 
 The above code will now search the regisrty for a application with the program ID equaling _"Mapinfo.Application" _and return the type for that application or as the documentation in the .NET framework says.
 
@@ -48,16 +48,16 @@ returning null if an error is encountered while loading the System.Type.
 
 Moving on. Now that we have the type that is associated to Mapinfo's COM object we can now go and create an instance of Mapinfo from this type, for this we will need a static method in the _Activator _ class.  The code that we will need to call is like this:
 
-[sourcecode language="csharp"]
+{% highlight csharp %}
 object instance = Activator.CreateInstance(mapinfotype);
-[/sourcecode]
+{% endhighlight %}
 
 Passing the type that we got returned from_ Type.GetTypeFromProgID_ into the _CreateInstance _method will create an instance of Mapinfo for us and return it as a object. If we join the above code together we should have something like this:
 
-[sourcecode language="csharp"]
+{% highlight csharp %}
 Type mapinfotype = Type.GetTypeFromProgID(&quot;Mapinfo.Application&quot;);
 object instance = Activator.CreateInstance(mapinfotype);
-[/sourcecode]
+{% endhighlight %}
 
 Now that we have created an instance of Mapinfo we can go ahead and start using it.
 
@@ -68,12 +68,12 @@ Now that we have created an instance of Mapinfo we can go ahead and start using 
 The biggest problem with doing things this way is that because we only have the instance of Mapinfo as a object type we have to use reflection to get access to the _Do_ and _Eval_ methods that Mapinfo provides.
 
 So what we will do first is create a our own _Do_ method that wraps up the reflection process, so we don't have to see it every time we need to call _Do_
-[sourcecode language="csharp"]
+{% highlight csharp %}
 public void Do(string command) {}
-[/sourcecode]
+{% endhighlight %}
 
  Now lets go on and fill out the reflection bit.
-[sourcecode language="csharp"]
+{% highlight csharp %}
 public void Do(string command)
 {
       parameter[0] = command; 
@@ -81,7 +81,7 @@ public void Do(string command)
                     BindingFlags.InvokeMethod,
                     null, instance, parameter); 
 } 
-[/sourcecode]
+{% endhighlight %}
 
  The above code will invoke the _Do_ method in Mapinfo using reflection and pass in the command string that we supplied.
 
@@ -91,16 +91,16 @@ public void Do(string command)
 
 Now that we have to _Do_ method out of the way lets move on to _eval_. Pretty much the same process but it will return a string insteed of a void type.  
 
-[sourcecode language="csharp"]
+{% highlight csharp %}
 public string Eval(string command)
 {
       parameter[0] = command; 
       return (string)mapinfoType.InvokeMember(&quot;Eval&quot;, BindingFlags.InvokeMethod,
                              null,instance,parameter); 
 } 
-[/sourcecode]
+{% endhighlight %}
 
- Done, now lets put that all together in a nice class with a static CreateInstance method. [sourcecode language="csharp"]
+ Done, now lets put that all together in a nice class with a static CreateInstance method. {% highlight csharp %}
 public class Mapinfo
 {
    private object mapinfoinstance;
@@ -131,15 +131,15 @@ public class Mapinfo
                              null,instance,parameter);
       }
 }
-[/sourcecode]
+{% endhighlight %}
 
- Now that we have it wrapped up in a nice class we can go ahead and use it in our application, something like this:  [sourcecode language="csharp"]
+ Now that we have it wrapped up in a nice class we can go ahead and use it in our application, something like this:  {% highlight csharp %}
 public static void Main()
 {
     Mapinfo mymapinfo = Mapinfo.CreateInstance();
     mymapinfo.Do(//Run some command);
 }
-[/sourcecode]
+{% endhighlight %}
 
 
 

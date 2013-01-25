@@ -71,12 +71,12 @@ One of the greatest things about the Sextante toolbox is that it allows you to�
 
 For me what is even better is that you can use Sextante in your plugins or custom Python code.  Sextante has a Python interface - well the whole thing is written in Python - that you can use to run a Sextante supported algorithm.
 
-[sourcecode language="python"]
+{% highlight python %}
 import sextante
 outputs_0=sextante.runalg("grass:v.crossbones", /file, 0, ,, 1, 2, 3, 4, 1=3.0,2=8.0,5=6.0,8=6.0,11=6.0,14=6.0, None)
 outputs_1=sextante.runalg("grass:v.delaunay", outputs_0['output'], True, True, None)
 outputs_2=sextante.runalg("grass:v.dissolve", outputs_0['output'], , None)
-[/sourcecode]
+{% endhighlight %}
 
 Victor has created a blog to cover some Sextante recipes at [QGIS-SEXTANTE cookbook/](http://qgissextante.blogspot.fr/). There are also some really cool example of Sextante in use at:
 

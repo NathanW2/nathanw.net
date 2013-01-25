@@ -28,14 +28,14 @@ If you have gdal 1.8 it's just one simple command line run using, what is becomi
 
 All you have to do is run:
 
-[sourcecode language="bash"]
+{% highlight bash %}
 ogr2ogr -f "DXF" {outFile} {inFile} -zfield {ColumnWithZValue}
-[/sourcecode]
+{% endhighlight %}
 
 So in my case I ran:
-[sourcecode language="bash"]
+{% highlight bash %}
 ogr2ogr -f "DXF" C:\Temp\contourswarwick.dxf C:\Temp\Contours.TAB -zfield Height
-[/sourcecode]
+{% endhighlight %}
 
 I haven't fully tested it but {outfile} can be any file ogr supports. 
 

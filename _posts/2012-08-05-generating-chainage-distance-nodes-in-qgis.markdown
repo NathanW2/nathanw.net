@@ -24,7 +24,7 @@ Something that I need to do now and then is generate points along a line at supp
 
 In the development version there is a new method on `QgsGeometry` called `interpolate`. This method takes a distance and returns a point along a line at that distance. Perfect! We can then just wrap this in a loop and generate a point increasing the distance as we move along
 
-[sourcecode language="python"]
+{% highlight python %}
 from qgis.core import (QgsFeature, QgsGeometry,
                        QgsVectorLayer, QgsMapLayerRegistry,
                        QgsField)
@@ -63,7 +63,7 @@ def pointsAlongLine(distance):
         vl.updateExtents()
 
     QgsMapLayerRegistry.instance().addMapLayer(vl)
-[/sourcecode]
+{% endhighlight %}
 
 The above code might look a bit scary at first if you have never done any Python/pyqgis but hopefully the comments will ease the pain a little. The main bit is the `createPointsAt` function.
 
@@ -71,10 +71,10 @@ Cool! If we want to use this we can just stick it in a file in the `.qgis/python
 
 So lets have a go. First select some objects then run the following in the Python Console
 
-[sourcecode language="python"]
+{% highlight python %}
 import pointtools
 pointtools.pointsAlongLine(40)
-[/sourcecode]
+{% endhighlight %}
 
 That will generate a point every 40 meters along then selected lines
 

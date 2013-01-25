@@ -81,10 +81,10 @@ Does that _MapinfoApplicationClass_ class look familiar?  It should as it is wha
 
 If we have the code that we used in part two step 1 for creating the instance of Mapinfo.
 
-[sourcecode language='csharp']
+{% highlight csharp %}
 Type mapinfotype = Type.GetTypeFromProgID("Mapinfo.Application");
 object instance = Activator.CreateInstance(mapinfotype);
-[/sourcecode]
+{% endhighlight %}
 
 now this code is great and all but we run into the problem that we had in part two where C# doesn't support late binding so we have to use reflection which just feels dirty. There has to be a better way.
 
@@ -92,10 +92,10 @@ What object is Activator.CreateInstace returning in the above code anyway?
 
 Turns out that the object that it returns also implements the interface _DMapinfo_, this is good for us as it allows us to cast the object returned from Activator.CreateInstance() to the type _DMapinfo_.  If we go and add the right casting to the code it should now look like the following.
 
-[sourcecode language='csharp']
+{% highlight csharp %}
 Type mapinfotype = Type.GetTypeFromProgID("Mapinfo.Application");
 DMapInfo instance = (DMapInfo)Activator.CreateInstance(mapinfotype);
-[/sourcecode]
+{% endhighlight %}
 
 Cool, so we have created a instance of Mapinfo and casted it to the type _DMapinfo_ now we should be able to do something useful with it.
 
@@ -107,13 +107,13 @@ Cool, so we have created a instance of Mapinfo and casted it to the type _DMapin
 Because we have casted our object to the interface called _DMapinfo_, we can now get strongly typed access to Mapinfo's Do and Eval method. No more reflection needed :).
 
 Some sample code:
-[sourcecode language='csharp']
+{% highlight csharp %}
 Type mapinfotype = Type.GetTypeFromProgID("Mapinfo.Application");
 DMapInfo instance = (DMapInfo)Activator.CreateInstance(mapinfotype);
 
 instance.Do("Print 1234567");
 string value = instance.Eval("NumTables()");
-[/sourcecode]
+{% endhighlight %}
 
 
 
@@ -122,10 +122,10 @@ string value = instance.Eval("NumTables()");
 
 If we have a look at the GUID on the top of the _DMapinfo_ interface you will notice that it looks something like this:
 
-[sourcecode language='csharp']
+{% highlight csharp %}
 [Guid("1D42EC63-7B28-11CE-B83D-00AA002C4F58")]
 public interface DMapInfo
-[/sourcecode]
+{% endhighlight %}
 
 This GUID for DMapinfo, which unlike the GUID for the MapinfoApplicationClass is the same for every Mapinfo version.  
 Because it is the same we can create Mapinfo using Activator.CreateInstance() which will return a COM object, cast it DMapinfo and by making calls against the interface we don't have to worry about what version of Mapinfo the client is running.

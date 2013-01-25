@@ -38,9 +38,9 @@ Step 1: Take One MapInfo table.
 
 Step 2: Run it though mapinfoToQgis.py
 
-[sourcecode language="python"]
+{% highlight python %}
 python mapinfoToQgis.py WaterFittings.Tab WatterFittings.qml -c FittingType --UseMapInfo
-[/sourcecode]
+{% endhighlight %}
 
 Step 3: Load QML file in QGIS
 

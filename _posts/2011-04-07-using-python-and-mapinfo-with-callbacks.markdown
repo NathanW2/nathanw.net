@@ -27,14 +27,14 @@ Turns out it is pretty easy, and today I worked out how.
 
 You will need to create a class in python that looks something like this:
 
-[sourcecode language="python"]
+{% highlight python %}
 class Callback():
     _public_methods_ = ['SetStatusText']
     _reg_progid_ = "MapInfo.PythonCallback"
     _reg_clsid_ = "{14EF8D30-8B00-4B14-8891-36B8EF6D51FD}"
     def SetStatusText(self,status):
         print status
-[/sourcecode]
+{% endhighlight %}
 
 This will be our callback object that we will need to create for MapInfo.
 
@@ -50,10 +50,10 @@ First I will explain what some of the funny stuff is:
 
 	
   * **_reg_clsid_** is the GUID, or unique id, for the object or app.  Do not use the one I have, call the following in a Python shell to create your own.
-[sourcecode language="python"]
+{% highlight python %}
          import pythoncom
          pythoncom.CreateGuid()
-         [/sourcecode]
+         {% endhighlight %}
 
 	
   * **SetStatusText** is the MapInfo callback method that is called when the status bar changes in MapInfo.
@@ -63,31 +63,31 @@ In order to use the class as a COM object we have two more steps to complete, on
 
 First, in oder to register the object we call the following code from our main Python method:
 
-[sourcecode language="python"]
+{% highlight python %}
 if __name__ == "__main__":
     print "Registering COM server..."
     import win32com.server.register
     win32com.server.register.UseCommandLine(Callback)
     main()
-[/sourcecode]
+{% endhighlight %}
 
 This will register the COM object which will mean it can then be creating for use by MapInfo.
 
 In order to create our callback in Python we call:
 
-[sourcecode language="python"]
+{% highlight python %}
 callback = win32com.client.Dispatch("MapInfo.PythonCallback")
-[/sourcecode]
+{% endhighlight %}
 
 and set it as our callback object for MapInfo:
 
-[sourcecode language="python"]
+{% highlight python %}
 mapinfo.SetCallback(callback)
-[/sourcecode]
+{% endhighlight %}
 
 So after all that the final code looks like this:
 
-[sourcecode language="python"]
+{% highlight python %}
 def main():
     from PyQt4.QtCore import *
     from PyQt4.QtGui import *
@@ -125,7 +125,7 @@ if __name__ == "__main__":
     import win32com.server.register
     win32com.server.register.UseCommandLine(Callback)
     main()
-[/sourcecode]
+{% endhighlight %}
 
 and the result is a map window and information printed to the console.
 

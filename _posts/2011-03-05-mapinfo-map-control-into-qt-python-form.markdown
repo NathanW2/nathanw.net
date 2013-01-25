@@ -26,7 +26,7 @@ Turns out it is pretty easy!
 
 pls send me teh codez? OK here you go.
 
-[sourcecode language="python"]
+{% highlight python %}
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from win32com.client import Dispatch
@@ -47,7 +47,7 @@ mapinfo.do('Open Table "D:\GIS\MAPS\Property.TAB"')
 mapinfo.do('Map from Property')
 
 app.exec_()
-[/sourcecode]
+{% endhighlight %}
 
 The above code will load MapInfo and open the property layer into the Qt Widget control, with the result below.
 

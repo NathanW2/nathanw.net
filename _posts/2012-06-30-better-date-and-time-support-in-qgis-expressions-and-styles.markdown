@@ -83,51 +83,51 @@ Functions like _age(..),_ _tointerval__(), {datetime} -/+ {interval}, day(..),
 
 For example one can take away 10 days from the current date by doing the following ( -> marks the output ):
 
-[sourcecode language="sql"]
+{% highlight sql %}
 todate($now - '10 Days')
 -> 2012-06-20
-[/sourcecode]
+{% endhighlight %}
 
 as
 
-[sourcecode language="sql"]
+{% highlight sql %}
 todate($now)
 -> 2012-06-30
-[/sourcecode]
+{% endhighlight %}
 
 We can also do something like:
 
-[sourcecode language="sql"]
+{% highlight sql %}
 todate($now + '2 Years 1 Month 10 Days')
 -> 2014-08-10
-[/sourcecode]
+{% endhighlight %}
 
 The age() function will return an interval which we can use extract what information we need.
 
 The number of days between two dates:
 
-[sourcecode language="sql"]
+{% highlight sql %}
 day(age('2012-06-30', '2012-06-10'))
 -> 20
 -- Think of it as '2012-06-30' - '2012-06-10'
 -- Note: day(), month(), etc, functions return doubles so you can get
 -- 21.135234 days if you are using date & time type rather than just date type
 -- wrap the result in toint() to get a more sane output.
-[/sourcecode]
+{% endhighlight %}
 
 Day() will also work on a plain date:
 
-[sourcecode language="sql"]
+{% highlight sql %}
 day('2012-06-30')
 -> 30
-[/sourcecode]
+{% endhighlight %}
 
 We can even get the number of seconds between two dates:
 
-[sourcecode language="sql"]
+{% highlight sql %}
 second(age('2012-06-30', '2012-06-10'))
 -> 1728000
-[/sourcecode]
+{% endhighlight %}
 
 Currently the only date format supported is {year}-{month}-{day} as seen in the examples above. Shouldn't be too hard to add support to the todate(), todatetime(), totime() functions for giving it a pattern to use when converting the string e.g. dd-mm-YYYY, or something like that.
 
@@ -151,7 +151,7 @@ This is the result of the above rules:
 
 I'm also using the date functions in the expression based labelling to label the features using the following expression:
 
-[sourcecode language="sql"]
+{% highlight sql %}
 CASE
 WHEN year( "dateadded") < year($now) THEN
 	'Last Year'
@@ -160,7 +160,7 @@ WHEN day(age("dateadded", $now)) < 0 THEN
 ELSE
 	day(age("dateadded", todate($now))) || ' Days to go'
 END
-[/sourcecode]
+{% endhighlight %}
 
 Well that's it. Hope you find it handy in your day-to-day mapping. I know I will be using it a lot.
 Thanks to Martin and Jürgen for the code reviews during the process; venturing in an unknown part of the code base always makes me nervous but that is all part of learning, and sometimes you can make some pretty cool stuff.

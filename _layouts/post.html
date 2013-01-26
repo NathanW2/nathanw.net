@@ -2,4 +2,18 @@
 layout: default
 ---
 {% include JB/setup %}
-{% include themes/twitter/post.html %}
+
+<div class="row-fluid">
+  {% include sidebar.html %}
+  <div class="span8">
+    <div class="content">
+      <h1>{{ page.title }} {% if page.tagline %}<br><small>{{ page.tagline }}</small>{% endif %}</h1>
+      <small>Published: <b> {{ page.date | date_to_long_string }}</b></small>
+      <br><br>
+      {{ content }}
+      <hr>
+      {% include JB/comments %}
+    </div>
+  </div>
+</div>
+

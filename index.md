@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: index
 title: Nathan's QGIS Blog
 tagline: My adventures with QGIS and other GIS.
 ---

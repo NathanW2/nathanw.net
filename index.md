@@ -8,7 +8,7 @@ tagline: My adventures with QGIS and other GIS.
   {% for post in site.posts limit:5 %}
     <div class="post">
       <h4><a href="{{ post.url }}">{{post.title }}</a></h4>
-      <small>Published: <b> {{ post.date | date_to_long_string }}</b></small>
+      <small>Published: {{ post.date | date_to_long_string }}</small>
       {% if post.excerpt %}
 	  <blockquote>
 	  	  <p>{{ post.excerpt | markdownify }}</p>

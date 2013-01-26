@@ -72,3 +72,8 @@ html, body {
 #sidebar {
     margin-right: 20px;
 }
+
+#hrule
+{
+  margin: 5px;
+}

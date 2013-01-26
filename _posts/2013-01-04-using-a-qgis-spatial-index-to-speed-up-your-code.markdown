@@ -31,10 +31,10 @@ layer.select(allAttrs)
 allfeatures = {feature.id(): feature for (feature) in layer}
 
 def noindex():
-        for feature in allfeatures.values():
-                for f in allfeatures.values():
-                        touches = f.geometry().touches(feature.geometry())
-                        # It doesn't matter if we don't return anything it's just an example
+    for feature in allfeatures.values():
+        for f in allfeatures.values():
+            touches = f.geometry().touches(feature.geometry())
+            # It doesn't matter if we don't return anything it's just an example
 
 import timeit
 print "Without Index: %s seconds " % timeit.timeit(noindex,number=1)
@@ -61,22 +61,22 @@ There isn't much to using QgsSpatialIndex just insert each QgsFeature and it han
   allfeatures = {feature.id(): feature for (feature) in layer}
 
   def withindex():
-          # Build the spatial index for faster lookup.
-          index = QgsSpatialIndex()
-          for f in allfeatures.values():
-                  index.insertFeature(f)
+      # Build the spatial index for faster lookup.
+      index = QgsSpatialIndex()
+      for f in allfeatures.values():
+              index.insertFeature(f)
 
-          # Loop each feature in the layer again and get only the features that are going to touch.
-          for feature in allfeatures.values():
-            # Get the ids of all the features in the index that are within
-            # the bounding box of the current feature because these are the ones
-            # that will be touching.
-            ids = index.intersects(feature.geometry().boundingBox())
-            for id in ids:
-              f = allfeatures[id]
-              if f == feature: continue
-              touches = f.geometry().touches(feature.geometry())
-              # It doesn't matter if we don't return anything it's just an example
+      # Loop each feature in the layer again and get only the features that are going to touch.
+      for feature in allfeatures.values():
+        # Get the ids of all the features in the index that are within
+        # the bounding box of the current feature because these are the ones
+        # that will be touching.
+        ids = index.intersects(feature.geometry().boundingBox())
+        for id in ids:
+          f = allfeatures[id]
+          if f == feature: continue
+          touches = f.geometry().touches(feature.geometry())
+          # It doesn't matter if we don't return anything it's just an example
 
   import timeit
   print "With Index: %s seconds " % timeit.timeit(withindex,number=1)
@@ -98,23 +98,23 @@ So the next time you need to do some spatial operations remember to use the hand
   allfeatures = {feature.id(): feature for (feature) in layer}
 
   def noindex():
-  	for feature in allfeatures.values():
-  		for f in allfeatures.values():
-  			touches = f.geometry().touches(feature.geometry())
-  			# It doesn't matter if we don't return anything it's just an example
+    	for feature in allfeatures.values():
+    		for f in allfeatures.values():
+    			touches = f.geometry().touches(feature.geometry())
+    			# It doesn't matter if we don't return anything it's just an example
 
   def withindex():
-  	# Build the spatial index for faster lookup.
-  	index = QgsSpatialIndex()
-  	map(index.insertFeature, allfeatures.values())
+    	# Build the spatial index for faster lookup.
+    	index = QgsSpatialIndex()
+    	map(index.insertFeature, allfeatures.values())
 
-  	# Loop each feature in the layer again and get only the features that are going to touch.
-  	for feature in allfeatures.values():
-  	  ids = index.intersects(feature.geometry().boundingBox())
-  	  for id in ids:
-  	    f = allfeatures[id]
-  	    touches = f.geometry().touches(feature.geometry())
-  	    # It doesn't matter if we don't return anything it's just an example
+    	# Loop each feature in the layer again and get only the features that are going to touch.
+    	for feature in allfeatures.values():
+    	  ids = index.intersects(feature.geometry().boundingBox())
+    	  for id in ids:
+    	    f = allfeatures[id]
+    	    touches = f.geometry().touches(feature.geometry())
+    	    # It doesn't matter if we don't return anything it's just an example
 
   import timeit
   print "With Index: %s seconds " % timeit.timeit(withindex,number=1)

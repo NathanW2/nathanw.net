@@ -77,3 +77,10 @@ html, body {
 {
   margin: 5px;
 }
+
+.excerpt
+{
+  font-size: 85%;
+  padding: 0 0 0 15px;
+  margin: 0 0 21px;
+}

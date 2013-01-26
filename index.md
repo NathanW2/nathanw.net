@@ -10,9 +10,9 @@ tagline: My adventures with QGIS and other GIS.
       <h4><a href="{{ post.url }}">{{post.title }}</a></h4>
       <small>Published: {{ post.date | date_to_long_string }}</small>
       {% if post.excerpt %}
-	  <blockquote>
+	    <div class="excerpt">
 	  	  <p>{{ post.excerpt | markdownify }}</p>
-	  </blockquote>
+	     </div>
       {% endif %}
     </div>
     <hr />

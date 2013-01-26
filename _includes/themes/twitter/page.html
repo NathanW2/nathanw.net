@@ -1,8 +1,6 @@
 <div class="row-fluid">
-    <div class="span2">
-       <h1>{{ page.title }} {% if page.tagline %}<br><small>{{ page.tagline }}</small>{% endif %}</h1>
-    </div>
-    <div class="span10">
-          {{ content }}
-    </div>
+  {% include themes/twitter/sidebar.html %}
+  <div class="span8">
+      {{ content }}
+  </div>
 </div>

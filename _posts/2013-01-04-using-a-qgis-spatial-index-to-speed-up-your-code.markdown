@@ -16,7 +16,11 @@ tags:
 - spatial operations
 ---
 
+{% excerpt %}
+
 If you need to do any kind of spatial operations in QGIS using Python or C++ you really want them to be as fast a possible in order reduce the amount of time you make the user wait. Lets take the simple scenario of a recent question that was asked on gis.stackexchange; [Summing up values of neighboring polygons?](http://gis.stackexchange.com/questions/44832/how-to-sum-up-values-of-neighbouring-polygons).
+
+{% endexcerpt %}
 
 I went for the SQL approach as I like how quick SQL can express what you need to do, however SQL is not the only way to skin a cat as [spatialthoughts](http://gis.stackexchange.com/users/5160/spatialthoughts) has shown in his [blog post](http://qgistips.spatialthoughts.com/2012/12/find-neighbor-polygons-in-layer-in-qgis.html). Here Ujaval has used Python to find the neighboring polygons of each feature. Running the script on a small dataset yields results in reasonable time however running it on a larger dataset can take a long time.
 

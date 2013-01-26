@@ -15,8 +15,11 @@ tags:
 - Quantum GIS
 ---
 
+{% excerpt %}
+
 The easiest way install Python libraries is to use `easy_install` and `pip`.  `easy_install` and `pip` are package managers for Python. From the easy_install page:
 
+{% endexcerpt %}
 
 > Easy Install is a python module (easy_install) bundled with setuptools that lets you automatically download, build, install, and manage Python packages.
 

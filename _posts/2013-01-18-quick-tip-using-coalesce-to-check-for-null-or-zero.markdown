@@ -12,7 +12,11 @@ tags:
 - sql
 ---
 
+{% excerpt %}
+
 Here is a quick tip that you can use in QGIS expressions, T-SQL, or even PostgresSQL.
+
+{% endexcerpt %}
 
 Normally if you have a column that you need query on to find all the NULL or zeros you have to do something like this:
 

@@ -16,13 +16,13 @@ tags:
 
 Here is a quick tip that you can use in QGIS expressions, T-SQL, or even PostgresSQL.
 
-{% endexcerpt %}
-
 Normally if you have a column that you need query on to find all the NULL or zeros you have to do something like this:
 
 {% highlight sql %}
 COLA IS NULL OR COLA = 0
 {% endhighlight %}
+
+{% endexcerpt %}
 
 Well that isn't too bad. Sure yeah it's fine for one column but what if you have three and you need to check them all together
 

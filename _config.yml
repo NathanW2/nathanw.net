@@ -6,7 +6,9 @@ safe: false
 # so be sure to set them if your theme uses them.
 #
 title : Nathan's QGIS Blog 
-name: nathanw.net
+name: Nathan's QGIS Blog
+url: http://nathanw.net/
+description: My adventures with QGIS, FOSSGIS, and maybe some other GIS stuff
 tagline: My adventures with QGIS, FOSSGIS, and maybe some other GIS stuff
 author :
   name : Nathan Woodrow

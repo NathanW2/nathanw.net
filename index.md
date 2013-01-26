@@ -3,8 +3,6 @@ layout: index
 title: Nathan's QGIS Blog
 tagline: My adventures with QGIS and other GIS.
 ---
-
-<h1>Recent Posts</h1>
 <div class="posts">
   {% for post in site.posts limit:5 %}
     <div class="post">

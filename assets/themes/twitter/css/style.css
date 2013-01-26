@@ -68,4 +68,7 @@ html, body {
 	border:1px solid #4C964D;
 	color:#FFF;
 }
-	
+
+#sidebar {
+    margin-right: 20px;
+}

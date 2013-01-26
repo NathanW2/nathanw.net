@@ -205,7 +205,7 @@ textarea {
   box-sizing: border-box;
 }
 body {
-  margin: 0;
+  margin: 40px;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 21px;

@@ -17,7 +17,7 @@ tags:
 - Quantum GIS
 ---
 
-Ever since I added [expression based labels](http://woostuff.wordpress.com/2011/10/27/expression-based-labeling/), including the new expression builder UI, something that I always wanted to add is the ability to define custom user defined functions in Python (or C++) and use them in an expression. The expression engine is used for [labels](http://woostuff.wordpress.com/2011/10/27/expression-based-labeling/), [rule](http://woostuff.wordpress.com/2012/01/25/improvements-to-the-qgis-rule-based-rendering/) [based rendering](http://woostuff.wordpress.com/2011/06/06/one-of-my-favorite-features-of-qgis/), layer actions, field calculator, and atlas composer tags.  Thanks to the all the awesome work on the expression engine by Martin all this cool stuff is now possible.
+Ever since I added [expression based labels](2011/10/27/expression-based-labeling/), including the new expression builder UI, something that I always wanted to add is the ability to define custom user defined functions in Python (or C++) and use them in an expression. The expression engine is used for [labels](2011/10/27/expression-based-labeling/), [rule](2012/01/25/improvements-to-the-qgis-rule-based-rendering/) [based rendering](2011/06/06/one-of-my-favorite-features-of-qgis/), layer actions, field calculator, and atlas composer tags.  Thanks to the all the awesome work on the expression engine by Martin all this cool stuff is now possible.
 
 Today I pushed a [commit](https://github.com/qgis/Quantum-GIS/commit/a7699e2696efcb471ab84871aae7af406ca2a375) into master that adds the ability to define a function in Python (or C++), register it in the expression engine, then use it anywhere expressions are used.
 

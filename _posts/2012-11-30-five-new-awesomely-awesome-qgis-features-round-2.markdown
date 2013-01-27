@@ -19,7 +19,7 @@ tags:
 
 {% excerpt %}
 
-As QGIS is such a fast moving project I have decided to make this a regular blog post in order to highlight some new features added to QGIS. If you haven't already, don't forget to check out [round one](http://woostuff.wordpress.com/2012/09/04/five-new-awesomely-awesome-qgis-features/).
+As QGIS is such a fast moving project I have decided to make this a regular blog post in order to highlight some new features added to QGIS. If you haven't already, don't forget to check out [round one](/2012/09/04/five-new-awesomely-awesome-qgis-features).
 
 {% endexcerpt %}
 
@@ -49,21 +49,26 @@ This new addition comes from the great work that [Salvatore Larosa](https://gi
 
 The new Python console includes attribute auto complete, syntax highlighting, better copy and paste, uploading to codepad, the ability to run code from a file, etc.  You don't realise how much difference there is until you go back to using the old one in version 1.8.
 
-[caption id="attachment_1224" align="aligncenter" width="630"][![](http://woostuff.files.wordpress.com/2012/11/python.png)](http://woostuff.files.wordpress.com/2012/11/python.png) New Python console[/caption]
-
+{% image http://woostuff.files.wordpress.com/2012/11/python.png %}
+  title: New Python console
+  alt: New Python console
+  link: http://woostuff.files.wordpress.com/2012/11/python.png
+{% endimage %}
 
 ## Tabbed and groups in builtin forms
 
 
-One of the things I really loved about QGIS, coming from MapInfo, was the builtin forms.  Just having the ability to enter data using controls like combo boxes, calendar widgets, etc makes you one step closer to having better data.   This feature is the exact reason I setup a 67 year old for [kerb data collection](http://woostuff.wordpress.com/2012/04/23/using-qgis-in-local-government/).
+One of the things I really loved about QGIS, coming from MapInfo, was the builtin forms.  Just having the ability to enter data using controls like combo boxes, calendar widgets, etc makes you one step closer to having better data.   This feature is the exact reason I setup a 67 year old for [kerb data collection](/2012/04/23/using-qgis-in-local-government/).
 
 As good as they are the builtin forms have an issue of ending up with as a big scrolling list with lots of fields; also the lack of  the ability to group or put fields on tabs in the UI meant you had to create a custom form.  Well not any more.
 
-![](http://woostuff.files.wordpress.com/2012/11/fields.png)
+{% image http://woostuff.files.wordpress.com/2012/11/fields.png %}
+{% endimage %}
 
 There is now a combo box on the Fields tab that allows you to build a generated form but also add tabs and group boxes.  You can even have the same field shown more then once on the form, handy for something like an ID field that you would like to show on each tab.
 
-![](http://woostuff.files.wordpress.com/2012/11/tabs.png)
+{% image http://woostuff.files.wordpress.com/2012/11/tabs.png %}
+{% endimage %}
 
 With this new ability the builtin forms can get me 95% of the way for data entry jobs, the other 5% I just make a custom form - but that is very rare.
 
@@ -75,7 +80,8 @@ Sextante is a great and powerful analytical framework that has been added to the
 
 One of the greatest things about the Sextante toolbox is that it allows you to integrate other great open source tools like GRASS, SAGA, R, OTB, etc, right into your QGIS workflow and view the results in the canvas. It even includes a modeller so that you can build a connected diagram of all the bits of your process, even if it crosses between programs.
 
-[caption id="attachment_1235" align="aligncenter" width="335"][![](http://woostuff.files.wordpress.com/2012/11/sextante.png)](http://woostuff.files.wordpress.com/2012/11/sextante.png) The toolbox[/caption]
+{% image http://woostuff.files.wordpress.com/2012/11/sextante.png %}
+{% endimage %}
 
 For me what is even better is that you can use Sextante in your plugins or custom Python code.  Sextante has a Python interface - well the whole thing is written in Python - that you can use to run a Sextante supported algorithm.
 
@@ -137,8 +143,8 @@ Some of the improvements include:
 	
   * etc, etc
 
-
-[![](http://woostuff.files.wordpress.com/2012/11/composer.png)](http://woostuff.files.wordpress.com/2012/11/composer.png)
+{% image http://woostuff.files.wordpress.com/2012/11/composer.png %}
+{% endimage %}
 
 These are great additions to the QGIS composer and I have already used the overview frame feature along with the new atlas integration  to make some quick nice looking map books. \
 

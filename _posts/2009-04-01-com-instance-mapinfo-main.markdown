@@ -23,13 +23,13 @@ This post series will done in three parts over the next few days, all out lining
 
 
 	
-  * Part One -> [Creating an instance using Interop.Mapinfo.dll (tied to Mapinfo version).](http://woostuff.wordpress.com/2009/04/01/com-instance-part-one/)
+  * Part One -> [Creating an instance using Interop.Mapinfo.dll (tied to Mapinfo version).](2009/04/01/com-instance-part-one/)
 
 	
-  * Part Two -> [Creating an instance using Activator.CreateInstance and reflection. (Mapinfo version independent)](http://woostuff.wordpress.com/2009/05/06/creating-a-instance-of-a-mapinfo-com-object-in-net-part-two/)
+  * Part Two -> [Creating an instance using Activator.CreateInstance and reflection. (Mapinfo version independent)](2009/05/06/creating-a-instance-of-a-mapinfo-com-object-in-net-part-two/)
 
 	
-  * Part Three -> [Creating an instance using a mix of Activator.CreateInstance and Interop.Mapinfo.dll (Mapinfo version independent)](http://woostuff.wordpress.com/2009/06/01/creating-an-instance-of-a-mapinfo-com-object-in-net-part-three/)
+  * Part Three -> [Creating an instance using a mix of Activator.CreateInstance and Interop.Mapinfo.dll (Mapinfo version independent)](2009/06/01/creating-an-instance-of-a-mapinfo-com-object-in-net-part-three/)
 
 
 NOTE:  All my examples apply to C#, I will add some VB examples a bit later.

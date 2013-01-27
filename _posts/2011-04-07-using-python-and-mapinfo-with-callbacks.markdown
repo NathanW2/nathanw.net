@@ -21,7 +21,7 @@ tags:
 - python
 ---
 
-The other day I posted an entry about using MapInfo with Python and Qt (see [http://woostuff.wordpress.com/2011/03/05/mapinfo-map-control-into-qt-python-form/](http://woostuff.wordpress.com/2011/03/05/mapinfo-map-control-into-qt-python-form/)), one big thing that I missed was support for callbacks, which if you want to do anything related to integrated mapping is a must for map tool support.
+The other day I posted an entry about using MapInfo with Python and Qt (see [2011/03/05/mapinfo-map-control-into-qt-python-form/](2011/03/05/mapinfo-map-control-into-qt-python-form/)), one big thing that I missed was support for callbacks, which if you want to do anything related to integrated mapping is a must for map tool support.
 
 Turns out it is pretty easy, and today I worked out how.
 

@@ -68,7 +68,7 @@ Normally we would use MapInfo for this kind of thing but consider this: There ar
 
 Each map window has its own copy of every layer, making change once apply every where changes hard.  This of course doesn't apply to styles as they are stored in the .map (tab) file, but does for labels, style overrides, etc.   I'll pass.
 
-QGIS is no means perfect for printing or print layouts but the 1:N map window to map frame ratio worked really well for this project.  The styling options in QGIS also helped to change the display of the map depending on what was needed to be shown quickly, one even used the [rule-based rendering](http://woostuff.wordpress.com/2011/06/06/one-of-my-favorite-features-of-qgis/).
+QGIS is no means perfect for printing or print layouts but the 1:N map window to map frame ratio worked really well for this project.  The styling options in QGIS also helped to change the display of the map depending on what was needed to be shown quickly, one even used the [rule-based rendering](2011/06/06/one-of-my-favorite-features-of-qgis/).
 
 You get the point.
 Moving on.

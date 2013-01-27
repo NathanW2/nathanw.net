@@ -17,7 +17,7 @@ tags:
 - Quantum GIS
 ---
 
-One thing I didn't explain very well  in my [other](http://woostuff.wordpress.com/2011/09/05/qgis-tips-custom-feature-forms-with-python-logic/) post was how to correctly set up value binding between your custom form and QGIS.  I didn't explain it because at the time I didn't know how.
+One thing I didn't explain very well  in my [other](2011/09/05/qgis-tips-custom-feature-forms-with-python-logic/) post was how to correctly set up value binding between your custom form and QGIS.  I didn't explain it because at the time I didn't know how.
 
 The other day I was building a custom form QGIS for a project I am working on. I had named all the fields right, set the ui as the edit form for the layer, but only the line edits were getting bound to the correct values.
 

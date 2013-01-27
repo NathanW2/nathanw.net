@@ -24,7 +24,7 @@ As I had not done this before or seen anyone else do it I thought it might be in
 
 The following code is what I managed to write that lets me embed the whole application into a .Net control(I let the code comments explain what is going on):
 
-_For this code to work you will need to create a .Net form with a picture box somewhere on it and a button that calls button1_click for it's click handler, you will also need to reference Mapinfow.exe/Mapinfo COM server see _[_http://woostuff.wordpress.com/2009/04/01/com-instance-mapinfo-main/_](http://woostuff.wordpress.com/2009/04/01/com-instance-mapinfo-main/)_ for details._
+_For this code to work you will need to create a .Net form with a picture box somewhere on it and a button that calls button1_click for it's click handler, you will also need to reference Mapinfow.exe/Mapinfo COM server see _[_2009/04/01/com-instance-mapinfo-main/_](2009/04/01/com-instance-mapinfo-main/)_ for details._
 
 
 {% highlight csharp %}

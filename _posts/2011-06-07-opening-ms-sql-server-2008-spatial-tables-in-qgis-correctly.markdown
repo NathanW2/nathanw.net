@@ -23,7 +23,7 @@ tags:
 
 **EDIT (22-07-12): QGIS 1.8 and above now ships with a native MS SQL data provider.  Look for Add MSSQL Spatial Layer in the Layer menu.**
 
-Turns out the [last blog post](http://woostuff.wordpress.com/2011/03/13/opening-ms-sql-spatial-in-qgis/) I did on this subject contained a few errors, mainly that QGIS wouldn't render the layer when you opened it.
+Turns out the [last blog post](2011/03/13/opening-ms-sql-spatial-in-qgis/) I did on this subject contained a few errors, mainly that QGIS wouldn't render the layer when you opened it.
 
 The answer is so obvious it's almost embarrassing :)
 

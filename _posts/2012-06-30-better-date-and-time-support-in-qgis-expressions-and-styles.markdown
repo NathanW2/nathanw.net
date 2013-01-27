@@ -135,7 +135,7 @@ Currently the only date format supported is {year}-{month}-{day} as seen in the
 ## More on this fancy new stuff
 
 
-When I wrote the new[ expression builder](http://woostuff.wordpress.com/2011/10/27/expression-based-labeling/) dialog a while ago I made it dynamic so that any new functions added to the expression engine will show up automatically.  So here they are:
+When I wrote the new[ expression builder](2011/10/27/expression-based-labeling/) dialog a while ago I made it dynamic so that any new functions added to the expression engine will show up automatically.  So here they are:
 
 [caption id="attachment_1056" align="aligncenter" width="387"][![](http://woostuff.files.wordpress.com/2012/06/functions.png)](http://woostuff.files.wordpress.com/2012/06/functions.png) List of new date and time functions.[/caption]
 

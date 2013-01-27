@@ -14,7 +14,7 @@ tags:
 - styling
 ---
 
-We are currently working a kerb line digitization and defect capture project at work.  This process involves looking at the aerial photo along with video of the roads and drawing lines on the kerb layer using QGIS, not overly hard just tedious.  As I mentioned in my [Using QGIS in local government](http://woostuff.wordpress.com/2012/04/23/using-qgis-in-local-government/) post, the defect points are snapped to the lines in order generate the distances, or chainage, along the kerb line for reporting reasons e.g Defect 1 at 10m, Defect 2 at 11.5m.  In order for this to happen the kerb lines must be running the correct direction, the correct direction here is defined by the road direction.    The kerb line also has an attribute to define what side of the road it is on, left or right, in reference to the direction of the road center line.
+We are currently working a kerb line digitization and defect capture project at work.  This process involves looking at the aerial photo along with video of the roads and drawing lines on the kerb layer using QGIS, not overly hard just tedious.  As I mentioned in my [Using QGIS in local government](2012/04/23/using-qgis-in-local-government/) post, the defect points are snapped to the lines in order generate the distances, or chainage, along the kerb line for reporting reasons e.g Defect 1 at 10m, Defect 2 at 11.5m.  In order for this to happen the kerb lines must be running the correct direction, the correct direction here is defined by the road direction.    The kerb line also has an attribute to define what side of the road it is on, left or right, in reference to the direction of the road center line.
 
 So we have two conditions:
 

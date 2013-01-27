@@ -33,4 +33,4 @@ This addition will open QGIS up to a whole new set of users who have to use MS S
 
 Currently this is only in master but I will be in the 1.8 release when it comes out.
 
-_Note: At the moment you have to have a geometry_columns table in the database in order to connect, this table is the same format used by PostGIS and can be made by importing a layer using the [ogr2ogr method](2011/06/07/opening-ms-sql-server-2008-spatial-tables-in-qgis-correctly/). There will be a fix coming for this at some stage._
+_Note: At the moment you have to have a geometry_columns table in the database in order to connect, this table is the same format used by PostGIS and can be made by importing a layer using the [ogr2ogr method](/2011/06/07/opening-ms-sql-server-2008-spatial-tables-in-qgis-correctly/). There will be a fix coming for this at some stage._

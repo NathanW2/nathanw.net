@@ -72,12 +72,12 @@ Docking? Yep and floating so you can put it on a different monitor if you need.
 
 The QGIS attribute table has a built-in search/filter box, saves having to run a query and have a new window like in MapInfo if you just want to filter the browser.
 
-[caption id="attachment_728" align="aligncenter" width="630" caption="The QGIS attribute table (browser)"][![](http://woostuff.files.wordpress.com/2011/07/qgisattribute.png)](http://woostuff.files.wordpress.com/2011/07/qgisattribute.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/07/qgisattribute.png)](http://woostuff.files.wordpress.com/2011/07/qgisattribute.png)
 
 **Extra Bonus**
 The QGIS browser can even have other UI objects inside the cells. Very bloody handy.
 
-[caption id="attachment_734" align="aligncenter" width="630" caption="Combo box in browser table."][![](http://woostuff.files.wordpress.com/2011/07/control.png)](http://woostuff.files.wordpress.com/2011/07/control.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/07/control.png)](http://woostuff.files.wordpress.com/2011/07/control.png)
 
 You can even have a calendar date picker if you want.
 

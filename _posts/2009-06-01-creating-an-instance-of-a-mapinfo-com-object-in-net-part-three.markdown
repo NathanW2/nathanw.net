@@ -16,9 +16,9 @@ tags:
 - mapping
 ---
 
-In part three of the series [Creating a instance of a Mapinfo COM object in .NET](2009/04/01/com-instance-mapinfo-main/), I'm going to be talking about **creating an instance of Mapinfo's COM object using Activator.CreateInstace but also allowing you to have strong typed access to Mapinfo's members**.  This approach unlike the approach outlined in [part two](2009/05/06/creating-a-instance-of-a-mapinfo-com-object-in-net-part-two/), will allow for your application to be Mapinfo version independent without having to use reflection to get access to _Do_ and _Eval_
+In part three of the series [Creating a instance of a Mapinfo COM object in .NET](/2009/04/01/com-instance-mapinfo-main/), I'm going to be talking about **creating an instance of Mapinfo's COM object using Activator.CreateInstace but also allowing you to have strong typed access to Mapinfo's members**.  This approach unlike the approach outlined in [part two](/2009/05/06/creating-a-instance-of-a-mapinfo-com-object-in-net-part-two/), will allow for your application to be Mapinfo version independent without having to use reflection to get access to _Do_ and _Eval_
 
-_If you haven't read part [one ](2009/04/01/com-instance-part-one/)and [two ](2009/05/06/creating-a-instance-of-a-mapinfo-com-object-in-net-part-two/) I would recommend reading them first as it will give you an understanding of where this post is heading._
+_If you haven't read part [one ](/2009/04/01/com-instance-part-one/)and [two ](/2009/05/06/creating-a-instance-of-a-mapinfo-com-object-in-net-part-two/) I would recommend reading them first as it will give you an understanding of where this post is heading._
 
 
 ## Step 1: Adding a referance to Mapinfo.
@@ -26,7 +26,7 @@ _If you haven't read part [one ](2009/04/01/com-instance-part-one/)and [two ](20
 
 As this method requires us to get access to some of the interfaces that Mapinfo provides, we will need to add a reference to Mapinfo like we did in first step  in part one.
 
-To save on re-explaining the whole process here again, I will wait while you head over to part [one](2009/04/01/com-instance-part-one/) and follow the process outlined in step 1.  Make sure that you come back here after you have completed step 1.
+To save on re-explaining the whole process here again, I will wait while you head over to part [one](/2009/04/01/com-instance-part-one/) and follow the process outlined in step 1.  Make sure that you come back here after you have completed step 1.
 
 
 ## Step 2: Creating the instance

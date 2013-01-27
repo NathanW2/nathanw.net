@@ -21,7 +21,7 @@ QGIS finally has expression based labels! _(Although you must be running latest 
 
 What does that mean? Well QGIS used to be only able to label with a field from the layer, very limiting if you need to make a nice looking label string. Now you can use expressions (eg 'Up ' || US_Invert || 'some more text' ) to label the feature, just like this.
 
-[caption id="attachment_870" align="aligncenter" width="525" caption="Example of expression based labels"][![](http://woostuff.files.wordpress.com/2011/10/expression-labels.png)](http://woostuff.files.wordpress.com/2011/10/expression-labels.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/10/expression-labels.png)](http://woostuff.files.wordpress.com/2011/10/expression-labels.png)
 
 This is something that I missed a lot when moving from MapInfo to QGIS.  After opening a ticket on the QGIS bug list and nothing happening with it for a couple of months (not that I expected anything to, everyone is busy enough as is.  I don't expect the devs to just jump at all my requests) so I decided I should at least attempt adding it myself.  The joys of open source!
 
@@ -35,7 +35,7 @@ So with that I started working on a generic expression builder that could be use
 ## The result
 
 
-[caption id="attachment_871" align="aligncenter" width="630" caption="Generic expression builder"][![](http://woostuff.files.wordpress.com/2011/10/expression-based-dialog.png)](http://woostuff.files.wordpress.com/2011/10/expression-based-dialog.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/10/expression-based-dialog.png)](http://woostuff.files.wordpress.com/2011/10/expression-based-dialog.png)
 
 Key features of the new expression builder:
 
@@ -62,11 +62,11 @@ Key features of the new expression builder:
 
 If the expression hits an error while you type you will be shown an "Expression is invalid" warning _(yes I know it's wrong in the screen shot). C_licking (more info) or hovering over the expression area will show you the error.
 
-[caption id="attachment_872" align="aligncenter" width="512" caption="Expression has error"][![](http://woostuff.files.wordpress.com/2011/10/expression-based-dialog-error.png)](http://woostuff.files.wordpress.com/2011/10/expression-based-dialog-error.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/10/expression-based-dialog-error.png)](http://woostuff.files.wordpress.com/2011/10/expression-based-dialog-error.png)
 
 Searching can done by using the search box at the top. The function list will reduce to show only functions or fields containing that string _(Note: it is case sensitive at the current time) ._
 
-[caption id="attachment_873" align="aligncenter" width="321" caption="Searching for a function or field name."][![](http://woostuff.files.wordpress.com/2011/10/expression-based-dialog-serach.png)](http://woostuff.files.wordpress.com/2011/10/expression-based-dialog-serach.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/10/expression-based-dialog-serach.png)](http://woostuff.files.wordpress.com/2011/10/expression-based-dialog-serach.png)
 
 
 ## Still to do

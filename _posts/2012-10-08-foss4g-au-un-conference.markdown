@@ -26,19 +26,18 @@ Centre for Advanced Technologies (QCAT), Pullenvale QLD.
 16 November: Code Sprint
 This is a participant-organised event: please add your unconference and code sprint topic suggestions to the wiki. Organisers are welcome; please speak up.
 
-See here for details: [http://wiki.osgeo.org/wiki/FOSS4G-AU_2012](http://wiki.osgeo.org/wiki/FOSS4G-AU_2012)
+> See here for details: [http://wiki.osgeo.org/wiki/FOSS4G-AU_2012](http://wiki.osgeo.org/wiki/FOSS4G-AU_2012)
 
-RSVP essential for building access. Please sign up here:
+> RSVP essential for building access. Please sign up here:
 [http://www.meetup.com/osgeo-aust-nz/events/83965312/](http://www.meetup.com/osgeo-aust-nz/events/83965312/)
 
-Email: aust-nz@lists.osgeo.org (sign up here [http://lists.osgeo.org/mailman/listinfo/aust-na](http://lists.osgeo.org/mailman/listinfo/aust-na))
+>Email: aust-nz@lists.osgeo.org (sign up here [http://lists.osgeo.org/mailman/listinfo/aust-na](http://lists.osgeo.org/mailman/listinfo/aust-na))
 
-Kind regards,
+>Kind regards,
 Ben Caradoc-Davies
 Software Engineer
 CSIRO Earth Science and Resource Engineering
 Australian Resources Research Centre
-
 
 
 Being part of osgeo-aust-nz and the local Australian open source GIS movement it's great to see events like this being organized.

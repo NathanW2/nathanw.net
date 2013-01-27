@@ -21,4 +21,5 @@ From QGIS 1.8 and onwards the Plugin Installer plugin will no longer include the
 
 If you have plugins that are still not on the official repository then I would strongly recommend that you migrate them as a lot of new 1.8 users will be missing out on your great work.
 
-[![](http://woostuff.files.wordpress.com/2012/08/migrate.jpg)](http://woostuff.files.wordpress.com/2012/08/migrate.jpg)
+{% image http://woostuff.files.wordpress.com/2012/08/migrate.jpg %}
+{% endimage %}

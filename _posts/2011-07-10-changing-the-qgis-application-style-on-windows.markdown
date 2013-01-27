@@ -17,7 +17,7 @@ tags:
 
 By default QGIS uses the Qt QPlastiqueStyle for all its windows which makes QGIS render all controls like this:
 
-[caption id="attachment_757" align="aligncenter" width="630" caption="Default style for QGIS on windows."][![](http://woostuff.files.wordpress.com/2011/07/qplastiquestyle.png)](http://woostuff.files.wordpress.com/2011/07/qplastiquestyle.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/07/qplastiquestyle.png)](http://woostuff.files.wordpress.com/2011/07/qplastiquestyle.png)
 
 However it can be changed in order to make it fit in with system style, as in use Windows style. Running the following commands in the python console:
 
@@ -28,7 +28,7 @@ QApplication.setStyle("windowsvista")
 
 will change QGIS to render controls in windows style:
 
-[caption id="attachment_758" align="aligncenter" width="630" caption="QGIS using windows style."][![](http://woostuff.files.wordpress.com/2011/07/qwindowsstyle.png)](http://woostuff.files.wordpress.com/2011/07/qwindowsstyle.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/07/qwindowsstyle.png)](http://woostuff.files.wordpress.com/2011/07/qwindowsstyle.png)
 
 _It's quite hard to notice many of the differences but just try it you will see them_
 

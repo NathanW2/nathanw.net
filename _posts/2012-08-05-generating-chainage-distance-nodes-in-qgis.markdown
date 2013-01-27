@@ -78,7 +78,8 @@ pointtools.pointsAlongLine(40)
 
 That will generate a point every 40 meters along then selected lines
 
-[caption id="attachment_1093" align="aligncenter" width="630"][![](http://woostuff.files.wordpress.com/2012/08/nodes.png)](http://woostuff.files.wordpress.com/2012/08/nodes.png) Distance nodes along line in qgis-dev[/caption]
+{% image http://woostuff.files.wordpress.com/2012/08/nodes.png %}
+{% endimage %}
 
 To generate nodes along different lines, select the new features, then call `pointtools.pointsAlongLine(40)` in the Python console.
 

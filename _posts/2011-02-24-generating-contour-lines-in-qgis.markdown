@@ -30,7 +30,7 @@ Today my discovery was in how to generate contour lines from a point layer.
 	
   2. Once installed open a vector point layer in QGIS.  Make sure the point layer has a field that you can use for elevation.
 
-[caption id="attachment_515" align="aligncenter" width="630" caption="One I prepared earlier"][![](http://woostuff.files.wordpress.com/2011/02/points.png)](http://woostuff.files.wordpress.com/2011/02/points.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/02/points.png)](http://woostuff.files.wordpress.com/2011/02/points.png)
 
 	
   3. Then select from the menu: Plugins->Contour->Contour
@@ -38,7 +38,7 @@ Today my discovery was in how to generate contour lines from a point layer.
 	
   4. Fill in the information
 
-[caption id="attachment_517" align="aligncenter" width="514" caption="Details form (The above setting will generate 0.5m contours)"][![](http://woostuff.files.wordpress.com/2011/02/form.png)](http://woostuff.files.wordpress.com/2011/02/form.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/02/form.png)](http://woostuff.files.wordpress.com/2011/02/form.png)
 
 	
   5. Press OK
@@ -46,7 +46,7 @@ Today my discovery was in how to generate contour lines from a point layer.
 	
   6. Results
 
-[caption id="attachment_518" align="aligncenter" width="630" caption="Results from plugin "][![](http://woostuff.files.wordpress.com/2011/02/results.png)](http://woostuff.files.wordpress.com/2011/02/results.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/02/results.png)](http://woostuff.files.wordpress.com/2011/02/results.png)
 
 	
   7. Profit??

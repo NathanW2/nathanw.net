@@ -17,8 +17,8 @@ tags:
 - Quantum GIS
 ---
 
-![](http://themavesite.com/TMS-Pictures/2011-01/GoodNewsEveryone.jpg)
-
+{% image http://themavesite.com/TMS-Pictures/2011-01/GoodNewsEveryone.jpg %}
+{% endimage %}
 
 I'm very please to announce the [Australian QGIS User Group](https://sites.google.com/site/ausqgis/home). Chris Scott ([DMS](www.mapsolutions.com.au)) and I created this group because the interest in QGIS here is growing fast and it would be nice to have a place where us Aussies can hang out and chat about QGIS stuff, discuss local issues, organize local events, <del>put shrimps on the barbie</del>.
 

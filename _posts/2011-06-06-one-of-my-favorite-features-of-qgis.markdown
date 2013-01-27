@@ -22,7 +22,7 @@ tags:
 
 One of my favorite features of QGIS is the rule based rendering.
 
-[caption id="attachment_631" align="aligncenter" width="630" caption="QGIS rule based rendering dialog"][![QGIS rule based rendering dialog](http://woostuff.files.wordpress.com/2011/06/rules.png)](http://woostuff.files.wordpress.com/2011/06/rules.png)[/caption]
+[![QGIS rule based rendering dialog](http://woostuff.files.wordpress.com/2011/06/rules.png)](http://woostuff.files.wordpress.com/2011/06/rules.png)
 
 If you're using MapInfo think of thematics + queries but on steroids. Rule based rendering allows you to you set, well, rules on what gets rendered and how.  The rules are based on a simple SQL style query language that's built into QGIS.
 
@@ -61,11 +61,11 @@ You will also note in the screenshot above that I have a max zoom scales set on 
 
 So after all that, the results:
 
-[caption id="attachment_650" align="aligncenter" width="630" caption="Map rendered using rules"][![Screenshot of rules applied](http://woostuff.files.wordpress.com/2011/06/rulesfinal.png)](http://woostuff.files.wordpress.com/2011/06/rulesfinal.png)[/caption]
+[![Screenshot of rules applied](http://woostuff.files.wordpress.com/2011/06/rulesfinal.png)](http://woostuff.files.wordpress.com/2011/06/rulesfinal.png)
 
 and if I zoom out pass 5,000:
 
-[caption id="attachment_651" align="aligncenter" width="630" caption="Map rendered when zoomed out pass 5,000"][![Screenshot of rules applied, zoomed past 5,000](http://woostuff.files.wordpress.com/2011/06/rulesfinal2.png)](http://woostuff.files.wordpress.com/2011/06/rulesfinal2.png)[/caption]
+[![Screenshot of rules applied, zoomed past 5,000](http://woostuff.files.wordpress.com/2011/06/rulesfinal2.png)](http://woostuff.files.wordpress.com/2011/06/rulesfinal2.png)
 
 I think you can see how this rule based rendering could be very powerful, in fact I have about four different rule sets I use with the drainage layer to show different things to different people.
 

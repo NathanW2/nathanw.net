@@ -28,7 +28,7 @@ Thanks to GDAL/OGR 1.8 QGIS can now open MS SQL Server 2008 spatial tables via t
 
 First you must be running a version of QGIS that is using GDAL/OGR 1.8.  Opening the QGIS about page will tell you if it is supported.
 
-[caption id="attachment_560" align="aligncenter" width="525" caption="Need version 1.8 or higher"][![](http://woostuff.files.wordpress.com/2011/03/version.png)](http://woostuff.files.wordpress.com/2011/03/version.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/03/version.png)](http://woostuff.files.wordpress.com/2011/03/version.png)
 
 As I am writing this on my Ubuntu install I only have version 1.6.3 but the latest dev version of QGIS (upcoming 1.7 release) for Windows in the OSGeo4W installer is complied with version 1.8.
 

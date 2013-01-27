@@ -21,7 +21,7 @@ Just a quick one.
 
 This afternoon I was having a go at getting our work MapInfo layers to look the same in QGIS as they do in MapInfo.  I wanted to do this; 1) So I can print maps from both systems for people and they are a consistent style 2) Would rather use QGIS for every day map work.  3) To see what they compare like.    I think it came out pretty good, apart from few symbols that I didn't get time to finish.
 
-[caption id="attachment_469" align="aligncenter" width="655" caption="MapInfo vs QGIS"][![](http://woostuff.files.wordpress.com/2011/02/mvsqgis1.png)](http://woostuff.files.wordpress.com/2011/02/mvsqgis1.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/02/mvsqgis1.png)](http://woostuff.files.wordpress.com/2011/02/mvsqgis1.png)
 
 
 _Note that MapInfo has anti-aliasing and transparency  turned off, as it makes MapInfo very slow._

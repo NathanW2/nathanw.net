@@ -13,7 +13,8 @@ I recently attended the SSSI [QSSC](http://www.sssi.org.au/details/region/4/cat/
 
 Always good to catch up with people that you only get to see now and then, or have only ever talked to online.
 
-[I'm making a note here: Huge Success](http://www.youtube.com/watch?v=RthZgszykLs#t=00m57s)
+I'm making a note here: Huge Success
+{% youtube RthZgszykLs %}
 
 
 

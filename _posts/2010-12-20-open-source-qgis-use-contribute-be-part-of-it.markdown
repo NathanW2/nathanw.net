@@ -41,7 +41,7 @@ The help files are probably the easiest things to edit as you don't need to be
 
 ﻿
 
-[caption id="attachment_405" align="alignnone" width="454" caption="Help files for QGIS"][![](http://woostuff.files.wordpress.com/2010/12/help.png)](http://woostuff.files.wordpress.com/2010/12/help.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2010/12/help.png)](http://woostuff.files.wordpress.com/2010/12/help.png)
 
 Don't be fooled by the file extensions, or lack thereof, they are just html files.  The funny stuff at the end is just the code for the language ie en_US is US English as QGIS supports different languages these codes are needed so the help knows which one to show to the user.
 
@@ -61,7 +61,7 @@ I thought it would be good to give a quick example of editing a help document.
 
 After finding the dialog with the help file needing work, let's go with the style manager dialog which happens to have no help written yet:
 
-[caption id="attachment_406" align="alignnone" width="630" caption="Oh! No help for the style manager dialog."][![](http://woostuff.files.wordpress.com/2010/12/stylinghelp.png)](http://woostuff.files.wordpress.com/2010/12/stylinghelp.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2010/12/stylinghelp.png)](http://woostuff.files.wordpress.com/2010/12/stylinghelp.png)
 
 We then need to navigate to the context help folder in C:\OSGeo4W\apps\qgis\resources\context_help and find the file that is linked to that dialogs help button [they tend to have the same name as the dialog]. So in this case it's called:  QgsStyleV2ManagerDialog-en_US.  As I don't know any other languages I will be working on the English one.
 
@@ -80,7 +80,7 @@ Well that explains why there isn't any help.  The file is empty apart from the 
 
 Now save the file and reopen the help dialog in QGIS, no need to restart QGIS.  And there we go:
 
-[caption id="attachment_407" align="alignnone" width="358" caption="Style manager help all done....ok well maybe not."][![](http://woostuff.files.wordpress.com/2010/12/help1.png)](http://woostuff.files.wordpress.com/2010/12/help1.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2010/12/help1.png)](http://woostuff.files.wordpress.com/2010/12/help1.png)
 
 ﻿It's a simple as that.  I would advise reading though some of the already written help files to get a feel for style, and type of language used but apart from that feel free to send me any changes and I will submit them as a ticket once I have few collected.
 

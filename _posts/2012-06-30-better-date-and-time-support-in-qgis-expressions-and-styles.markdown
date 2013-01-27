@@ -24,62 +24,28 @@ tags:
 The lack of uni for the next couple of weeks has left me some time at night to work on some features that I really wish QGIS had.  One of these features was better date and time support in the expression engine.  Date and time is an important concept when working on inspection data and not being able to style my features in QGIS using date operations was bugging me.  So in good open source fashion I added some.
 
 Here are the current functions (more to come in the future):
-
-
-
 	
-  * **$now** - _returns the current date and time_
-
-	
-  * _**age**({datetime},{datetime}) - _returns the difference between the two dates
-
-	
-  * **todate**({string}) - _converts a string to date type_
-
-	
-  * _**totime**({string}) - converts a string to time type_
-
-	
-  * _**tointerval**({string}) - converts a string to a interval type (details below)_
-
-	
-  * _**day**({datetime} or {interval}) - returns the day from a datetime type or the number of days in a interval._
-
-	
-  * _**hour**(...) - Same as above but for hours_
-
-	
-  * _**minute**(...) _ - Same as above but for minutes__
-
-	
-  * _**second**(...) _ - Same as above but for seconds__
-
-	
-  * _**day**(..) _ - Same as above but for days__
-
-	
-  * _**week**(..) _ - Same as above but for weeks__
-
-	
-  * _**month**(...) _ - Same as above but for months__
-
-	
-  * _**year**(...)_ - Same as above but for years__
-
-	
-  * _{datetime} - {interval} = {new datetime} - returns a new datetime subtracting the interval _
-
-	
-  * __{datetime} + {interval} = {new datetime} - returns a new datetime adding the interval__
+  * `$now` - returns the current date and time
+  * `age({datetime},{datetime})` - returns the difference between the two dates
+  * `todate({string})` - converts a string to date type
+  * `totime({string})` - converts a string to time type
+  * `tointerval({string})` - converts a string to a interval type (details below)
+  * `day**({datetime} or {interval})` - returns the day from a datetime type or the number of days in a interval._
+  * `hour**(...)` - Same as above but for hours
+  * `minute**(...)` - Same as above but for minutes
+  * `second**(...)` - Same as above but for seconds
+  * `day**(..)` - Same as above but for days
+  * `week**(..)` - Same as above but for weeks
+  * `month**(...)` - Same as above but for months
+  * `year**(...)` - Same as above but for years
+  * `{datetime} - {interval} = {new datetime}` - returns a new datetime subtracting the interval _
+  * `{datetime} + {interval} = {new datetime}` - returns a new datetime adding the interval
 
 
+####The interval type
 
 
-## _**
-**_The interval type
-
-
-Functions like _age(..),_ _tointerval__(), {datetime} -/+ {interval}, day(..), hour(..), etc, _use, or return, Intervals.  An Interval is a measure of time that we can use for different things.  An example of an Interval is '1 Year 2 Months' this is then converted to a number of seconds and used for any calculations.
+Functions like `age(..),`, `tointerval__()`, `{datetime} -/+ {interval}`, `day(..)`, `hour(..)`, etc, use, or return, Intervals.  An Interval is a measure of time that we can use for different things.  An example of an Interval is '1 Year 2 Months' this is then converted to a number of seconds and used for any calculations.
 
 For example one can take away 10 days from the current date by doing the following ( -> marks the output ):
 
@@ -102,7 +68,7 @@ todate($now + '2 Years 1 Month 10 Days')
 -> 2014-08-10
 {% endhighlight %}
 
-The age() function will return an interval which we can use extract what information we need.
+The `age()` function will return an interval which we can use extract what information we need.
 
 The number of days between two dates:
 
@@ -135,19 +101,19 @@ Currently the only date format supported is {year}-{month}-{day} as seen in the
 ## More on this fancy new stuff
 
 
-When I wrote the new[ expression builder](2011/10/27/expression-based-labeling/) dialog a while ago I made it dynamic so that any new functions added to the expression engine will show up automatically.  So here they are:
+When I wrote the new[ expression builder](/2011/10/27/expression-based-labeling/) dialog a while ago I made it dynamic so that any new functions added to the expression engine will show up automatically.  So here they are:
 
-[caption id="attachment_1056" align="aligncenter" width="387"][![](http://woostuff.files.wordpress.com/2012/06/functions.png)](http://woostuff.files.wordpress.com/2012/06/functions.png) List of new date and time functions.[/caption]
+[![](http://woostuff.files.wordpress.com/2012/06/functions.png)](http://woostuff.files.wordpress.com/2012/06/functions.png)
 
 We can also use these functions in the rule based rending, which is where the power really comes in.  Lets see something like that in action:
 
-[caption id="attachment_1058" align="aligncenter" width="630"][![](http://woostuff.files.wordpress.com/2012/06/dates-style1.png)](http://woostuff.files.wordpress.com/2012/06/dates-style1.png) Styled using days and years[/caption]
+[![](http://woostuff.files.wordpress.com/2012/06/dates-style1.png)](http://woostuff.files.wordpress.com/2012/06/dates-style1.png)
 
 Should be pretty straight forward to understand. We are using the age() and day() functions to style the events that are older than 30 days, within 30 days, for today, or in the future.  We also check the year of the event using year() and year($now) to make sure we only see this years events, or style them differently depending on if they are last years events or in the future.
 
 This is the result of the above rules:
 
-[caption id="attachment_1059" align="aligncenter" width="630"][![](http://woostuff.files.wordpress.com/2012/06/style-result.png)](http://woostuff.files.wordpress.com/2012/06/style-result.png) Result of using date functions in rule based renderer[/caption]
+[![](http://woostuff.files.wordpress.com/2012/06/style-result.png)](http://woostuff.files.wordpress.com/2012/06/style-result.png)
 
 I'm also using the date functions in the expression based labelling to label the features using the following expression:
 

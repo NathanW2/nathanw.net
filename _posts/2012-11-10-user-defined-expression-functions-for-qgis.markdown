@@ -17,7 +17,7 @@ tags:
 - Quantum GIS
 ---
 
-Ever since I added [expression based labels](2011/10/27/expression-based-labeling/), including the new expression builder UI, something that I always wanted to add is the ability to define custom user defined functions in Python (or C++) and use them in an expression. The expression engine is used for [labels](2011/10/27/expression-based-labeling/), [rule](2012/01/25/improvements-to-the-qgis-rule-based-rendering/) [based rendering](2011/06/06/one-of-my-favorite-features-of-qgis/), layer actions, field calculator, and atlas composer tags.  Thanks to the all the awesome work on the expression engine by Martin all this cool stuff is now possible.
+Ever since I added [expression based labels](/2011/10/27/expression-based-labeling/), including the new expression builder UI, something that I always wanted to add is the ability to define custom user defined functions in Python (or C++) and use them in an expression. The expression engine is used for [labels](/2011/10/27/expression-based-labeling/), [rule](/2012/01/25/improvements-to-the-qgis-rule-based-rendering/) [based rendering](/2011/06/06/one-of-my-favorite-features-of-qgis/), layer actions, field calculator, and atlas composer tags.  Thanks to the all the awesome work on the expression engine by Martin all this cool stuff is now possible.
 
 Today I pushed a [commit](https://github.com/qgis/Quantum-GIS/commit/a7699e2696efcb471ab84871aae7af406ca2a375) into master that adds the ability to define a function in Python (or C++), register it in the expression engine, then use it anywhere expressions are used.
 
@@ -40,7 +40,7 @@ def vertices(values, feature, parent):
 	pass
 {% endhighlight %}
 
-`@qgsfunction(0, "Python")` means we are defining a new vertices function that takes 0 args and lives in the "python" group in the expression builder UI. Any custom function must take `(values, feature, parent)` as python args. **`values`** is a list of QVariants passed into the function, **`feature`** is the current `QgsFeature`, and **`parent`** is expression engine node (you use this to raise errors).
+`@qgsfunction(0, "Python")` means we are defining a new vertices function that takes 0 args and lives in the "python" group in the expression builder UI. Any custom function must take `(values, feature, parent)` as python args. `values` is a list of QVariants passed into the function, `feature` is the current `QgsFeature`, and `parent` is expression engine node (you use this to raise errors).
 
 Lets stick some more logic in there:
 
@@ -74,35 +74,31 @@ Now that we have that all done we can save it into a file in our `.qgis/python`�
 
 Lets open QGIS and run import **userfunctions.py:**
 
-[caption id="attachment_1193" align="aligncenter" width="630"][![](http://woostuff.files.wordpress.com/2012/11/import.png)](http://woostuff.files.wordpress.com/2012/11/import.png) Importing functions from userfunctions.py[/caption]
+{% image http://woostuff.files.wordpress.com/2012/11/import.png %}
+{% endimage %}
 
 Now open the label properties for the layer:
 
-[caption id="attachment_1195" align="aligncenter" width="481"][![](http://woostuff.files.wordpress.com/2012/11/expression.png)](http://woostuff.files.wordpress.com/2012/11/expression.png) The new function shown in the expression builder[/caption]
+{% image http://woostuff.files.wordpress.com/2012/11/expression.png %}
+{% endimage %}
 
 Nice! Notice also that the function doc string is used as the function help. How cool is that.  You can also see the $ sign in front of the function, this is because any functions that take no args are considered special and use the $ sign as a convention, this is all automatic when the function is registered.
 
 And the result is:
 
-[caption id="attachment_1196" align="aligncenter" width="630"][![](http://woostuff.files.wordpress.com/2012/11/result.png)](http://woostuff.files.wordpress.com/2012/11/result.png) The label using the new function[/caption]
+{% image http://woostuff.files.wordpress.com/2012/11/result.png %}
+{% endimage %}
 
 You can even use it in the rule based rendering:
 
-[caption id="attachment_1198" align="aligncenter" width="630"][![](http://woostuff.files.wordpress.com/2012/11/rules.png)](http://woostuff.files.wordpress.com/2012/11/rules.png) Rule rendering using new function[/caption]
+{% image http://woostuff.files.wordpress.com/2012/11/rules.png %}
+{% endimage %}
 
 Enjoy!
 
 
 ## Notes
 
-
-
-
-
-	
   * You must unregister a function once you are finished with it using QgsExpression.unregisterFunction(name). This mainly applies to plugins where the user might unload your plugin and the code is no longer available. In the above example we could import userfunctions and never unregister because we plan on using it for the whole session.
-
 	
   * You can't override the built-in methods.
-
-

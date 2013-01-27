@@ -21,7 +21,7 @@ tags:
 - python
 ---
 
-The other day I posted an entry about using MapInfo with Python and Qt (see [2011/03/05/mapinfo-map-control-into-qt-python-form/](2011/03/05/mapinfo-map-control-into-qt-python-form/)), one big thing that I missed was support for callbacks, which if you want to do anything related to integrated mapping is a must for map tool support.
+The other day I posted an entry about using MapInfo with Python and Qt (see [2011/03/05/mapinfo-map-control-into-qt-python-form/](/2011/03/05/mapinfo-map-control-into-qt-python-form/)), one big thing that I missed was support for callbacks, which if you want to do anything related to integrated mapping is a must for map tool support.
 
 Turns out it is pretty easy, and today I worked out how.
 
@@ -129,6 +129,6 @@ if __name__ == "__main__":
 
 and the result is a map window and information printed to the console.
 
-[caption id="attachment_591" align="aligncenter" width="630" caption="Information from MapInfo callback"][![](http://woostuff.files.wordpress.com/2011/04/image001.png)](http://woostuff.files.wordpress.com/2011/04/image001.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/04/image001.png)](http://woostuff.files.wordpress.com/2011/04/image001.png)
 
 I think Python could be a good language to prototype MapInfo based app, or even build a whole app itself.   If you do end up making something of it let me know I am quite interested with what people could come up with.

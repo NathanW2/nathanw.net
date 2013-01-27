@@ -16,7 +16,7 @@ tags:
 - mapping
 ---
 
-This the first blog post in the series [Creating a instance of a Mapinfo COM object in .NET.](2009/04/01/com-instance-mapinfo-main/)
+This the first blog post in the series [Creating a instance of a Mapinfo COM object in .NET.](/2009/04/01/com-instance-mapinfo-main/)
 
 In this post I am going to talk about **creating an instance of using Interop.Mapinfo.dll. **So lets get into it.
 

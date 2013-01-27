@@ -32,6 +32,5 @@ The un-conference is held at [The Queensland Centre for Advanced Technologies](h
 
 Jody Garnett has also done a post on the un-conference and what this kind of conference style is like.  You can find more details here: [http://how2map.blogspot.com.au/2012/11/foss4g-au-tomorrow.html ](http://how2map.blogspot.com.au/2012/11/foss4g-au-tomorrow.html)
 
-[caption id="attachment_1207" align="aligncenter" width="630"][![](http://woostuff.files.wordpress.com/2012/11/p1000872.jpg)](http://woostuff.files.wordpress.com/2012/11/p1000872.jpg) The venue[/caption]
-
-** **
+{% image http://woostuff.files.wordpress.com/2012/11/p1000872.jpg %}
+{% endimage %}

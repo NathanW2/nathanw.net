@@ -29,11 +29,11 @@ The first thing I noticed was it was a lot faster in regards to map rendering th
 
 Styling of the layers has also improved a lot since I first tried it, it now has stack styling for points, lines and regions. Stack styles is something that was introduced in MapInfo 10.5, but unlike MapInfo, QGIS allows you to create a stacked style for each feature class rather than a style override like in MapInfo.  So you have a lot more control with styling in QGIS then you do in MapInfo.
 
-[caption id="attachment_376" align="alignnone" width="630" caption="QGIS styling dialogs for lines"][![](http://woostuff.files.wordpress.com/2010/12/styling.png)](http://woostuff.files.wordpress.com/2010/12/styling.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2010/12/styling.png)](http://woostuff.files.wordpress.com/2010/12/styling.png)
 
 and styles applied:
 
-[caption id="attachment_377" align="alignnone" width="630" caption="Ok not that pretty but it's a demo image."][![](http://woostuff.files.wordpress.com/2010/12/styles.png)](http://woostuff.files.wordpress.com/2010/12/styles.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2010/12/styles.png)](http://woostuff.files.wordpress.com/2010/12/styles.png)
 
 Styling in QGIS is also only based on the underlying data of the object, think thematic maps in MapInfo.  I kind of like this, rather than just being able to just style an object you need to think about the data that is stored with an object.  This also stops the style and data getting out of sync.  At times I have seen maps made in MapInfo with no information on the object but  just styled to show different classes.
 
@@ -41,21 +41,21 @@ QGIS supports a large number of formats. It can open and write tab files but jus
 
 QGIS also has an interesting plugin system, while being able to use C++ and Python, the main app has a plugin installer [a plugin itself] which lets you install plugins from "hosted repositories".  This makes finding new tools with work with very easy.
 
-[caption id="attachment_378" align="alignnone" width="630" caption="Plugin installer. Very very handy."][![](http://woostuff.files.wordpress.com/2010/12/plugins.png)](http://woostuff.files.wordpress.com/2010/12/plugins.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2010/12/plugins.png)](http://woostuff.files.wordpress.com/2010/12/plugins.png)
 
 Composers are basically MapInfo layout windows, they allow you to add maps, legends, text labels, dynamic scale bar. attribute tables.  Composers can be exported to svg, pdf or printed just like layouts and you can have as many composers as you need.
 
-[caption id="attachment_379" align="alignnone" width="630" caption="A composer window for QGIS"][![](http://woostuff.files.wordpress.com/2010/12/plugins1.png)](http://woostuff.files.wordpress.com/2010/12/plugins1.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2010/12/plugins1.png)](http://woostuff.files.wordpress.com/2010/12/plugins1.png)
 
 Labeling options in QGIS are pretty much the same as MapInfo, if not more. You have the ability to use columns from a table that defines information about labels eg colour, X and Y etc if needed.
 
 But one big feature that I really like about QGIS is the info tool. Unlike MapInfos info tool, you can define per table how and what information is displayed for each column and there is no stupid Ctrl+C copy bug.  It's a bit hard to explain so a picture saves a thousand words:
 
-[caption id="attachment_380" align="alignnone" width="581" caption="Defining each how each column should be displayed."][![](http://woostuff.files.wordpress.com/2010/12/attribute.png)](http://woostuff.files.wordpress.com/2010/12/attribute.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2010/12/attribute.png)](http://woostuff.files.wordpress.com/2010/12/attribute.png)
 
 and editing or adding a new feature:
 
-[caption id="attachment_381" align="alignnone" width="350" caption="When editing or adding features this dialog is shown."][![](http://woostuff.files.wordpress.com/2010/12/editing.png)](http://woostuff.files.wordpress.com/2010/12/editing.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2010/12/editing.png)](http://woostuff.files.wordpress.com/2010/12/editing.png)
 
 For me as a developer the one thing that I find great with QGIS is it has a very kind and active developer community, though both IRC and email, and the code is relatively well organized .   I was able to pull down the source code for the latest trunk and have a build running in Ubuntu in under a hour [this mainly being due to my lack of Linux experience].   Being able to see something you don't like, change it and submit it back to the project is a very good feeling.
 
@@ -65,7 +65,7 @@ For me as a developer the one thing that I find great with QGIS is it has a very
 
 While QGIS is very good, and is always improving, it doesn't always win over MapInfo in everything.  One major thing that MapInfo has going is its SQL, being able to run the same SQL syntax over any kind of table in MapInfo is a great feature.   QGIS, in this regard, tends to leave those things up to the underlying provider.  You are able to run simple [or complex] queries on an open table but being able to do something like "Select Col1, Col2, Col3 From Table Where Col1 = "SomeCondition" Group By Col2"  isn't really there, although if you are running PostGIS it is quite easy.
 
-[caption id="attachment_384" align="alignnone" width="630" caption="QGIS Query builder."][![Query](http://woostuff.files.wordpress.com/2010/12/q.png)](http://woostuff.files.wordpress.com/2010/12/q.png)[/caption]
+[![Query](http://woostuff.files.wordpress.com/2010/12/q.png)](http://woostuff.files.wordpress.com/2010/12/q.png)
 
 The next big thing MapInfo has, is MAPBASIC.  While QGIS has a built-in Python shell and has a relatively good API, MAPBASIC is very easy language to get up to speed with especially for beginners.
 

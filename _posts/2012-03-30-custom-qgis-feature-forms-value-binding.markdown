@@ -17,7 +17,7 @@ tags:
 - Quantum GIS
 ---
 
-One thing I didn't explain very well  in my [other](2011/09/05/qgis-tips-custom-feature-forms-with-python-logic/) post was how to correctly set up value binding between your custom form and QGIS.  I didn't explain it because at the time I didn't know how.
+One thing I didn't explain very well  in my [other](/2011/09/05/qgis-tips-custom-feature-forms-with-python-logic/) post was how to correctly set up value binding between your custom form and QGIS.  I didn't explain it because at the time I didn't know how.
 
 The other day I was building a custom form QGIS for a project I am working on. I had named all the fields right, set the ui as the edit form for the layer, but only the line edits were getting bound to the correct values.
 
@@ -33,13 +33,13 @@ The other day I was building a custom form QGIS for a project I am working on. I
 
 First create the form with the controls you need, remember to name them the same as your fields.
 
-[caption id="attachment_959" align="aligncenter" width="554" caption="Custom form with controls using the same name as the fields"][![](http://woostuff.files.wordpress.com/2012/03/customform.png)](http://woostuff.files.wordpress.com/2012/03/customform.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2012/03/customform.png)](http://woostuff.files.wordpress.com/2012/03/customform.png)
 
 Note that here I have a QComboBox with the FeatureCla name, this will bind the combo box to the FeatureCla field in my dataset in QGIS.
 
 Now set the custom form as the **Edit UI **for the layer
 
-[caption id="attachment_960" align="aligncenter" width="441" caption="Set the Edit UI to your form"][![](http://woostuff.files.wordpress.com/2012/03/properties.png)](http://woostuff.files.wordpress.com/2012/03/properties.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2012/03/properties.png)](http://woostuff.files.wordpress.com/2012/03/properties.png)
 
 
 > _Tip: You can use relative paths if you store the form along side your project file_
@@ -47,7 +47,7 @@ Now set the custom form as the **Edit UI **for the layer
 
 _ _Flick to the Fields tab and set up the **Edit Widget **type for each field that you have used on the custom feature form.
 
-[caption id="attachment_961" align="aligncenter" width="504" caption="Set the Edit Widget that matches your control"][![](http://woostuff.files.wordpress.com/2012/03/fields.png)](http://woostuff.files.wordpress.com/2012/03/fields.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2012/03/fields.png)](http://woostuff.files.wordpress.com/2012/03/fields.png)
 
 I have set the **FeatueCla** field to use Unique values widget, this tells QGIS to collect all the unique values from that column and add them to the QComboBox.  There are a range of different edit widgets you can set
 
@@ -55,7 +55,7 @@ I have set the **FeatueCla** field to use Unique values widget, this tells QGIS 
 
 Save the properties and head back to you map.  Use the Identify Tool to select a feature.
 
-[caption id="attachment_963" align="aligncenter" width="577" caption="Values bound to form"][![](http://woostuff.files.wordpress.com/2012/03/form.png)](http://woostuff.files.wordpress.com/2012/03/form.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2012/03/form.png)](http://woostuff.files.wordpress.com/2012/03/form.png)
 
 [![](http://woostuff.files.wordpress.com/2012/03/values.png)](http://woostuff.files.wordpress.com/2012/03/values.png)
 

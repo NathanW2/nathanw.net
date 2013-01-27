@@ -16,47 +16,22 @@ tags:
 
 I would like to announce QMap: A simple data collection application built using QGIS and Python.
 
-
-![](http://nathanw2.github.com/qmap/images/Screen2.png)
-
+{% image https://raw.github.com/NathanW2/qmap/gh-pages/images/Screen2.png %}
+{% endimage %}
 
 QMap is a QGIS based field data collection application that was built by myself and a work college at Southern Downs Regional Council.  QMap is now opened source under the same licence as QGIS, GPLv2.  The project homepage can be found at [http://nathanw2.github.com/qmap/](http://nathanw2.github.com/qmap/) and source at [https://github.com/NathanW2/qmap](https://github.com/NathanW2/qmap).
 
 Before I go into to many more details I will preface with: The application is currently under active development and as such there might be bugs or little rough bits that I haven't cleaned up yet. However having said that, the program is functional and we are using it at work for the purpose it was built.
 
-
 ## Features
-
-
-
-
-
-	
   * Simple to use
-
-	
   * Simple to manage
-
-	
   * Simple to install
-
-	
   * Forms built using Qt Designer
-
-	
   * Loads normal QGIS projects
-
-	
   * Anything QGIS supports QMap does too (snapping, PostGIS, etc)
-
-	
   * It's just QGIS with a tablet friendlier interface.
-
-	
   * Syncing support _(MS SQL 2008 only at the moment)_
-
-
-
 
 ## The Story
 
@@ -65,23 +40,11 @@ The program was developed after we looked around and decided that nothing real
 
 We had a list of, I think simple, requirements:
 
-
-
-	
   * Must be simple to use by field staff
-
-	
-  * Can deal with complex or simple forms
-
-	
-  * Fully offline but with a syncing option
-
-	
+  * Can deal with complex or simple forms	
+  * Fully offline but with a syncing option	
   * GPS support
-
-	
   * Easy maintenance
-
 
 The first point for me is a big one.  I have a seen a lot of data collection applications and unfortunately this is where I feel a lot of them fall down.  Most seem to be designed with people like me in mind, people who understand computers, understand menu systems, etc. If you work in local government or with an older age group of outside workforce you will know that this assumption doesn't hold true.   Most of our field staff are not computer people, a few don't even have home computer, expecting them to navigate a menu just to enable the GPS, or click on a small 16x16 pixel icon, on a tablet PC is not a option.
 
@@ -97,11 +60,10 @@ Once you have tasted the open source kool aid it can be quite hard to go back. K
 ## How does it work?
 
 
-At the moment the core of the application is built as a QGIS plugin, however there is one little trick here that is worth mentioning. QMap is really a script that loads QGIS and sets the --configpath in order to load all the QGIS settings from a supplied path, inside the supplied path is the plugin. Think of it as a sandboxed QGIS which only loads the QMap plugin.  I'm also using the new customization function to remove all unneeded interface items.
+At the moment the core of the application is built as a QGIS plugin, however there is one little trick here that is worth mentioning. QMap is really a script that loads QGIS and sets the `--configpath` in order to load all the QGIS settings from a supplied path, inside the supplied path is the plugin. Think of it as a sandboxed QGIS which only loads the QMap plugin.  I'm also using the new customization function to remove all unneeded interface items.
 
 
 ## Notes
-
 
 Here are some notes worth bring up:
 

@@ -60,21 +60,21 @@ Now the trick in making a custom form for QGIS is naming the object the same as 
 
 For my custom form I only care about Segment_ID and Name, so my form looks like:
 
-[caption id="attachment_810" align="aligncenter" width="630" caption="Custom form in Qt Designer"][![](http://woostuff.files.wordpress.com/2011/09/designer.png)](http://woostuff.files.wordpress.com/2011/09/designer.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/09/designer.png)](http://woostuff.files.wordpress.com/2011/09/designer.png)
 
 _Note that I have set the read only property of the Segment ID line edit to True so that it can't be edited. I don't want people messing around with the ID._
 
 As I said above the tick is in the naming so right click on each line edit and select Change objectName, naming each line edit using the same name as the field. For me the first control is called Segment_ID and the other is called Name.
 
-[caption id="attachment_811" align="aligncenter" width="311" caption="Make sure the objects are the same name as the field."][![](http://woostuff.files.wordpress.com/2011/09/objectnaming.png)](http://woostuff.files.wordpress.com/2011/09/objectnaming.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/09/objectnaming.png)](http://woostuff.files.wordpress.com/2011/09/objectnaming.png)
 
 Save the form into a new folder, I have put mine in C:\Temp\Roads. Jump back into QGIS, load the properties dialog for the layer. Select the General tab and set Edit UI to the new form .ui file.
 
-[caption id="attachment_813" align="aligncenter" width="630" caption="Setting the edit form UI file."][![](http://woostuff.files.wordpress.com/2011/09/properties.png)](http://woostuff.files.wordpress.com/2011/09/properties.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/09/properties.png)](http://woostuff.files.wordpress.com/2011/09/properties.png)
 
 Save and exit the properties window. Enable the layer for editing (or not) and select an object with the Identify Feature tool.
 
-[caption id="attachment_812" align="aligncenter" width="630" caption="Woot! Custom edit form in QGIS."][![](http://woostuff.files.wordpress.com/2011/09/mapwithform.png)](http://woostuff.files.wordpress.com/2011/09/mapwithform.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/09/mapwithform.png)](http://woostuff.files.wordpress.com/2011/09/mapwithform.png)
 
 Magic! As I'm in edit mode any changes I make to the Name line edit will be reflected back on the layer (but not the Segment ID as it's read only). If you are in non-edit mode then you are given the custom form with everything disabled and a cancel button.
 
@@ -182,11 +182,11 @@ Now that you have a Python file with the custom validation logic we need to tell
 
 Back on the General tab in the layer properties we can set the Init function field. We set this to call the module and function we just made. The syntax is {module name}.{function name}. In my case my module (the Python file we made before) is called RoadForm and the function is called formOpen, so it will be RoadForm.formOpen.
 
-[caption id="attachment_814" align="aligncenter" width="630" caption="Set the Init function field to moduleName.functionName"][![](http://woostuff.files.wordpress.com/2011/09/propertiesupdated.png)](http://woostuff.files.wordpress.com/2011/09/propertiesupdated.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/09/propertiesupdated.png)](http://woostuff.files.wordpress.com/2011/09/propertiesupdated.png)
 
 Save and use the Identify Feature tool to select a feature. You shouldn't get any errors if everything worked ok. Now delete everything in the Name field and hit Ok.
 
-[caption id="attachment_815" align="aligncenter" width="630" caption="Validation in action"][![](http://woostuff.files.wordpress.com/2011/09/validate.png)](http://woostuff.files.wordpress.com/2011/09/validate.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/09/validate.png)](http://woostuff.files.wordpress.com/2011/09/validate.png)
 
 Sweet! The form can now not be accepted if the name field is null.
 
@@ -241,4 +241,4 @@ def Name_onTextChanged(text):
 
 The key part of of this is nameField.textChanged.connect(Name_onTextChanged) and the Name_onTextChanged(text) method. Give it a try, I think it looks quite nice.
 
-[caption id="attachment_820" align="aligncenter" width="314" caption="Change text background to red on invalid input."][![](http://woostuff.files.wordpress.com/2011/09/form.png)](http://woostuff.files.wordpress.com/2011/09/form.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/09/form.png)](http://woostuff.files.wordpress.com/2011/09/form.png)

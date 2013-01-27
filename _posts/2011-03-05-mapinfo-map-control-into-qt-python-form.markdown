@@ -51,7 +51,7 @@ app.exec_()
 
 The above code will load MapInfo and open the property layer into the Qt Widget control, with the result below.
 
-[caption id="attachment_528" align="aligncenter" width="416" caption="MapInfo map in python Qt based form "][![](http://woostuff.files.wordpress.com/2011/03/mapinfo.png)](http://woostuff.files.wordpress.com/2011/03/mapinfo.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/03/mapinfo.png)](http://woostuff.files.wordpress.com/2011/03/mapinfo.png)
 
 
 So this means you don't "always" have to write your MapInfo based apps in C# or C++; of course I already knew this as anything that can use OLE and provide a native window handle to MapInfo will work, I just never tried it.

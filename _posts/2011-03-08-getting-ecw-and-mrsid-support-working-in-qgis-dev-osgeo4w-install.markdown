@@ -64,7 +64,7 @@ You can open the OSgeo4W shell and run: _**copy "C:\Program Files\ERDAS\ERDAS EC
   9. Open a ecw
 
 
-[caption id="attachment_541" align="aligncenter" width="630" caption="ECW file opened in QGIS"][![](http://woostuff.files.wordpress.com/2011/03/ecw.png)](http://woostuff.files.wordpress.com/2011/03/ecw.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/03/ecw.png)](http://woostuff.files.wordpress.com/2011/03/ecw.png)
 
 I have tested this on a couple of machines now but as always
 

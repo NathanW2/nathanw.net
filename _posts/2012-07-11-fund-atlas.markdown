@@ -18,11 +18,11 @@ tags:
 
 Atlas is a super handy little QGIS plugin that lets you generate a map series from a composer and a coverage (grid) layer.
 
+{% image http://www.oslandia.com/tech/wp-content/uploads/2012/01/atlas_main.png %}
+{% endimage %}
 
-[![](http://www.oslandia.com/tech/wp-content/uploads/2012/01/atlas_main.png)](http://www.oslandia.com/tech/wp-content/uploads/2012/01/atlas_main.png)
-
-
-![](http://www.oslandia.com/tech/wp-content/uploads/2012/01/image_results.png)
+{% image http://www.oslandia.com/tech/wp-content/uploads/2012/01/image_results.png %}
+{% endimage %}
 
 The authors of the plugin are now looking for some funding to make it a core part of QGIS.  Making it part of QGIS would mean integration into the composer and maybe APIs for developers to add extensions.
 

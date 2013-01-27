@@ -44,7 +44,7 @@ python mapinfoToQgis.py WaterFittings.Tab WatterFittings.qml -c FittingType --Us
 
 Step 3: Load QML file in QGIS
 
-[caption id="attachment_794" align="aligncenter" width="630" caption="Result from running mapinfoToQGIS.py"][![](http://woostuff.files.wordpress.com/2011/08/qgis.png)](http://woostuff.files.wordpress.com/2011/08/qgis.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/08/qgis.png)](http://woostuff.files.wordpress.com/2011/08/qgis.png)
 
 Step 4: Get a beer?
 

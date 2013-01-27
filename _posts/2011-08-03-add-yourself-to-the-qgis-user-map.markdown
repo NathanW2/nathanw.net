@@ -17,10 +17,10 @@ tags:
 
 If your a QGIS user, and you haven't done so already, how about consider adding yourself to the QGIS user map at [http://planet.qgis.org/community-map/](http://planet.qgis.org/community-map/). So far there are 604 user mapped
 
-[caption id="attachment_776" align="aligncenter" width="512" caption="QGIS User Map"][![](http://woostuff.files.wordpress.com/2011/08/qgismap.png)](http://woostuff.files.wordpress.com/2011/08/qgismap.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/08/qgismap.png)](http://woostuff.files.wordpress.com/2011/08/qgismap.png)
 
 although Australia doesn't look like it has many users.......yet.
 
-[caption id="attachment_777" align="aligncenter" width="516" caption="QGIS user map Australia"][![](http://woostuff.files.wordpress.com/2011/08/qgisausmap.png)](http://woostuff.files.wordpress.com/2011/08/qgisausmap.png)[/caption]
+[![](http://woostuff.files.wordpress.com/2011/08/qgisausmap.png)](http://woostuff.files.wordpress.com/2011/08/qgisausmap.png)
 
 So if you are a QGIS user (full time or part time) it would be good to see your location on the user map esp if you are in Australia :)

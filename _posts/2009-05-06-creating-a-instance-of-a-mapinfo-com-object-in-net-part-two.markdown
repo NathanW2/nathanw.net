@@ -16,7 +16,7 @@ tags:
 - mapping
 ---
 
-In part two of the series [Creating a instance of a Mapinfo COM object in .NET](2009/04/01/com-instance-mapinfo-main/), I'm going to be talking about **creating an instance of Mapinfo's COM object using reflection and Activator.CreateInstace**.  This approach unlike the approach outlined in [part one](2009/04/01/com-instance-part-one/), will allow for your application to be Mapinfo version independent.
+In part two of the series [Creating a instance of a Mapinfo COM object in .NET](/2009/04/01/com-instance-mapinfo-main/), I'm going to be talking about **creating an instance of Mapinfo's COM object using reflection and Activator.CreateInstace**.  This approach unlike the approach outlined in [part one](/2009/04/01/com-instance-part-one/), will allow for your application to be Mapinfo version independent.
 
 
 ## Step 1: Creating a COM instance of Mapinfo.

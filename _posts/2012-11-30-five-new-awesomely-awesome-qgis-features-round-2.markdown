@@ -31,7 +31,11 @@ Remember that some of these features may still only be new which might change be
 
 If you are a regular user of QGIS Python plugins, and who isn't, then you would have used the awesome Atlas plugin developed by Vincent Picavet. This great tool can be used to generate mapbooks, or an atlas as some people like to say, using a coverage layer and a print composer. What makes this even more awesome is that it is now built into the print composer.
 
-[caption id="attachment_1222" align="aligncenter" width="504"][![](http://woostuff.files.wordpress.com/2012/11/atlas.png)](http://woostuff.files.wordpress.com/2012/11/atlas.png) Atlas composer intergration[/caption]
+{% image http://woostuff.files.wordpress.com/2012/11/atlas.png %}
+  title: Atlas composer intergration.
+  alt: Something descriptive
+  link: http://woostuff.files.wordpress.com/2012/11/atlas.png
+{% endimage %}
 
 The builtin atlas function also gives you the ability to use an expression to do runtime text replacement, including access to all the fields on the coverage layer.  The coverage layer doesn't even have to be a region layer, it can be a simple point layer, or even a line layer.   You can see the result of me running the atlas generation from the above example [here](http://dl.dropbox.com/u/6170988/map.pdf)
 

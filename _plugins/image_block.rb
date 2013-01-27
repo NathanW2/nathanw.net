@@ -1,3 +1,5 @@
+require 'uri'
+
 module Jekyll
   class ImageBlock < Liquid::Block
     def initialize(tag_name, filename, tokens)
@@ -39,7 +41,11 @@ module Jekyll
     end
 
     def image_url
-      "http://spparker.com/images/#{@image_name}"
+      if @image_name =~ URI::regexp
+        @image_name
+      else
+        "/images/#{@image_name}"
+      end
     end
 
     def link?

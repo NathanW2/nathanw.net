@@ -6,6 +6,7 @@ tagline: My adventures with QGIS and other GIS.
 
 <div class="posts">
   {% for post in site.posts limit:5 %}
+    {% unless post.draft %}
     <div class="post">
       <h4><a href="{{ post.url }}">{{post.title }}</a></h4>
       <small>Published: {{ post.date | date_to_long_string }}</small>
@@ -16,6 +17,7 @@ tagline: My adventures with QGIS and other GIS.
       {% endif %}
     </div>
     <hr />
+    {% endunless %}
   {% endfor %}
 </div>
 

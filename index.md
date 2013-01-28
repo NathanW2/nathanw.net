@@ -19,5 +19,6 @@ tagline: My adventures with QGIS and other GIS.
     <hr />
     {% endunless %}
   {% endfor %}
+    <h4><a href="/archive.html" title="Rocky Horror">View more in the vault</a></h4>
 </div>
 

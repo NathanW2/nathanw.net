@@ -21,6 +21,7 @@ Usage:
   {% include custom/posts_collate %}
 {% else %}
   {% for post in posts_collate  %}
+  {% unless post.draft %}
     {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
     {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
     {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
@@ -50,6 +51,7 @@ Usage:
         {% endif %}
       {% endif %}
     {% endif %}
+    {% endunless %}
   {% endfor %}
 {% endif %}
 {% assign posts_collate = nil %}

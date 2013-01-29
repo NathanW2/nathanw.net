@@ -7,7 +7,7 @@ safe: false
 #
 title : Nathan's QGIS Blog 
 name: Nathan's QGIS Blog
-url: http://nathan.net/
+url: http://nathanw.net
 description: My adventures with QGIS, FOSSGIS, and maybe some other GIS stuff
 tagline: My adventures with QGIS, FOSSGIS, and maybe some other GIS stuff
 author :
@@ -20,7 +20,7 @@ author :
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
 # Most places will/should use BASE_PATH to make the urls
-production_url : http://nathan.net/
+production_url : http://nathanw.net
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #

@@ -13,6 +13,7 @@ tagline: My adventures with QGIS and other GIS.
       {% if post.excerpt %}
 	    <div class="excerpt">
 	  	  <p>{{ post.excerpt | markdownify }}</p>
+        <a href="{{ post.url }} ">Read More</a>
 	     </div>
       {% endif %}
     </div>

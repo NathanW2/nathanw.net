@@ -29,7 +29,7 @@ From github.com:qgis/Quantum-GIS
    18cd145..89bdb10  master     -> upstream/master
 {% endhighlight %}
 
-Now that we have the changes in our local repo we need to bring our master branch up to date with the latest changes from upstream`.  I use `rebase` here because I don't want to see `merge master into master etc etc` each time I want to bring my master branch up to date. In the end I want my local `master` branch to reflect `upstream/master` exactly  
+Now that we have the changes in our local repo we need to bring our master branch up to date with the latest changes from upstream.  I use `rebase` here because I don't want to see `merge master into master etc etc` each time I want to bring my master branch up to date. In the end I want my local `master` branch to reflect `upstream/master` exactly  
 
 {% highlight bash %}
 $ git rebase upstream/master
@@ -37,7 +37,7 @@ First, rewinding head to replay your work on top of it...
 Fast-forwarded master to upstream/master.
 {% endhighlight %}
 
-* Note: You can combine the two into one call using: `git pull upstream master --rebase` *
+*Note: You can combine the two into one call using: `git pull upstream master --rebase`*
 
 In order to do any work in git you should really be using branches.  We can check a new one out using:
 
@@ -64,7 +64,7 @@ $ git commit -a -m "bug fix"
 [working 211e387] bug fix
 {% endhighlight %}
 
-* Note: The `-a` means add any changed files to the commit. You can also use `git add`. I'm trusting you already understand how to add files to a commit. *
+*Note: The `-a` means add any changed files to the commit. You can also use `git add`. I'm trusting you already understand how to add files to a commit.*
 
 Now at this point I could merge my changes into the `master` branch and push it up, or if you don't have commit rights you can issue a pull request. However having heaps of "fix this", "fix that" commits is pretty ugly.  This is where git rebase can come in handy.
 
@@ -87,7 +87,7 @@ There we can see we have four commits that differ and that `8cd2f4b` is the firs
 $ git rebase -i 8cd2f4b^
 {% endhighlight %}
 
-* Note: `^` means go back one commit from the one listed.  git rebase doesn't include the commit that you list so you have to go back one before it. *
+*Note: `^` means go back one commit from the one listed.  git rebase doesn't include the commit that you list so you have to go back one before it.*
 
 {% highlight bash %}
 pick 8cd2f4b Add some feature
@@ -128,4 +128,4 @@ At this point I normally merge it into master and push it upstream, but if you d
 $ git push myrepo working
 {% endhighlight %}
 
-<div class="alert alert-block"><h4>Important Note:</h4> <p>git rebase -i will change the commit hash for anything that is included in the range of commits. Make sure you only rebase commits that isn't public yet. Only rebase commits that in your local repo.</p></div>
+<div class="alert alert-block"><h4>Important Note:</h4> git rebase -i will change the commit hash for anything that is included in the range of commits. Make sure you only rebase commits that are not public yet. Only rebase commits that in your local repo.</div>

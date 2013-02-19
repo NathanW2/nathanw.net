@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-10-08 23:12:04
+
 layout: post
 slug: foss4g-au-un-conference
 title: FOSS4G-AU un-conference

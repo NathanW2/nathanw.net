@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2009-04-01 16:56:55
+
 layout: post
 slug: com-instance-part-one
 title: Creating an instance of a Mapinfo COM object in .NET - Part One

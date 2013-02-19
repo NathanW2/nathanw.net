@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-09-27 16:35:31
+
 layout: post
 slug: generating-contours-using-gdal-via-shell-or-qgis
 title: 'Generating contours using GDAL ( via shell or QGIS)   '

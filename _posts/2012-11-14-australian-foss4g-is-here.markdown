@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-11-14 15:23:11
+
 layout: post
 slug: australian-foss4g-is-here
 title: Australian FOSS4G is here

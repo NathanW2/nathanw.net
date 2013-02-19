@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-11-20 14:32:06
+
 layout: post
 slug: foss4g-au-in-summary
 title: FOSS4G-AU in summary

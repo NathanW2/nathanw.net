@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2013-01-06 16:44:12
+
 layout: post
 slug: qgis-manuals
 title: New QGIS PDF and HTML manuals

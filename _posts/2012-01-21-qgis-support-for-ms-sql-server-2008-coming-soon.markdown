@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-01-21 10:22:39
+
 layout: post
 slug: qgis-support-for-ms-sql-server-2008-coming-soon
 title: QGIS support for MS SQL Server 2008 - Coming Soon!

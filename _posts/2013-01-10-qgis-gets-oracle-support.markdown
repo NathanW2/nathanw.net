@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2013-01-10 09:06:12
+
 layout: post
 slug: qgis-gets-oracle-support
 title: QGIS gets Oracle support!

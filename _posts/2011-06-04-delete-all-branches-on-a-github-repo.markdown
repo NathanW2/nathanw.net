@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-06-04 21:35:13
+
 layout: post
 slug: delete-all-branches-on-a-github-repo
 title: Delete all branches on a github repo

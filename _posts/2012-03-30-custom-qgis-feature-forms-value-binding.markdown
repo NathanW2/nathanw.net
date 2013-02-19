@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-03-30 10:08:31
+
 layout: post
 slug: custom-qgis-feature-forms-value-binding
 title: Custom QGIS feature forms - Value Binding

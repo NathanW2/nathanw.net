@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-07-22 23:22:03
+
 layout: post
 slug: qgis-style-tricks-using-styles-to-help-fix-kerb-line-directions
 title: 'QGIS Style Tricks: Using styles to help fix kerb line directions'

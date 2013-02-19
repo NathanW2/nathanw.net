@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-06-13 16:45:13
+
 layout: post
 slug: new-qgis-training-provider-in-australia-digital-mapping-solutions
 title: New QGIS Training Provider in Australia -  Digital Mapping Solutions

@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-04-07 23:12:10
+
 layout: post
 slug: using-python-and-mapinfo-with-callbacks
 title: Using Python and MapInfo with Callbacks

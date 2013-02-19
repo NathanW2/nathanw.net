@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2010-05-04 13:43:14
+
 layout: post
 slug: new-mapinfo-pro-tool-window-manager
 title: New MapInfo Pro Tool - Window Manager

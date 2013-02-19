@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-03-05 21:59:40
+
 layout: post
 slug: mapinfo-map-control-into-qt-python-form
 title: MapInfo map control into Qt Python form

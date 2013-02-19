@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2009-02-24 23:55:36
+
 layout: post
 slug: commands-to-a-mbx-program
 title: Sending commands to a Mapbasic(.MBX) program from .NET

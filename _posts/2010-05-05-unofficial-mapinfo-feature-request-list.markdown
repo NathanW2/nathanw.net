@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2010-05-05 15:27:59
+
 layout: post
 slug: unofficial-mapinfo-feature-request-list
 title: Unofficial MapInfo feature request list - Updated Again!

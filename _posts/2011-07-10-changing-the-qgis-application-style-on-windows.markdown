@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-07-10 11:26:55
+
 layout: post
 slug: changing-the-qgis-application-style-on-windows
 title: Changing the QGIS application style on Windows

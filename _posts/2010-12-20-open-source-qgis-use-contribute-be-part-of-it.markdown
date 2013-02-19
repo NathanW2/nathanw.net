@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2010-12-20 15:44:26
+
 layout: post
 slug: open-source-qgis-use-contribute-be-part-of-it
 title: Open Source QGIS - Use, Contribute, Be part of it.

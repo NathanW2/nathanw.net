@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-08-04 13:48:16
+
 layout: post
 slug: qgis-edit-tools-brainstorming
 title: QGIS edit tools brainstorming or What edit tools should QGIS have?

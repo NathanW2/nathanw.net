@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2013-01-18 22:38:30
+
 layout: post
 slug: quick-tip-using-coalesce-to-check-for-null-or-zero
 title: 'Quick Tip: Using coalesce to check for NULL or zero'

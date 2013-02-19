@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2010-02-19 16:19:00
+
 layout: post
 slug: embedding-the-whole-mapinfo-application-in-a-net-form
 title: 'Embedding the whole Mapinfo application in a .Net form. '

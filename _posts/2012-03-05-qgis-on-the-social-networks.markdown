@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-03-05 09:25:28
+
 layout: post
 slug: qgis-on-the-social-networks
 title: QGIS on the social networks

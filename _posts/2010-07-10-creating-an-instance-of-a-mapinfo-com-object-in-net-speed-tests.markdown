@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2010-07-10 22:24:27
+
 layout: post
 slug: creating-an-instance-of-a-mapinfo-com-object-in-net-speed-tests
 title: Creating an instance of a MapInfo COM object in .NET – Speed Tests

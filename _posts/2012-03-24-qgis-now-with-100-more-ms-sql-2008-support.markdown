@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-03-24 08:54:41
+
 layout: post
 slug: qgis-now-with-100-more-ms-sql-2008-support
 title: QGIS now with 100% more MS SQL Server 2008 support

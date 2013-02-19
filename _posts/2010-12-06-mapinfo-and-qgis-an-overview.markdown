@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2010-12-06 11:49:47
+
 layout: post
 slug: mapinfo-and-qgis-an-overview
 title: MapInfo and QGIS - An overview

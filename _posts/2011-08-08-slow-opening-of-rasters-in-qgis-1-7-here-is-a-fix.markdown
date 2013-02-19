@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-08-08 08:48:26
+
 layout: post
 slug: slow-opening-of-rasters-in-qgis-1-7-here-is-a-fix
 title: Slow opening of rasters in QGIS 1.7? Here is a fix.

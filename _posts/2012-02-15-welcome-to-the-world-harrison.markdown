@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-02-15 21:24:59
+
 layout: post
 slug: welcome-to-the-world-harrison
 title: Welcome to the world Harrison!

@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2013-01-04 16:28:53
+
 layout: post
 slug: using-a-qgis-spatial-index-to-speed-up-your-code
 title: Using a QGIS spatial index to speed up your code

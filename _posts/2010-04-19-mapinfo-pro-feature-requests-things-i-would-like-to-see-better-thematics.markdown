@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2010-04-19 14:05:28
+
 layout: post
 slug: mapinfo-pro-feature-requests-things-i-would-like-to-see-better-thematics
 title: MapInfo Pro Feature Requests - Things I would like to see - Better thematics

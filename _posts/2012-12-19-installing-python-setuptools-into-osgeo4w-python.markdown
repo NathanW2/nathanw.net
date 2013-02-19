@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-12-19 23:42:18
+
 layout: post
 slug: installing-python-setuptools-into-osgeo4w-python
 title: Installing Python setuptools into OSGeo4W Python

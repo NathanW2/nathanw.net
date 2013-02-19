@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-06-24 16:29:44
+
 layout: post
 slug: another-cool-open-source-project-osgeo-live
 title: Another cool open source project - OSGeo-Live

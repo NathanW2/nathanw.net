@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-11-30 01:03:49
+
 layout: post
 slug: five-new-awesomely-awesome-qgis-features-round-2
 title: Five new awesomely awesome QGIS features - Round 2

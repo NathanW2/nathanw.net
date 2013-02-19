@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-01-30 12:44:58
+
 layout: post
 slug: a-new-qgis-plugin-python-script-runner
 title: 'A new QGIS plugin: Python Script Runner'

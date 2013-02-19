@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-10-08 13:23:55
+
 layout: post
 slug: qgis-training-in-brisbane-and-other-places-in-australia
 title: QGIS Training in Brisbane (and other places in Australia)

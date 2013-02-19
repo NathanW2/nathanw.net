@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-06-19 23:26:13
+
 layout: post
 slug: fresh-off-the-press-qgis-1-7-is-released
 title: Fresh off the press - QGIS 1.7 is released!

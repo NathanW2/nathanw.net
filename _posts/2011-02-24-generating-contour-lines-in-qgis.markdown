@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-02-24 17:00:21
+
 layout: post
 slug: generating-contour-lines-in-qgis
 title: Generating contour lines in QGIS

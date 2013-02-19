@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-06-23 01:08:24
+
 layout: post
 slug: styling-temporal-time-data-in-qgis
 title: Styling temporal (time) data in QGIS

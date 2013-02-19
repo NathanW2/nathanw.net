@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-01-25 14:54:23
+
 layout: post
 slug: improvements-to-the-qgis-rule-based-rendering
 title: 'Improvements to the QGIS rule based rendering  '

@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-08-05 21:35:17
+
 layout: post
 slug: html-map-tips-in-qgis
 title: HTML map tips in QGIS

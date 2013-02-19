@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-03-13 22:44:45
+
 layout: post
 slug: opening-ms-sql-spatial-in-qgis
 title: Opening MS SQL Server 2008 Spatial tables in QGIS

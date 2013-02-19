@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-03-08 14:23:31
+
 layout: post
 slug: getting-ecw-and-mrsid-support-working-in-qgis-dev-osgeo4w-install
 title: Getting ECW and MrSID support working in QGIS dev OSGeo4W install

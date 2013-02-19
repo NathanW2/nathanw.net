@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-05-17 23:26:28
+
 layout: post
 slug: the-things-i-would-like-to-see-in-qgis-what-are-yours
 title: The things I would like to see in QGIS.  What are yours?

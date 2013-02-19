@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-08-07 14:39:11
+
 layout: post
 slug: dont-forget-to-migrate-your-qgis-plugins
 title: Don't forget to migrate your QGIS plugins!

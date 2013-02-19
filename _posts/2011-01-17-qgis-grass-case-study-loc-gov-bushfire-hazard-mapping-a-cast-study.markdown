@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-01-17 08:25:37
+
 layout: post
 slug: qgis-grass-case-study-loc-gov-bushfire-hazard-mapping-a-cast-study
 title: QGIS and GRASS in Local Government Bushfire Hazard Mapping - A Case Study

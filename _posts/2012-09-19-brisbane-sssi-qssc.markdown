@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-09-19 22:10:00
+
 layout: post
 slug: brisbane-sssi-qssc
 title: Brisbane SSSI QSSC

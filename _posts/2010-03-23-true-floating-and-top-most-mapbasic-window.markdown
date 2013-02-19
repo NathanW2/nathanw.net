@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2010-03-23 20:28:41
+
 layout: post
 slug: true-floating-and-top-most-mapbasic-window
 title: True floating and top most Mapbasic window.

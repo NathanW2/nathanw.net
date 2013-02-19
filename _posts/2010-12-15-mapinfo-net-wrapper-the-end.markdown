@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2010-12-15 22:51:04
+
 layout: post
 slug: mapinfo-net-wrapper-the-end
 title: MapInfo .Net Wrapper - The End...

@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-01-03 18:59:54
+
 layout: post
 slug: generating-a-gource-source-commit-history-visualization-for-qgis-quantum-gis
 title: Generating a Gource source commit history visualization for QGIS (Quantum GIS)

@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-06-06 09:10:04
+
 layout: post
 slug: one-of-my-favorite-features-of-qgis
 title: One of my favorite features of QGIS - Rule based styling.

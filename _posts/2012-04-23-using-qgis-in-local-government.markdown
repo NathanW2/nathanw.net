@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-04-23 10:54:22
+
 layout: post
 slug: using-qgis-in-local-government
 title: 'Using QGIS in local government '

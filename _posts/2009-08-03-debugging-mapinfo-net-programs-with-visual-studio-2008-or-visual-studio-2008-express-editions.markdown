@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2009-08-03 14:34:48
+
 layout: post
 slug: debugging-mapinfo-net-programs-with-visual-studio-2008-or-visual-studio-2008-express-editions
 title: Debugging MapInfo .Net Programs with Visual Studio 2008 or Visual Studio 2008

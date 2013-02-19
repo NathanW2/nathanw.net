@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-08-23 15:01:10
+
 layout: post
 slug: australian-qgis-user-group
 title: Australian QGIS User Group

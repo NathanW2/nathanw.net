@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-06-30 22:46:23
+
 layout: post
 slug: better-date-and-time-support-in-qgis-expressions-and-styles
 title: Better date and time support in QGIS expressions and styles

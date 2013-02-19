@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-07-07 22:42:30
+
 layout: post
 slug: browser-wars-qgis-vs-mapinfo-11
 title: 'Browsers: QGIS vs MapInfo 11'

@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-11-10 16:38:39
+
 layout: post
 slug: user-defined-expression-functions-for-qgis
 title: 'User defined expression functions for QGIS '

@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2009-01-21 08:35:04
+
 layout: post
 slug: wpfmapinfo
 title: Showing a WPF form in Mapinfo 9.5.

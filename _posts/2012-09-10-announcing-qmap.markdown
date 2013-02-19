@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-09-10 07:50:52
+
 layout: post
 slug: announcing-qmap
 title: 'Announcing QMap: A simple data collection application using QGIS   '

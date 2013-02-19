@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-08-08 16:39:06
+
 layout: post
 slug: new-tool-mapinfo-to-qgis-style-converter
 title: 'New Tool: MapInfo to QGIS style converter'

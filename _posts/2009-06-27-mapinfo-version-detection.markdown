@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2009-06-27 14:50:21
+
 layout: post
 slug: mapinfo-version-detection
 title: MapInfo version detection.

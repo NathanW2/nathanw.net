@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-02-08 20:10:15
+
 layout: post
 slug: picture-mapinfo-to-qgis-styling
 title: 'Picture:  MapInfo to QGIS Styling'

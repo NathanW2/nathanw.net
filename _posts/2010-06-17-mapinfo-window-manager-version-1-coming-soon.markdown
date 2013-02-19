@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2010-06-17 14:32:03
+
 layout: post
 slug: mapinfo-window-manager-version-1-coming-soon
 title: MapInfo Window Manager Version 1 - Coming Soon!

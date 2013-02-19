@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-08-05 19:36:01
+
 layout: post
 slug: generating-chainage-distance-nodes-in-qgis
 title: Generating chainage (distance) nodes in QGIS

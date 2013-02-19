@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-06-25 10:45:25
+
 layout: post
 slug: a-qgis-user-poll
 title: A QGIS user poll

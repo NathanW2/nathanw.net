@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-07-11 00:07:59
+
 layout: post
 slug: fund-atlas
 title: Like the super handy Atlas QGIS plugin? Want to see it as a core part of QGIS?

@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-08-03 15:32:50
+
 layout: post
 slug: add-yourself-to-the-qgis-user-map
 title: Add yourself to the QGIS user map

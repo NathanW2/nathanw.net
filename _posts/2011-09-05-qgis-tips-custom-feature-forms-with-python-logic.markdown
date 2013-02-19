@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-09-05 10:08:42
+
 layout: post
 slug: qgis-tips-custom-feature-forms-with-python-logic
 title: QGIS Tips - Custom feature forms with Python logic

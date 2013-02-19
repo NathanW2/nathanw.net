@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-05-05 08:55:10
+
 layout: post
 slug: 3d-dxf-using-ogr
 title: '3D DXF from MapInfo Tab or ESRI Shape (or anything) using OGR '

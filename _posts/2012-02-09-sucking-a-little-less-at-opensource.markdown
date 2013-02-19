@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2012-02-09 11:58:04
+
 layout: post
 slug: sucking-a-little-less-at-opensource
 title: Sucking a little less at Software and Open Source

@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-09-23 17:35:50
+
 layout: post
 slug: visualizing-qgis-code-activity-between-1-6-and-1-7-video
 title: Visualizing QGIS code activity between 1.6 and 1.7 - Video

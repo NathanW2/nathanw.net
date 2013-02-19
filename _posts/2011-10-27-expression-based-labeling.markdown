@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-10-27 08:59:31
+
 layout: post
 slug: expression-based-labeling
 title: Expression based labeling now in QGIS.

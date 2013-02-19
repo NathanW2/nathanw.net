@@ -1,6 +1,6 @@
 ---
 comments: true
-date: 2011-02-23 18:13:51
+
 layout: post
 slug: total-length-of-selected-objects-qgis-via-python
 title: Getting total length of selected lines in QGIS via python

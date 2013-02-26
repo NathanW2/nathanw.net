@@ -1,10 +1,7 @@
 ---
-comments: true
-date: 2008-09-02 11:19:06
 layout: page
 slug: aboutme
-title: About Me
-wordpress_id: 2
+title: Who am I?
 ---
 
-About me hey, well, I'm a QGIS core developer living in Australia and working for a local government.
+My name is Nathan I'm a QGIS developer, OSGeo advocate, and general open source lover. I live in Australia and work in local government. I'm quite passionate - maybe sometimes too much - about promoting and developing open source GIS projects.

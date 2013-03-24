@@ -40,6 +40,13 @@ module JB
   end #Path
 end #JB
 
+task :runwindows do
+    puts '* Changing the codepage'
+    `chcp 65001`
+    puts '* Running Jekyll'
+    `jekyll --server --auto`
+end
+
 # Usage: rake post title="A Title" [date="2012-02-09"]
 desc "Begin a new post in #{CONFIG['posts']}"
 task :post do

@@ -50,7 +50,7 @@ I am a big fan Scott Hanselman and this post was inspired by his [2011 Ultimate 
 [IL]: http://52north.org/communities/ilwis
 [PG]: http://postgis.net/
 [2008]: http://www.microsoft.com/en-au/download/details.aspx?id=1695
-[intrmaps]: http://www.mapsolutions.com.au/intramaps.aspx
+[intramaps]: http://www.mapsolutions.com.au/intramaps.aspx
 
 - [QGIS][QGIS] : Obviously
 
@@ -110,7 +110,7 @@ I am a big fan Scott Hanselman and this post was inspired by his [2011 Ultimate 
 
 - [GitHub][github] : I really like GitHub it really does add a nice social experience to development that most sites fail on.
 
-- [gis.stackexchange.com][gis] : Personally I really think this guys hit the nail on the head when building this Q&A site. I try to spend as much time as I can on here answering QGIS questions.
+- [gis.stackexchange.com][gis] : Personally I really think they hit the nail on the head when building this Q&A site. I try to spend as much time as I can on here answering QGIS questions.
 
 If anyone has anything extra they can recommend feel free to leave a comment. 
 

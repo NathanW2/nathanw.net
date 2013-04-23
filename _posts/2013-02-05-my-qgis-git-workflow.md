@@ -5,7 +5,6 @@ description: ""
 category: git
 tags: [git qgis]
 ---
-{% include JB/setup %}
 
 {% excerpt %}
 I thought it might be handy to post the git workflow that I use when working on QGIS, or any project for that matter.

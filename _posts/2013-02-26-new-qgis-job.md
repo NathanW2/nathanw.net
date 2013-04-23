@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [qgis]
 ---
-{% include JB/setup %}
 
 {% excerpt %}
 

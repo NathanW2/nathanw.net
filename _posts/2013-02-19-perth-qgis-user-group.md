@@ -5,7 +5,6 @@ description: ""
 category: qgis
 tags: [qgis georabble]
 ---
-{% include JB/setup %}
 
 {% excerpt %}
 

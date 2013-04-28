@@ -38,7 +38,7 @@ Presentations
 
 There was a great mix of users, even a few non users keen to check QGIS out for the first time.  I was extremely happy with how both days turned out and the feedback so far has been fantastic.  A massive thanks must go to [DMS](http://www.mapsolutions.com.au/) who sponsored both events.
 
-{% image users.png %}
+{% image users.jpg %}
 {% endimage %}
 
 I also thought I might give filming and screen recording my workshop a go. Seemed to turn out alright, for a first attempt anyway.  A few mistakes here and there but live things never go 100% :)

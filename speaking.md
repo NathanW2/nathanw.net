@@ -2,9 +2,10 @@
 layout: page
 title: "Speaking and Workshops"
 description: "A quick list of any of the QGIS talks or workshops I have given"
+tagline: "A quick list of any of the QGIS talks or workshops I have given"
 ---
 
-Just a quick list of any of the talks or workshops I have given.  Be warned I am not a professinal speaker just a dude that loves talking about QGIS and GIS.
+Be warned I am not a professinal speaker, just a dude that loves talking about QGIS and GIS.
 
 <table class="table table-hover">
 	<tr>

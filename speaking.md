@@ -16,12 +16,12 @@ Be warned I am not a professinal speaker, just a dude that loves talking about Q
 	<tr>
 	<td>15/03/2013</td>
 	<td>All the New Cool Stuff in QGIS 2.0</td>
-	<td><small>Coming</small></td>
+	<td><a href="http://www.slideshare.net/nathanwoodrow/all-the-new-cool-stuff-in-qgis-20#">Slides</a></td>
 	</tr>
 	<tr>
 	<td>18/04/2013</td>
 	<td>All the New Cool Stuff in QGIS 2.0</td>
-	<td><small>Coming</small></td>
+	<td><a href="http://www.slideshare.net/nathanwoodrow/all-the-new-cool-stuff-in-qgis-20#">Slides</a></td>
 	</tr>
 	<tr>
 	<td>18/04/2013</td>

@@ -33,6 +33,11 @@ Be warned I am not a professinal speaker, just a dude that loves talking about Q
 	<td>Custom QGIS Forms</td>
 	<td><a href="http://www.youtube.com/watch?v=Z84GMcQV3EM">Video</a></td>
 	</tr>
+	<tr>
+	<td>8/05/2013</td>
+	<td>How does it work? QGIS - The Open Source Model</td>
+	<td><a href="http://www.slideshare.net/nathanwoodrow/how-does-it-work-20828530">Sldies</a></td>
+	</tr>
 </table>
 
 {% include JB/setup %}

@@ -44,7 +44,7 @@ task :runwindows do
     puts '* Changing the codepage'
     `chcp 65001`
     puts '* Running Jekyll'
-    `jekyll --server --auto`
+    `jekyll serve`
 end
 
 # Usage: rake post title="A Title" [date="2012-02-09"]

@@ -18,68 +18,72 @@ Thanks to good ol' Python we can just monkey patch it right on.
 def mapping_feature(feature):
     geom = feature.geometry()
     properties = {}
-    fields = feature.fields()
-    for index, attr in enumerate(feature.attributes()):
-        name = fields[index].name()
-        properties[name] = attr
-        
+    fields = [field.name() for field in feature.fields()]
+    properties = dict(zip(fields, feature.attributes()))
     return { 'type' : 'Feature',
              'properties' : properties,
-             'geometry' : geom.__geo_interface__()}
+             'geometry' : geom.__geo_interface__}
 
 def mapping_geometry(geometry):
-    geo = feature.geometry().exportToGeoJSON()
+    geo = geometry.exportToGeoJSON()
     # We have to use eval because exportToGeoJSON() gives us
     # back a string that looks like a dictionary. 
     return eval(geo)
 
-from types import MethodType
-QgsGeometry.__geo_interface__ = MethodType(mapping_geometry, None, QgsGeometry)
-QgsFeature.__geo_interface__ = MethodType(mapping_feature, None, QgsFeature)
+QgsFeature.__geo_interface__ = property(lambda self: mapping_feature(self))
+QgsGeometry.__geo_interface__ = property(lambda self: mapping_geometry(self))
 {% endhighlight %}
 
 And that's that. Easy hey. Really got to love dynamic languages. 
 
-The `__geo_interface__` method will now exists on any instance of `QgsGeometry` or `QgsFeature`.  Lets test that theory.
+The `__geo_interface__` property now exists on any instance of `QgsGeometry` or `QgsFeature`.  Lets test that theory.
 
 {% highlight python %}
+>>> import pprint
 >>> layer = iface.activeLayer()
 >>> feature = layer.selectedFeatures()[0]
->>> feature.__geo_interface__()
-{'geometry': {'type': 'Point', 'coordinates': [388197.74503284, 6450504.16670842]}, 'type': 'Feature', 'properties': {u'court_acti': None, u'autoid': 0, u'userid': None, u'number': 0.0, u'datetime': None, u'building_l': None, u'totally_is': None, u'issue_date': u'1998-12-23', u'property_n': u'1103182', u'water_qual': None, u'pool_posit': u'CENTRE REAR', u'next_insp_': None, u'string': None, u'insp_form_': None, u'fence_type': None, u'dogs_on_pr': None, u'suburb': None, u'skimmer_bo': None, u'date': None, u'picklist': None, u'multitext': None, u'last_insp_': None, u'pool_licen': u'98167', u'pool_type': u'FIBREGLASS', u'map_key': 324548, u'boolean': u'F'}}
->>> feature.geometry().__geo_interface__()
+>>> feature.__geo_interface__
+>>> pprint.pprint(f.__geo_interface__)
+{'geometry': {'coordinates': [[[385039.90567724, 6449154.61878853],
+                               [385059.01135993, 6449154.80874077],
+                               [385059.41538719, 6449114.58680192],
+                               [385040.30145863, 6449114.38685169],
+                               [385040.16953133, 6449127.46423076],
+                               [385039.90567724, 6449154.61878853]]],
+              'type': 'Polygon'},
+ 'properties': {u'address': u'HYNES WY',
+                u'assessment': u'2204315',
+                u'bool': u'F',
+                u'dola_pin': 283678,
+                u'field18': 2920,
+                u'field19': 0.0,
+                u'house_numb': u'3',
+                u'location': None,
+                u'lot': u'LOT 107',
+                u'new': None,
+                u'old': u'http://www.seabreeze.com.au|mylink',
+                u'paid_in_fu': u'F',
+                u'pin_string': u'283678',
+                u'postcode': u'6163',
+                u'reserve': None,
+                u'sample_dat': u'2003-05-15',
+                u'subdivided': None,
+                u'suburb': u'HAMILTON HILL',
+                u'suburb_wit': u'HAMILTON HILL',
+                u'type': u'H',
+                u'v_auto_dat': None,
+                u'v_auto_use': None,
+                u'v_boolean': None,
+                u'v_datetime': None,
+                u'v_decimal': None,
+                u'v_int': None,
+                u'v_numeric': None,
+                u'v_varcha_1': None,
+                u'v_varchar': None,
+                u'v_varchar_': None},
+ 'type': 'Feature'}
+>>> feature.geometry().__geo_interface__
 {'type': 'Point', 'coordinates': [388197.74503284, 6450504.16670842]}
 {% endhighlight %}
 
 Excellent!
-
-
-## Some extra info
-
-If you have never seen this kind of voodoo `MethodType` magic before:
-
-{% highlight python %}
-def mapping_geometry(geometry):
-	...
-
-def mapping_feature(feature):
-	...
-
-from types import MethodType
-QgsGeometry.__geo_interface__ = MethodType(mapping_geometry, None, QgsGeometry)
-QgsFeature.__geo_interface__ = MethodType(mapping_feature, None, QgsFeature)
-{% endhighlight %}
-
-This is adding the `__geo_interface__` method onto the class `QgsGeomtry` and `QgsFeature` and mapping it to the `mapping_geometry` and `mapping_feature` methods respectively.  Each `mapping` function is passed the instance of the class they are bound to when called.  In the end it would be the same as if we had defined `QgsGeomtry` in Python like so:
-
-{% highlight python %}
-class QgsGeometry():
-	def mapping_geometry(self):
-		...
-{% endhighlight %}
-
-Again, <3 Python
-
-
-
-

@@ -1,44 +1,41 @@
----
-theme :
-  name : twitter
----
-{% include JB/setup %}
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    <meta name="author" content="{{ site.author.name }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/pygments.css" rel="stylesheet">
-    <link href="/assets/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
-      _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
-      _gaq.push(['_setAccount', 'UA-5231515-7']);
-      _gaq.push(['_setDomainName', 'nathanw.net']);
-      _gaq.push(['_trackPageview']);
+  {% include head.html %}
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-  </head>
+  <body class="theme-base-0d" >
 
-  <body>
-    <div class="container-fluid">
+    <header class="masthead">
+      <div class="masthead-inner">
+        <h1><a href="/index.html" title="{{ site.title }}">{{ site.title }}</a></h1>
+        <p class="lead">{{ site.description }}</p>
+
+        <div class="colophon">
+          <ul class="colophon-links">
+            <li>
+              View one from the <a href="/archive.html" title="Rocky Horror">vault</a>
+            </li>
+            <li>
+              <a href="/speaking.html">Speaking and workshops</a>
+            </li>
+            <li>
+              <a href="/aboutme.html" title="About Me">About Me</a>
+            </li>
+            <li>
+              <a href="/disclaimer.html" title="Disclaimer">Disclaimer</a>
+            </li>
+            <li>
+            <a href="/feed.xml">Post Feed</a>
+            </li>
+          </ul>
+          <p>&copy; 2014. {{ site.author.name }} All rights reserved.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="content container">
       {{ content }}
-      <footer align="center" >
-            <p>&copy; {{ site.author.name }} 2013 </a></p>
-      </footer>
     </div>
+
   </body>
 </html>

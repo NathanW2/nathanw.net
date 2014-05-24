@@ -47,6 +47,19 @@ task :runwindows do
     `jekyll serve`
 end
 
+task :build do
+    puts '* Building'
+    `chcp 65001`
+    `jekyll build`
+end
+
+task :push do
+    puts '* Pushing'
+    `chcp 65001`
+    `jekyll build`
+    `s3_website push`
+end
+
 # Usage: rake post title="A Title" [date="2012-02-09"]
 desc "Begin a new post in #{CONFIG['posts']}"
 task :post do

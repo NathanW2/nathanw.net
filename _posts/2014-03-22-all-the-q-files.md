@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What are all these QGIS file type. And why do I need them"
+title: "What are all these QGIS file types? Why do I need them"
 tagline: "or: Lions and tigers and bears! Oh my!"
 description: "QML, QLR, QGS. What are all these different files?"
 category: 

@@ -6,14 +6,14 @@ category:
 tags: [qgis style]
 ---
 
-{% excerpt %}
+
 
 Here is a preview of a new cool feature coming in QGIS 2.0. Alpha channel in colour ramps.
 
 {% image ramp.png %}
 {% endimage %}
 
-{% endexcerpt %}
+
 
 Fancy!
 

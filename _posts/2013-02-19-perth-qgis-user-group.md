@@ -6,7 +6,7 @@ category: qgis
 tags: [qgis georabble]
 ---
 
-{% excerpt %}
+
 
 I have a feeling this year is going to be a interesting one for QGIS in Australia. What's a better way then to start the year of with two great events on the same day in Perth, Australia. A QGIS User Forum/Group, and the regular Perth GeoRabble 
 
@@ -14,7 +14,7 @@ I have a feeling this year is going to be a interesting one for QGIS in Australi
 
 	Inaugural Australian QGIS Forum
 	 
-	Digital Mapping Solutions is pleased to support, what will hopefully be, the first of many inspiring QGIS user forums. The goal for this event is to provide a casual environment where people can see QGIS in action as well as discuss and share their QGIS experiences and thoughts. The event will feature a variety of real-world demonstrations by QGIS users from a cross-section of industries. {% endexcerpt %} There will also be a presentation by Nathan Woodrow, an active member of the open source GIS community, developer on the QGIS project and an OSGeo advocate.  Finally, there will be plenty of time for discussion during the presentations and networking over lunch. Whether you are already a QGIS user who is looking for an opportunity to share your experiences with others or if you are a potential user who is curious as to how QGIS can enhance your GIS toolkit, this is the event for you.
+	Digital Mapping Solutions is pleased to support, what will hopefully be, the first of many inspiring QGIS user forums. The goal for this event is to provide a casual environment where people can see QGIS in action as well as discuss and share their QGIS experiences and thoughts. The event will feature a variety of real-world demonstrations by QGIS users from a cross-section of industries.  There will also be a presentation by Nathan Woodrow, an active member of the open source GIS community, developer on the QGIS project and an OSGeo advocate.  Finally, there will be plenty of time for discussion during the presentations and networking over lunch. Whether you are already a QGIS user who is looking for an opportunity to share your experiences with others or if you are a potential user who is curious as to how QGIS can enhance your GIS toolkit, this is the event for you.
 	 
 	Event Details
 	Date and Times

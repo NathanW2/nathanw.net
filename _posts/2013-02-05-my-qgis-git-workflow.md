@@ -6,7 +6,7 @@ category: git
 tags: [git qgis]
 ---
 
-{% excerpt %}
+
 I thought it might be handy to post the git workflow that I use when working on QGIS, or any project for that matter.
 
 In the following examples `upstream = https://github.com/qgis/Quantum-GIS.git`.  If you have cloned from your github fork of QGIS you can add `upstream` using:
@@ -16,7 +16,7 @@ $ git remote add upstream https://github.com/qgis/Quantum-GIS.git
 {% endhighlight %}
 
 The first thing we need to do is pull down the latest changes from the main QGIS repo aka `upstream` 
-{% endexcerpt %}
+
 
 {% highlight bash %}
 $ git fetch upstream

@@ -6,7 +6,7 @@ category:
 tags: [python]
 ---
 
-{% excerpt %}
+
 
 [Sean Gillies](http://sgillies.net/) has managed to get me addicted to using generators, itertools, map, filter, and a generally more [declarative](http://latentflip.com/imperative-vs-declarative/) style of programming. 
 
@@ -22,7 +22,7 @@ Before we go any further, just note that this is just a hobby project of mine. N
 
 The code can be found on [github](https://github.com/NathanW2/little-pyqgis-query-engine) or its [homepage](http://nathanw2.github.io/little-pyqgis-query-engine/). 
 
-{% endexcerpt %}
+
 
 What good is a mini query engine?  Lets try with some examples.
 

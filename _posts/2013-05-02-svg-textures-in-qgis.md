@@ -7,7 +7,7 @@ category:
 tags: []
 ---
 
-{% excerpt %}
+
 Did you know you can use textures to fill a polyon in QGIS? No? Well you do now!
 
 The cool thing is you can get results like this with a simple SVG and a texture.
@@ -16,7 +16,7 @@ The cool thing is you can get results like this with a simple SVG and a texture.
 {% endimage %}
 
 So how do you do it? Lets give it a go.
-{% endexcerpt %}
+
 
 First grab a texture you want from [http://texturelib.com/](http://texturelib.com/)
 

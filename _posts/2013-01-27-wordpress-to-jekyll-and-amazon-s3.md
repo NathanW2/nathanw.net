@@ -6,13 +6,13 @@ category:
 tags: []
 ---
 
-{% excerpt %}
+
 
 Like a lot of other people I have decided to move my blog off WordPress and onto a static page based system, mainly Jekyll. I'm not going to go over all the reasons in detail, you can always [Google It](http://lmgtfy.com/?q=Wordpress+to+Jekyll) as I'm swapping for most of the same reasons that everyone else is.
 
 In case you don't like Google, or want my spin, this is a summary of the reasons that made me switch:
 
-{% endexcerpt %}
+
 
 * Static site - Blogs are static content. I don't need any fancy PHP to generate dynamic content on the fly.
 

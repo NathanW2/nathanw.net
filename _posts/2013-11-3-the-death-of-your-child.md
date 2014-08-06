@@ -6,11 +6,11 @@ category:
 tags: []
 ---
 
-{% excerpt %}
+
 
 Today was Eloise's due date but she has already been and gone.  Three weeks now. Sometimes it doesn't feel real - a bad dream that we can't escape from.  There is no rewind in life, you can only push forward and try to make things better.
 
-Eloise died at around 8:30am on the 16th of October, just 10 days after being born. Her heart stopped and she passed away in Stacey's arms while we both held her.  We knew it was coming, it was just a matter of time.  {% endexcerpt %} Stace and I had broken sleep that night listening for the alarms and watching her oxygen levels fall to the floor taking longer and longer to come back up. At one stage she was never going to come back and at 8:30am that is what happened. It was expected she would only last a few days and we stayed at the hospital, sleeping beside her, ever day until that morning. 
+Eloise died at around 8:30am on the 16th of October, just 10 days after being born. Her heart stopped and she passed away in Stacey's arms while we both held her.  We knew it was coming, it was just a matter of time.   Stace and I had broken sleep that night listening for the alarms and watching her oxygen levels fall to the floor taking longer and longer to come back up. At one stage she was never going to come back and at 8:30am that is what happened. It was expected she would only last a few days and we stayed at the hospital, sleeping beside her, ever day until that morning. 
 
 <blockquote class="twitter-tweet"><p>Goodbye baby girl. We love you. &lt;3 mummy, daddy, Harry.</p>&mdash; Nathan Woodrow (@madmanwoo) <a href="https://twitter.com/madmanwoo/statuses/390247704632107008">October 15, 2013</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

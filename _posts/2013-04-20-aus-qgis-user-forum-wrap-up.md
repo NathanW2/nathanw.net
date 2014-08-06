@@ -6,13 +6,13 @@ category: QGIS
 tags: [user group, qgis, melbourne]
 ---
 
-{% excerpt %}
+
 I had a feeling this year was going to be a good one for QGIS.  The recent success of the first Australian QGIS User Group in Perth, and the most recent one in Melbourne can only reinforce this.  Both events had a great turn out of around fifty people.  
 
 The Perth event was run as three presentations followed by a discussion session.
 
  - Mapping Projects with QGIS (Jeremy Taylor - City of Belmont)
-{% endexcerpt %}
+
  - Custom Plugin Development (Shane French - Department of Environment and Conservation)
  - All the New Cool Stuff in QGIS 2.0 (Nathan Woodrow - Digital Mapping Solutions)
 

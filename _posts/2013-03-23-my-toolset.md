@@ -6,7 +6,7 @@ category:
 tags: []
 ---
 
-{% excerpt %}
+
 
 I am a big fan Scott Hanselman and this post was inspired by his [2011 Ultimate Developer and Power Users Tool List for Windows](http://www.hanselman.com/blog/ScottHanselmans2011UltimateDeveloperAndPowerUsersToolListForWindows.aspx) with some extra stuff thrown in.  I have nowhere close to the amount of tools that Scott does but I thought it would be cool to share my setup anyway.
 
@@ -38,7 +38,7 @@ I am a big fan Scott Hanselman and this post was inspired by his [2011 Ultimate 
 
 - [ConEmu][Con] : I bloody love this program.  If you are still using cmd.exe to do anything just stop now! Go and download this. Tabs, better copy and paste, resize-able window, predefined tasks, and heaps more. Trust me you will be more productive. I found it though one of Scott's [posts](http://www.hanselman.com/blog/ConEmuTheWindowsTerminalConsolePromptWeveBeenWaitingFor.aspx) and haven't stopped using it since.
 
-{% endexcerpt %}
+
 
 #### GIS
 

@@ -6,13 +6,13 @@ category:
 tags: []
 ---
 
-{% excerpt %}
+
 
 This post was inspired by a post written by [Xaquín G.V](http://www.xocas.com/blog/en/ubersimple-tutorial-a-choropleth-in-qgis/), some extra credit must also go to Mathieu for helping me with the expression.
 
 One of the new great features in the upcoming QGIS 2.0 is the ability to use data defined symbology and labelling.  It might look like nothing on the surface but it can really open up the possibility of some great looking maps.
 
-{% endexcerpt %}
+
 
 Lets start with the example Xaquín has used by classifying by the unemployment rate. I have even created a pre-joined dataset for you if you want to follow along, grab it [here](https://www.dropbox.com/s/u4ps3chnpscbzz0/US%20Country%202000%202004.sqlite).
 

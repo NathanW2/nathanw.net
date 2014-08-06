@@ -3,19 +3,13 @@ layout: index
 title: Nathan's QGIS Blog
 tagline: My adventures with QGIS and other GIS.
 ---
-
+<h1> Recent posts </h1>
 <div class="posts">
-  {% for post in site.posts limit:5 %}
+  {% for post in site.posts limit:10 %}
     {% unless post.draft %}
     <div class="post">
       <h2><a href="{{ post.url }}">{{post.title }}</a></h2>
       <small>Published: {{ post.date | date_to_long_string }}</small>
-      {% if post.excerpt %}
-	    <div class="excerpt">
-	  	  <p>{{ post.excerpt | markdownify }}</p>
-        <a href="{{ post.url }} ">Read More</a>
-	     </div>
-      {% endif %}
     </div>
     <hr />
     {% endunless %}

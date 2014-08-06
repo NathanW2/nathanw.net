@@ -17,11 +17,11 @@ tags:
 - Quantum GIS
 ---
 
-{% excerpt %}
+
 
 As QGIS is such a fast moving project I have decided to make this a regular blog post in order to highlight some new features added to QGIS. If you haven't already, don't forget to check out [round one](/2012/09/04/five-new-awesomely-awesome-qgis-features).
 
-{% endexcerpt %}
+
 
 Remember that some of these features may still only be new which might change between now and the next official released version. With that out of the way lets get listing.
 

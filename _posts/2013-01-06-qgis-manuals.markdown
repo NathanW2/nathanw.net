@@ -17,7 +17,7 @@ tags:
 - Quantum GIS
 ---
 
-{% excerpt %}
+
 
 A quick [update](http://lists.osgeo.org/pipermail/qgis-community-team/2013-January/002436.html) from the QGIS documentation team today on the mailing list. The QGIS 1.8 manual is now available in HTML and PDF form.
 
@@ -25,7 +25,7 @@ A quick [update](http://lists.osgeo.org/pipermail/qgis-community-team/2013-Janua
 HTML manual can be found at:
 [http://docs.qgis.org/html/en/docs/user_manual/index.html](http://docs.qgis.org/html/en/docs/user_manual/index.html)
 
-{% endexcerpt %}
+
 
 
 PDF manual at:

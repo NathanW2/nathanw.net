@@ -6,11 +6,11 @@ category:
 tags: [OSGeo4W]
 ---
 
-{% excerpt %}
+
 
 Here is a handy tip to be able to install and update OSGeo4W packages, things like QGIS, GRASS, etc, using the apt utility from OSGeo4W.  apt is a command line utility that you can install using OSGeo4W and then run using the OSGeo4W Shell.
 
-{% endexcerpt %}
+
 
 First install apt via OSGeo4W
 

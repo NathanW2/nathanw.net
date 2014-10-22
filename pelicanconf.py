@@ -26,6 +26,8 @@ TAGLINE = 'QGIS Developer, Python (Monty and code) fan'
 LOAD_CONTENT_CACHE = True
 CHECK_MODIFIED_METHOD = 'md5'
 
+DISQUS_SITENAME = 'nathansqgisblog'
+GOOGLE_ANALYTICS = 'UA-5231515-7'
 
 # Blogroll
 LINKS = ()

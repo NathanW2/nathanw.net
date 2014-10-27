@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Nathan Woodrow'
 SITENAME = u"Nathan's QGIS Blog"
-SITEURL = ''
+SITEURL = 'http://localhost:8000/'
 
 PATH = 'content'
 
@@ -33,9 +33,7 @@ GOOGLE_ANALYTICS = 'UA-5231515-7'
 LINKS = ()
 
 # Social widget
-SOCIAL = (('GitHub', 'https://github.com/NathanW2'),
-          ('Twitter', 'https://twitter.com/madmanwoo'),
-          ('Google+', 'https://plus.google.com/u/0/109990125267312011029/posts'))
+SOCIAL = ()
 
 DEFAULT_PAGINATION = 10
 
